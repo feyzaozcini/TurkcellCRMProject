@@ -16,7 +16,6 @@ import java.util.Map;
 public class BaseJwtService {
     private long EXPIRATION = 600000;
     private String SECRET_KEY = "r9qSZrihqYt79JPbHpAaD//OX8RICTOIRGPzESiHbiGT1Ppc4G1uMTbLu5Lw7/o6GSbtpEPZmzMELKH1G1qirjerCbpASu3DZYN1AsGgMZ9JEhSwzwYzfp0h8Ooqu2R1r/s2qiN+PxInHX1uee8yQcwBEIkaU9U3EUMvSYsdY+CBSWsIJeywC9p9hWJn1cBcFBBHjDQ0zJrEK6bwDfRI9DGatN+thR8OmEzER/RKyYv8AFQxeYsw3ZZC+nry2kgm5T48NlEyqhif0logyzAYvRAIpjhV+n/yXJe0D6CJOyMiPaYT217JHdStcD3THjVtGgIoF0mSWkOMFvLGdTLb4WYcx3jORFC+MshYzhDGFkY=";
-
     public String generateToken(String username, Map<String, Object> extraClaims)
     {
         String token = Jwts
