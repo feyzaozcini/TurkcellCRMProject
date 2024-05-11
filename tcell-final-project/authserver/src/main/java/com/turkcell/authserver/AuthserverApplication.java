@@ -1,5 +1,4 @@
 package com.turkcell.authserver;
-
 import com.turkcell.tcellfinalcore.annotations.EnableSecurity;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

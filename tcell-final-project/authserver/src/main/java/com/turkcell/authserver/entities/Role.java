@@ -1,10 +1,15 @@
 package com.turkcell.authserver.entities;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import java.util.Set;
 @Entity
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 @Table(name = "roles")
 public class Role implements GrantedAuthority {
     @Id

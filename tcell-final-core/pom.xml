@@ -12,7 +12,7 @@
 
 	<groupId>com.turkcell</groupId>
 	<artifactId>tcell-final-core</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
@@ -49,11 +49,11 @@
 		</dependency>
 	</dependencies>
 
-<!--	<distributionManagement>-->
-<!--		<repository>-->
-<!--			<id>github</id>-->
-<!--			<name>Github Package Center</name>-->
-<!--			<url>https://maven.pkg.github.com/halit-kalayci-instruction/turkcell-3-core</url>-->
-<!--		</repository>-->
-<!--	</distributionManagement>-->
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>Github Package Center</name>
+			<url>https://maven.pkg.github.com/feyzaozcini/tcell-final-project</url>
+		</repository>
+	</distributionManagement>
 </project>

@@ -15,7 +15,7 @@ import java.util.Map;
 @Service
 public class BaseJwtService {
     private long EXPIRATION = 600000;
-    private String SECRET_KEY = "r9qSZrihqYt79JPbHpAaD//OX8RICTOIRGPzESiHbiGT1Ppc4G1uMTbLu5Lw7/o6GSbtpEPZmzMELKH1G1qirjerCbpASu3DZYN1AsGgMZ9JEhSwzwYzfp0h8Ooqu2R1r/s2qiN+PxInHX1uee8yQcwBEIkaU9U3EUMvSYsdY+CBSWsIJeywC9p9hWJn1cBcFBBHjDQ0zJrEK6bwDfRI9DGatN+thR8OmEzER/RKyYv8AFQxeYsw3ZZC+nry2kgm5T48NlEyqhif0logyzAYvRAIpjhV+n/yXJe0D6CJOyMiPaYT217JHdStcD3THjVtGgIoF0mSWkOMFvLGdTLb4WYcx3jORFC+MshYzhDGFkY=";
+    private String SECRET_KEY = "Ovcwy/oYoPYH9oKyl2P+VW2eEcDs+Q0/airucLh9aeG6Lj5JzYuvPHsozxljSCRqkIYzdW24oPX2JtQruIIJACcHRH87xq/TXEWOQVqwpUtwbuL3kWi6WBOsEGRgndZE7K8gMibx7ecI85QJHIAcepYvMYX/A/+lpJuuJ0Rx6KnjhsFJovqGPbxTNtHEWHcz7c62GmFzLP8mJVfpEAo4PMZyc75YX3VTX4RS/4ORnu98ywvtMi7wm2VH0YzeDabkg2QSO39XoMnH8Yux/gc39JOg4MyvCCD+1G5IHAuo9dYp7SH17G/rMe33UjgoyhvxoquRG6aGaFWNpdWTe+4TptBxEYlbuRCZBkdiwjwpm80=";
     public String generateToken(String username, Map<String, Object> extraClaims)
     {
         String token = Jwts

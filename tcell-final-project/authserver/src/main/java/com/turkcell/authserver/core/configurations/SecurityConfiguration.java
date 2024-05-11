@@ -31,8 +31,7 @@ public class SecurityConfiguration {
                         .requestMatchers(WHITE_LIST).permitAll()
                         .requestMatchers(("/api/v1/admin"))
                         .hasAnyAuthority("admin")
-                        .anyRequest().authenticated())
-                .httpBasic(AbstractHttpConfigurer::disable);
+                        .anyRequest().authenticated());
         return http.build();
     }
 }

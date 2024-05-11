@@ -92,8 +92,8 @@
 		</dependency>
 		<dependency>
 			<groupId>com.turkcell</groupId>
-			<artifactId>tcell.final.core</artifactId>
-			<version>1.0.1</version>
+			<artifactId>tcell-final-core</artifactId>
+			<version>1.0.2</version>
 		</dependency>
 
 	</dependencies>
