@@ -1,37 +1,32 @@
-package com.turkcell.authserver.core.configurations;
+package com.turkcell.customerservice.core.configuration;
 
-import com.turkcell.tcellfinalcore.configuration.BaseApplicationConfiguration;
+import com.turkcell.customerservice.services.abstracts.CustomerService;
 import com.turkcell.tcellfinalcore.security.BaseJwtFilter;
 import com.turkcell.tcellfinalcore.services.BaseSecurityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfiguration {
+    private final CustomerService customerService;
     private final BaseJwtFilter jwtFilter;
     private final BaseSecurityService baseSecurityService;
-
     private static final String[] WHITE_LIST={
-            "/api/v1/auth/**",
+            "/api/v1/customer/**",
             "/swagger-ui/**",
             "/v2/api-docs",
             "/v3/api-docs",
             "/v3/api-docs/**",
     };
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         baseSecurityService.configureCoreSecurity(http);
-        http
-                .authorizeHttpRequests((req)-> req
-                        .requestMatchers(WHITE_LIST).permitAll()
-                        .requestMatchers(("/api/v1/*"))
-                        .hasAnyAuthority("Kodlamaio")
-                        .anyRequest().authenticated());
+        http.authorizeHttpRequests((req) -> req.requestMatchers(WHITE_LIST).permitAll());
         return http.build();
     }
 }
