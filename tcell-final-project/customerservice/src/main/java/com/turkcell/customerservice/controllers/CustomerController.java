@@ -1,15 +1,14 @@
 package com.turkcell.customerservice.controllers;
-
-import com.turkcell.customerservice.entities.Customer;
 import com.turkcell.customerservice.services.abstracts.CustomerService;
 import com.turkcell.customerservice.services.dtos.request.CustomerAddRequest;
 import com.turkcell.customerservice.services.dtos.request.CustomerAddressAdd;
+import com.turkcell.customerservice.services.dtos.request.CustomerContactAdd;
 import com.turkcell.customerservice.services.dtos.request.CustomerUpdateRequest;
-import com.turkcell.customerservice.services.dtos.response.CustomerAddressesGetResponse;
+import com.turkcell.customerservice.services.dtos.response.CustomerAddressGet;
+import com.turkcell.customerservice.services.dtos.response.CustomerContactGet;
 import com.turkcell.customerservice.services.dtos.response.CustomerGetResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -35,23 +34,32 @@ public class CustomerController {
     public void deleteCustomerById(@PathVariable int id){
         customerService.deleteCustomerById(id);
     }
-    @PutMapping("/update/{id}")
-    public void updateCustomer(@PathVariable int id, @RequestBody CustomerUpdateRequest request){
-        customerService.updateCustomerById(id, request);
+    @PutMapping("/update")
+    public void updateCustomer(@RequestBody CustomerUpdateRequest request){
+        customerService.updateCustomerById(request);
     }
 
-    @PutMapping("/update/address")
-    public void updateCustomerAddresses(@RequestParam int customerId, @RequestBody CustomerAddressAdd dto){
-        customerService.addCustomerAddress(customerId, dto);
+    @PutMapping("/addAddress")
+    public void addAddressToCustomer(@RequestBody CustomerAddressAdd dto){
+        customerService.addAddressToCustomer(dto);
     }
 
     @GetMapping("/adresses")
-    public List<CustomerAddressesGetResponse> getCustomerAdressesById(@RequestParam int customerId){
-        return customerService.getCustomerAdressesById(customerId);
+    public List<CustomerAddressGet> getCustomerAdressesById(@RequestParam int customerId){
+        return customerService.getCustomerAdressesByCustomerId(customerId);
     }
 
     @DeleteMapping("/deleteAddress")
     public void deleteAddress(@RequestParam int addressId){
         customerService.deleteCustomerAddressByAddressId(addressId);
+    }
+    @PutMapping("/addContact")
+    public void addContactToCustomer(@RequestBody CustomerContactAdd request){
+        customerService.addContactToCustomer(request);
+    }
+
+    @GetMapping("/contacts")
+    public List<CustomerContactGet> getCustomerContactsById(@RequestParam int customerId){
+        return customerService.getCustomerContactsByCustomerId(customerId);
     }
 }

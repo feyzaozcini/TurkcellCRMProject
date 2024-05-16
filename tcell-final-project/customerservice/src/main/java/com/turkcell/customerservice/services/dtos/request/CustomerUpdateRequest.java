@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerUpdateRequest {
+    private int id;
     private String firstName;
     private String secondName;
     private String lastName;

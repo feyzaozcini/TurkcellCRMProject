@@ -1,21 +1,28 @@
 package com.turkcell.customerservice.services.concretes;
 
 import com.turkcell.customerservice.entities.Address;
+import com.turkcell.customerservice.entities.Contact;
 import com.turkcell.customerservice.entities.Customer;
 import com.turkcell.customerservice.repositories.AddressRepository;
+import com.turkcell.customerservice.repositories.ContactRepository;
 import com.turkcell.customerservice.repositories.CustomerRepository;
 import com.turkcell.customerservice.services.abstracts.CustomerService;
 import com.turkcell.customerservice.services.dtos.request.CustomerAddRequest;
 import com.turkcell.customerservice.services.dtos.request.CustomerAddressAdd;
+import com.turkcell.customerservice.services.dtos.request.CustomerContactAdd;
 import com.turkcell.customerservice.services.dtos.request.CustomerUpdateRequest;
-import com.turkcell.customerservice.services.dtos.response.CustomerAddressesGetResponse;
+import com.turkcell.customerservice.services.dtos.response.CustomerAddressGet;
+import com.turkcell.customerservice.services.dtos.response.CustomerContactGet;
 import com.turkcell.customerservice.services.dtos.response.CustomerGetResponse;
 import com.turkcell.customerservice.services.mappers.AddressMapper;
+import com.turkcell.customerservice.services.mappers.ContactMapper;
 import com.turkcell.customerservice.services.mappers.CustomerMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -23,6 +30,7 @@ import java.util.stream.Collectors;
 public class CustomerServiceImpl implements CustomerService {
     private final CustomerRepository customerRepository;
     private final AddressRepository addressRepository;
+    private final ContactRepository contactRepository;
     @Override
     public void addCustomer(CustomerAddRequest request) {
         Customer newCustomer = CustomerMapper.INSTANCE.getCustomerFromAddRequest(request);
@@ -38,7 +46,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List<CustomerGetResponse> getCustomers() {
        return customerRepository.findAll().stream()
-                .map((customer)-> CustomerMapper.INSTANCE.getResponseFromCustomer(customer))
+                .map(CustomerMapper.INSTANCE::getResponseFromCustomer)
                 .collect(Collectors.toList());
     }
 
@@ -48,41 +56,65 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void updateCustomerById(int id, CustomerUpdateRequest request) {
-        Customer customer = customerRepository.findById(id).orElseThrow();
-        customer = CustomerMapper.INSTANCE.customerFromUpdateRequest(request);
-        customer.setId(customer.getId());
-        customerRepository.save(customer);
+    public void updateCustomerById(CustomerUpdateRequest request) {
+        boolean isExist = customerRepository.existsById(request.getId());
+        if(isExist){
+            Customer customer = CustomerMapper.INSTANCE.customerFromUpdateRequest(request);
+            customerRepository.save(customer);
+        }
+        else{
+            throw new RuntimeException("Yok");
+        }
     }
 
     @Override
-    public void addCustomerAddress(int id, CustomerAddressAdd request) {
-        Customer customer = customerRepository.findById(id).orElseThrow();
-        Address address=addressRepository.save(AddressMapper.INSTANCE.addressFromAddRequest(request));
-        List<Address> customerAddresses = customer.getAddresses();
+    public void addAddressToCustomer(CustomerAddressAdd request) {
+        Address address = AddressMapper.INSTANCE.addressFromAddRequest(request);
+        Customer customer = customerRepository.findById(request.getCustomerId()).orElseThrow();
+        Set<Address> customerAddresses = customer.getAddresses();
         customerAddresses.add(address);
-        customer.setAddresses(customerAddresses);
         customerRepository.save(customer);
     }
 
     @Override
-    public List<CustomerAddressesGetResponse> getCustomerAdressesById(int id) throws RuntimeException {
-        List<CustomerAddressesGetResponse> addresses = customerRepository.findById(id).orElseThrow(()-> new RuntimeException("YOKKK!!")).getAddresses().stream()
-                .map((response)->AddressMapper.INSTANCE.getResponseFromAddress(response))
+    public List<CustomerAddressGet> getCustomerAdressesByCustomerId(int id) throws RuntimeException {
+        return customerRepository.findById(id).orElseThrow(()-> new RuntimeException("YOKKK!!")).getAddresses().stream()
+                .map(AddressMapper.INSTANCE::getResponseFromAddress)
                 .collect(Collectors.toList());
-        return addresses;
     }
 
     @Override
     public void deleteCustomerAddressByAddressId(int addressId) {
-//        Customer customer = customerRepository.findById(customerId).orElseThrow();
-//        Address address = addressRepository.findById(addressId).orElseThrow();
-//        List<Address> customerAddresses = customer.getAddresses();
-//        customerAddresses.remove(address);
-//        customer.setAddresses(customerAddresses);
-//        customer.setId(customerId);
-//        customerRepository.save(customer);
-        addressRepository.deleteById(addressId);
+        boolean isAddressExist = addressRepository.existsById(addressId);
+        if(isAddressExist){
+            addressRepository.deleteById(addressId);
+        }
+        else{
+            throw new RuntimeException(" ");
+        }
+    }
+
+    public void addContactToCustomer(CustomerContactAdd request){
+        Contact contact = ContactMapper.INSTANCE.contactFromAddRequest(request);
+        if(customerRepository.existsById(request.getCustomerId())){
+            Customer customer = customerRepository.findById(request.getCustomerId()).orElseThrow();
+            Set<Contact> customerContacts = customer.getContacts();
+            customerContacts.add(contact);
+            customer.setContacts(customerContacts);
+            customerRepository.save(customer);
+        }
+        else{
+            throw new RuntimeException(" ");
+        }
+
+    }
+    public List<CustomerContactGet> getCustomerContactsByCustomerId(int customerId){
+        return customerRepository.findById(customerId).orElseThrow(()-> new RuntimeException("YOKKK!!")).getContacts()
+                .stream()
+                .map((contact) -> ContactMapper.INSTANCE.getResponseFromContact(contact)
+        ).collect(Collectors.toList());
+
+        //TODO: null geliyor.
     }
 
 

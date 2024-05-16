@@ -8,6 +8,7 @@ import org.hibernate.annotations.Cascade;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "customers")
@@ -41,19 +42,9 @@ public class Customer {
     private String gender;
     @Column(name = "birth_date")
     private LocalDateTime birthDate;
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "customer_addresses",
-            joinColumns = @JoinColumn(name = "customer_id"),
-            inverseJoinColumns = @JoinColumn(name = "address_id"))
-    private List<Address> addresses;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "customer_contacts",
-            joinColumns = @JoinColumn(name = "customer_id"),
-            inverseJoinColumns = @JoinColumn(name = "contact_id")
-    )
-    private List<Contact> contacts;
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private Set<Address> addresses;
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private Set<Contact> contacts;
 
 }

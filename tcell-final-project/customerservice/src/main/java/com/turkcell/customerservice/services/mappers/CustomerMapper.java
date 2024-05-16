@@ -5,11 +5,13 @@ import com.turkcell.customerservice.services.dtos.request.CustomerAddRequest;
 import com.turkcell.customerservice.services.dtos.request.CustomerUpdateRequest;
 import com.turkcell.customerservice.services.dtos.response.CustomerGetResponse;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface CustomerMapper {
     CustomerMapper INSTANCE = Mappers.getMapper(CustomerMapper.class);
+
     Customer getCustomerFromAddRequest(CustomerAddRequest request);
 
     CustomerGetResponse getResponseFromCustomer(Customer customer);

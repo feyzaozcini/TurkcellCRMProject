@@ -1,5 +1,5 @@
 package com.turkcell.customerservice.services.dtos.request;
-
+import com.turkcell.customerservice.entities.Customer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,13 +9,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerAddressAdd {
+public class CustomerContactAdd {
     private int customerId;
-    private String city;
-    private String district;
-    private String street;
-    private String addressDescription;
-
-    private String houseFlatNumberStreet;
-
+    private String email;
+    private String mobilePhone;
+    private String homePhone;
+    private String fax;
 }

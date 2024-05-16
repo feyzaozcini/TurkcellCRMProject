@@ -28,7 +28,7 @@ public class Address {
     private String addressDescription;
     @Column(name = "house_flat_number_street")
     private String houseFlatNumberStreet;
-    @ManyToMany(mappedBy = "addresses", cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JsonIgnore
-    private List<Customer> customers;
+    private Customer customer;
 }

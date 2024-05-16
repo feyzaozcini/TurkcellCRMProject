@@ -26,7 +26,7 @@ public class Contact {
     private String homePhone;
     @Column(name = "fax")
     private String fax;
-    @ManyToMany(mappedBy = "contacts")
+    @ManyToOne
     @JsonIgnore
-    private List<Customer> customers;
+    private Customer customer;
 }
