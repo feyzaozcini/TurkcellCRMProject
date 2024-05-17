@@ -47,7 +47,6 @@ public class CustomerController {
     @GetMapping("/adresses")
     public List<CustomerAddressGet> getCustomerAdressesById(@RequestParam int customerId){
         return customerService.getCustomerAdressesByCustomerId(customerId);
-        //
     }
 
     @DeleteMapping("/deleteAddress")
