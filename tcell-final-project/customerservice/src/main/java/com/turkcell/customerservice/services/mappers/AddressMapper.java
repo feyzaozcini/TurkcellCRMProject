@@ -1,7 +1,7 @@
 package com.turkcell.customerservice.services.mappers;
 
 import com.turkcell.customerservice.entities.Address;
-import com.turkcell.customerservice.services.dtos.request.CustomerAddressAdd;
+import com.turkcell.customerservice.services.dtos.request.CustomerAddressAddRequest;
 import com.turkcell.customerservice.services.dtos.response.CustomerAddressGet;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -12,7 +12,7 @@ public interface AddressMapper {
     AddressMapper INSTANCE = Mappers.getMapper(AddressMapper.class);
 
     @Mapping(target = "customer.id", source = "customerId")
-    Address addressFromAddRequest(CustomerAddressAdd add);
+    Address addressFromAddRequest(CustomerAddressAddRequest add);
 
     CustomerAddressGet getResponseFromAddress(Address address);
 }

@@ -1,8 +1,6 @@
 package com.turkcell.customerservice.services.abstracts;
-
-import com.turkcell.customerservice.entities.Customer;
 import com.turkcell.customerservice.services.dtos.request.CustomerAddRequest;
-import com.turkcell.customerservice.services.dtos.request.CustomerAddressAdd;
+import com.turkcell.customerservice.services.dtos.request.CustomerAddressAddRequest;
 import com.turkcell.customerservice.services.dtos.request.CustomerContactAdd;
 import com.turkcell.customerservice.services.dtos.request.CustomerUpdateRequest;
 import com.turkcell.customerservice.services.dtos.response.CustomerAddressGet;
@@ -20,11 +18,12 @@ public interface CustomerService {
 
     void updateCustomerById(CustomerUpdateRequest request);
 
-    void addAddressToCustomer(CustomerAddressAdd request);
+    void addAddressToCustomer(CustomerAddressAddRequest request);
 
     List<CustomerAddressGet> getCustomerAdressesByCustomerId(int id);
 
-    void deleteCustomerAddressByAddressId(int addressId); //customerId olmadan cascade kullanarak nasil yapariz?
+    void deleteCustomerAddressByAddressId(int addressId);
     void addContactToCustomer(CustomerContactAdd request);
     List<CustomerContactGet> getCustomerContactsByCustomerId(int customerId);
+    void deleteCustomerContactByContactId(int contactId);
 }

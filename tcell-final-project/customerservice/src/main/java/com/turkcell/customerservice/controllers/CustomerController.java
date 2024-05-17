@@ -1,7 +1,7 @@
 package com.turkcell.customerservice.controllers;
 import com.turkcell.customerservice.services.abstracts.CustomerService;
 import com.turkcell.customerservice.services.dtos.request.CustomerAddRequest;
-import com.turkcell.customerservice.services.dtos.request.CustomerAddressAdd;
+import com.turkcell.customerservice.services.dtos.request.CustomerAddressAddRequest;
 import com.turkcell.customerservice.services.dtos.request.CustomerContactAdd;
 import com.turkcell.customerservice.services.dtos.request.CustomerUpdateRequest;
 import com.turkcell.customerservice.services.dtos.response.CustomerAddressGet;
@@ -40,7 +40,7 @@ public class CustomerController {
     }
 
     @PutMapping("/addAddress")
-    public void addAddressToCustomer(@RequestBody CustomerAddressAdd dto){
+    public void addAddressToCustomer(@RequestBody CustomerAddressAddRequest dto){
         customerService.addAddressToCustomer(dto);
     }
 
@@ -50,8 +50,12 @@ public class CustomerController {
     }
 
     @DeleteMapping("/deleteAddress")
-    public void deleteAddress(@RequestParam int addressId){
+    public void deleteCustomerAddressByAddressId(@RequestParam int addressId){
         customerService.deleteCustomerAddressByAddressId(addressId);
+    }
+    @DeleteMapping("/deleteContact")
+    public void deleteCustomerContactByContactId(@RequestParam int contactId){
+        customerService.deleteCustomerContactByContactId(contactId);
     }
     @PutMapping("/addContact")
     public void addContactToCustomer(@RequestBody CustomerContactAdd request){

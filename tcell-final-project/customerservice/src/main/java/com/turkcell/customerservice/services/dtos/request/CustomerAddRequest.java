@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class CustomerAddRequest {
-    private int id;
     private String firstName;
     private String secondName;
     private String lastName;

@@ -13,6 +13,5 @@ public interface ContactMapper {
 
     @Mapping(target = "customer.id", source = "customerId")
     Contact contactFromAddRequest(CustomerContactAdd request);
-
     CustomerContactGet getResponseFromContact(Contact contact);
 }

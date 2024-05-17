@@ -12,6 +12,7 @@ import org.mapstruct.factory.Mappers;
 public interface CustomerMapper {
     CustomerMapper INSTANCE = Mappers.getMapper(CustomerMapper.class);
 
+    @Mapping(target = "id", ignore = true)
     Customer getCustomerFromAddRequest(CustomerAddRequest request);
 
     CustomerGetResponse getResponseFromCustomer(Customer customer);

@@ -8,7 +8,7 @@ import com.turkcell.customerservice.repositories.ContactRepository;
 import com.turkcell.customerservice.repositories.CustomerRepository;
 import com.turkcell.customerservice.services.abstracts.CustomerService;
 import com.turkcell.customerservice.services.dtos.request.CustomerAddRequest;
-import com.turkcell.customerservice.services.dtos.request.CustomerAddressAdd;
+import com.turkcell.customerservice.services.dtos.request.CustomerAddressAddRequest;
 import com.turkcell.customerservice.services.dtos.request.CustomerContactAdd;
 import com.turkcell.customerservice.services.dtos.request.CustomerUpdateRequest;
 import com.turkcell.customerservice.services.dtos.response.CustomerAddressGet;
@@ -34,7 +34,6 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void addCustomer(CustomerAddRequest request) {
         Customer newCustomer = CustomerMapper.INSTANCE.getCustomerFromAddRequest(request);
-        System.out.println(newCustomer.getFirstName());
         customerRepository.save(newCustomer);
     }
 
@@ -68,7 +67,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void addAddressToCustomer(CustomerAddressAdd request) {
+    public void addAddressToCustomer(CustomerAddressAddRequest request) {
         Address address = AddressMapper.INSTANCE.addressFromAddRequest(request);
         Customer customer = customerRepository.findById(request.getCustomerId()).orElseThrow();
         Set<Address> customerAddresses = customer.getAddresses();
@@ -114,7 +113,16 @@ public class CustomerServiceImpl implements CustomerService {
                 .map((contact) -> ContactMapper.INSTANCE.getResponseFromContact(contact)
         ).collect(Collectors.toList());
 
-        //TODO: null geliyor.
+    }
+    @Override
+    public void deleteCustomerContactByContactId(int contactId) {
+        boolean isAddressExist = contactRepository.existsById(contactId);
+        if(isAddressExist){
+            contactRepository.deleteById(contactId);
+        }
+        else{
+            throw new RuntimeException(" ");
+        }
     }
 
 

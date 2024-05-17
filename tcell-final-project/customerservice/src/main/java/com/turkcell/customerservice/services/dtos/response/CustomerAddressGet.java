@@ -10,6 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerAddressGet {
+    private int id;
     private String city;
     private String district;
     private String street;

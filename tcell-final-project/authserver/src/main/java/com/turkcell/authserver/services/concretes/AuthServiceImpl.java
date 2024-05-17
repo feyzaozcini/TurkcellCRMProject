@@ -27,19 +27,9 @@ public class AuthServiceImpl implements AuthService {
     private final BaseJwtService jwtService;
     @Override
     public void register(RegisterRequest request) {
-
-        User user = new User();
-        user.setEmail(request.getEmail());
+        User user = UserMapper.INSTANCE.userFromRegisterRequest(request);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         userService.add(user);
-
-
-
-        /*
-        User user = UserMapper.INSTANCE.userFromRegisterRequest(request);
-        userService.add(user);
-
-         */
     }
 
     @Override
