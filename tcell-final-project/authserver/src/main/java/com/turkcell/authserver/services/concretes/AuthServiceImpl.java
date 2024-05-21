@@ -27,8 +27,6 @@ public class AuthServiceImpl implements AuthService {
     private final UserService userService;
     private final AuthenticationManager authenticationManager;
     private final BaseJwtService jwtService;
-    private final CustomerServiceClient customerServiceClient;
-    private String token;
     @Override
     public void register(RegisterRequest request) {
         User user = UserMapper.INSTANCE.userFromRegisterRequest(request);
@@ -45,15 +43,8 @@ public class AuthServiceImpl implements AuthService {
             throw new RuntimeException("Kullanici adi ya da sifre yanlis");
         }
 
-        token = jwtService.generateTokenWithClaims(userService.loadUserByUsername(request.getEmail()));
-        return token;
+        return jwtService.generateTokenWithClaims(userService.loadUserByUsername(request.getEmail()));
     }
 
-    public List<CustomerGet> getCustomers(){
-        return customerServiceClient.getCustomers();
-    }
 
-    public String getToken(){
-        return token;
-    }
 }

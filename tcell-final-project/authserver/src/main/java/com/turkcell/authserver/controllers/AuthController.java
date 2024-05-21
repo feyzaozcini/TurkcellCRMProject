@@ -25,8 +25,8 @@ public class AuthController {
         return authService.login(request);
     }
 
-    @GetMapping("/customers")
-    public List<CustomerGet> getCustomers(){
-        return authService.getCustomers();
-    }
+//    @GetMapping("/customers")
+//    public List<CustomerGet> getCustomers(){
+//        return authService.getCustomers();
+//    }
 }

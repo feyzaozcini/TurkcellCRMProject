@@ -9,6 +9,5 @@ import java.util.List;
 public interface AuthService {
     void register(RegisterRequest request);
     String login(LoginRequest request);
-    List<CustomerGet> getCustomers();
-    String getToken();
+
 }
