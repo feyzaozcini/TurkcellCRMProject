@@ -44,7 +44,7 @@ public class CustomerController {
         customerService.addAddressToCustomer(dto);
     }
 
-    @GetMapping("/adresses")
+    @GetMapping("/addresses")
     public List<CustomerAddressGet> getCustomerAdressesById(@RequestParam int customerId){
         return customerService.getCustomerAdressesByCustomerId(customerId);
     }

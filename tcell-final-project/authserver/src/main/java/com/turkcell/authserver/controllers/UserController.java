@@ -20,8 +20,8 @@ public class UserController {
     }
 
     @GetMapping("/getCustomerAddresses")
-    public List<CustomerAddressGet> getCustomerAddressesByCustomerId(@RequestParam int customerId){
-        return userService.getCustomerAddressesByCustomerId(customerId);
+    public List<CustomerAddressGet> getCustomerAddressesByCustomerId(@RequestParam String token,@RequestParam int customerId){
+        return userService.getCustomerAddressesByCustomerId(token,customerId);
     }
 
     @GetMapping("/getCustomerContacts")

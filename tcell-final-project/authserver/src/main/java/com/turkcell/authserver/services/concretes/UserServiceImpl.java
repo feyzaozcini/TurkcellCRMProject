@@ -38,7 +38,8 @@ public class UserServiceImpl implements UserService {
     }
 
 
-    public List<CustomerAddressGet> getCustomerAddressesByCustomerId( int customerId){
+    public List<CustomerAddressGet> getCustomerAddressesByCustomerId( String token,int customerId){
+        this.token=token;
         return customerServiceClient.getCustomerAddressesByCustomerId(customerId);
     }
 

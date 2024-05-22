@@ -10,7 +10,7 @@ import org.mapstruct.factory.Mappers;
 public interface UserMapper {
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
     @Mapping(target = "password", ignore = true)
-    @Mapping (source="email", target="email")
+    //@Mapping (source="email", target="email")
     User userFromRegisterRequest(RegisterRequest request);
     User userFromLoginRequest(LoginRequest request);
 

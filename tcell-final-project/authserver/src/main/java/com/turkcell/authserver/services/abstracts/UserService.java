@@ -15,7 +15,7 @@ public interface UserService extends UserDetailsService {
     UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
     List<CustomerGet> getCustomers(String token);
     String getToken();
-    List<CustomerAddressGet> getCustomerAddressesByCustomerId(int customerId);
+    List<CustomerAddressGet> getCustomerAddressesByCustomerId(String token, int customerId);
     List<CustomerContactGet> getCustomerContactsByCustomerId(int customerId);
     List<CustomerContactGet> getCustomerContactsByCustomerId(String token, int customerId);
 }
