@@ -30,6 +30,7 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public void register(RegisterRequest request) {
         User user = UserMapper.INSTANCE.userFromRegisterRequest(request);
+        //user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         userService.add(user);
     }
