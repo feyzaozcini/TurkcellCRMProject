@@ -4,16 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12259e16-21ce-4acd-8315-f9ed281d24a6" name="Changes" comment="">
+    <list default="true" id="12259e16-21ce-4acd-8315-f9ed281d24a6" name="Changes" comment="sample">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/clients/CustomerServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/clients/CustomerServiceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/core/configurations/FeignConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/core/configurations/FeignConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/core/configurations/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/core/configurations/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/abstracts/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/abstracts/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/controllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/abstracts/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/abstracts/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/concretes/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/concretes/AuthServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/concretes/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/concretes/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/dtos/requests/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/dtos/requests/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/dtos/requests/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/dtos/requests/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/mappers/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/repositories/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/repositories/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/CustomerAddRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/CustomerAddRequest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +32,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -157,7 +165,8 @@
       <workItem from="1715962827440" duration="1370000" />
       <workItem from="1715964209618" duration="2448000" />
       <workItem from="1716023382869" duration="4070000" />
-      <workItem from="1716304806446" duration="8976000" />
+      <workItem from="1716304806446" duration="9672000" />
+      <workItem from="1716476021659" duration="10906000" />
     </task>
     <task id="LOCAL-00001" summary="sample">
       <option name="closed" value="true" />
@@ -180,10 +189,14 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/concretes/UserServiceImpl.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="9" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/repositories/CustomerRepository.java</url>
+          <line>25</line>
+          <properties class="com.turkcell.customerservice.repositories.CustomerRepository" method="search">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

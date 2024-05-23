@@ -4,9 +4,12 @@ import com.turkcell.authserver.clients.CustomerServiceClient;
 import com.turkcell.authserver.entities.User;
 import com.turkcell.authserver.repositories.UserRepository;
 import com.turkcell.authserver.services.abstracts.UserService;
+import com.turkcell.authserver.services.dtos.requests.CustomerUpdateRequest;
+import com.turkcell.authserver.services.dtos.requests.SearchRequest;
 import com.turkcell.authserver.services.dtos.responses.CustomerAddressGet;
 import com.turkcell.authserver.services.dtos.responses.CustomerContactGet;
 import com.turkcell.authserver.services.dtos.responses.CustomerGet;
+import com.turkcell.authserver.services.dtos.responses.SearchResponse;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -50,5 +53,14 @@ public class UserServiceImpl implements UserService {
         this.token = token;
         return customerServiceClient.getCustomerContactsByCustomerId(customerId);
     }
+
+    public List<SearchResponse> searchCustomer(SearchRequest request){
+        this.token = request.getToken();
+        return customerServiceClient.searchCustomer(request);
+    }
+
+    public void updateCustomer(String token, CustomerUpdateRequest request){
+        this.token = token;
+        customerServiceClient.updateCustomer(request);
+    }
 }
-//'http://localhost:8084/api/v1/customer/adresses?customerId=2'

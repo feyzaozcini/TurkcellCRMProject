@@ -7,13 +7,11 @@ import com.turkcell.customerservice.repositories.AddressRepository;
 import com.turkcell.customerservice.repositories.ContactRepository;
 import com.turkcell.customerservice.repositories.CustomerRepository;
 import com.turkcell.customerservice.services.abstracts.CustomerService;
-import com.turkcell.customerservice.services.dtos.request.CustomerAddRequest;
-import com.turkcell.customerservice.services.dtos.request.CustomerAddressAddRequest;
-import com.turkcell.customerservice.services.dtos.request.CustomerContactAdd;
-import com.turkcell.customerservice.services.dtos.request.CustomerUpdateRequest;
+import com.turkcell.customerservice.services.dtos.request.*;
 import com.turkcell.customerservice.services.dtos.response.CustomerAddressGet;
 import com.turkcell.customerservice.services.dtos.response.CustomerContactGet;
 import com.turkcell.customerservice.services.dtos.response.CustomerGetResponse;
+import com.turkcell.customerservice.services.dtos.response.SearchResponse;
 import com.turkcell.customerservice.services.mappers.AddressMapper;
 import com.turkcell.customerservice.services.mappers.ContactMapper;
 import com.turkcell.customerservice.services.mappers.CustomerMapper;
@@ -123,5 +121,8 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
+    public List<SearchResponse> searchCustomer(SearchRequest request){
+        return customerRepository.search(request);
+    }
 
 }

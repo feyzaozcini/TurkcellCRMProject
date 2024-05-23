@@ -1,12 +1,11 @@
 package com.turkcell.customerservice.controllers;
+import com.turkcell.customerservice.repositories.CustomerRepository;
 import com.turkcell.customerservice.services.abstracts.CustomerService;
-import com.turkcell.customerservice.services.dtos.request.CustomerAddRequest;
-import com.turkcell.customerservice.services.dtos.request.CustomerAddressAddRequest;
-import com.turkcell.customerservice.services.dtos.request.CustomerContactAdd;
-import com.turkcell.customerservice.services.dtos.request.CustomerUpdateRequest;
+import com.turkcell.customerservice.services.dtos.request.*;
 import com.turkcell.customerservice.services.dtos.response.CustomerAddressGet;
 import com.turkcell.customerservice.services.dtos.response.CustomerContactGet;
 import com.turkcell.customerservice.services.dtos.response.CustomerGetResponse;
+import com.turkcell.customerservice.services.dtos.response.SearchResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -65,5 +64,10 @@ public class CustomerController {
     @GetMapping("/contacts")
     public List<CustomerContactGet> getCustomerContactsById(@RequestParam int customerId){
         return customerService.getCustomerContactsByCustomerId(customerId);
+    }
+
+    @PostMapping("/search")
+    public List<SearchResponse> searchCustomer(@RequestBody SearchRequest request){
+        return customerService.searchCustomer(request);
     }
 }

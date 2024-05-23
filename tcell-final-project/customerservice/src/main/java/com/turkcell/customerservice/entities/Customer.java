@@ -39,6 +39,9 @@ public class Customer {
     @Column(name = "father_name")
     private String fatherName;
     @Column(name = "gender")
+    //@Enumerated(EnumType.STRING)
+    //private Gender gender;
+
     private String gender;
     @Column(name = "birth_date")
     private LocalDateTime birthDate;
