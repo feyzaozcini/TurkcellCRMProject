@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: catalogservice
+  cloud:
+    config:
+      profile: local
+  config:
+    import: "configserver:${configUrl}"
+configUrl: http://localhost:8079/

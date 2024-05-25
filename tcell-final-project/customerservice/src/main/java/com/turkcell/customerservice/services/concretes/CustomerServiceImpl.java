@@ -1,5 +1,6 @@
 package com.turkcell.customerservice.services.concretes;
 
+import com.turkcell.customerservice.core.utils.types.BusinessException;
 import com.turkcell.customerservice.entities.Address;
 import com.turkcell.customerservice.entities.Contact;
 import com.turkcell.customerservice.entities.Customer;
@@ -58,7 +59,7 @@ public class CustomerServiceImpl implements CustomerService {
             customerRepository.save(customer);
         }
         else{
-            throw new RuntimeException("Yok");
+            throw new BusinessException(request.getId() + ", Bu idye sahip bir kullanici yok!");
         }
     }
 
@@ -73,7 +74,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<CustomerAddressGet> getCustomerAdressesByCustomerId(int id) throws RuntimeException {
-        return customerRepository.findById(id).orElseThrow(()-> new RuntimeException("YOKKK!!")).getAddresses().stream()
+        return customerRepository.findById(id).orElseThrow(()-> new BusinessException(id + ", bu idye sahip bir customer bulunamadi")).getAddresses().stream()
                 .map(AddressMapper.INSTANCE::getResponseFromAddress)
                 .collect(Collectors.toList());
     }
@@ -85,7 +86,7 @@ public class CustomerServiceImpl implements CustomerService {
             addressRepository.deleteById(addressId);
         }
         else{
-            throw new RuntimeException(" ");
+            throw new BusinessException(addressId + ", Bu idye sahip bir adres yok");
         }
     }
 
@@ -99,14 +100,14 @@ public class CustomerServiceImpl implements CustomerService {
             customerRepository.save(customer);
         }
         else{
-            throw new RuntimeException(" ");
+            throw new BusinessException(request.getCustomerId() + ", Bu idye sahip bir customer bulunamadi ");
         }
 
     }
     public List<CustomerContactGet> getCustomerContactsByCustomerId(int customerId){
-        return customerRepository.findById(customerId).orElseThrow(()-> new RuntimeException("YOKKK!!")).getContacts()
+        return customerRepository.findById(customerId).orElseThrow(()-> new BusinessException(customerId+ ", Customer bulunamadi")).getContacts()
                 .stream()
-                .map((contact) -> ContactMapper.INSTANCE.getResponseFromContact(contact)
+                .map(ContactMapper.INSTANCE::getResponseFromContact
         ).collect(Collectors.toList());
 
     }
@@ -117,7 +118,7 @@ public class CustomerServiceImpl implements CustomerService {
             contactRepository.deleteById(contactId);
         }
         else{
-            throw new RuntimeException(" ");
+            throw new BusinessException(contactId + ", Bu idye sahip bir contact bulunamadi");
         }
     }
 
