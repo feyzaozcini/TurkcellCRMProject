@@ -10,6 +10,8 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Catalog {
     @Id
     @Column(name = "id")
@@ -17,7 +19,7 @@ public class Catalog {
     private int id;
     @Column(name = "name")
     private String name;
-    @OneToMany
+    @OneToMany(mappedBy = "catalog")
     private Set<Product> products;
 
 }

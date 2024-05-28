@@ -1,5 +1,6 @@
 package com.turkcell.catalogservice.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,5 +22,6 @@ public class Product {
     @Column(name = "price")
     private float price;
     @ManyToOne
+    @JoinColumn(name = "catalog_id")
     private Catalog catalog;
 }

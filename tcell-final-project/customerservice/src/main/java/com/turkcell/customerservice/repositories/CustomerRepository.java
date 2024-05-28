@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     boolean existsById(int id);
     @Query("select new com.turkcell.customerservice.services.dtos.response." +
-        "SearchResponse(c.id, c.firstName, c.lastName, c.secondName, c.nationalityId)" +
+        "SearchResponse(c.id, c.firstName, c.secondName, c.lastName, c.nationalityId)" +
         " from Customer c" +
         "  where (c.firstName like concat('%',:#{#request.getFirstName()},'%')) " +
         " or ( c.lastName like concat('%',:#{#request.getLastName()},'%')) " +
