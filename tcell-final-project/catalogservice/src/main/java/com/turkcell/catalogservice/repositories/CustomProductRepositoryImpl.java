@@ -17,6 +17,7 @@ public class CustomProductRepositoryImpl implements CustomProductRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
+
     @Override
     public List<SearchResponse> search(SearchRequest request) {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -35,12 +36,6 @@ public class CustomProductRepositoryImpl implements CustomProductRepository {
 
         if (request.getCatalogId() != 0) {
             predicates.add(cb.equal(product.get("catalog").get("id"), request.getCatalogId()));
-        }
-
-        // Additional logic to handle multiple field combinations
-        if (request.getCatalogId() != 0 && request.getName() != null && !request.getName().isEmpty()) {
-            predicates.add(cb.equal(product.get("catalog").get("id"), request.getCatalogId()));
-            predicates.add(cb.equal(product.get("name"), request.getName()));
         }
 
         cq.select(cb.construct(SearchResponse.class,
