@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12259e16-21ce-4acd-8315-f9ed281d24a6" name="Changes" comment="sample">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/core/configurations/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/core/configurations/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/entities/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/entities/Catalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/entities/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/entities/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/repositories/CatalogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/repositories/CatalogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/repositories/CustomProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/repositories/CustomProductRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/repositories/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/services/concretes/CatalogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/services/concretes/CatalogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/repositories/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/repositories/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/services/concretes/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/services/concretes/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/AddressController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/core/utils/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/core/utils/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/AddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/AddressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/CustomerServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="package-info" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -64,9 +70,10 @@
     "Spring Boot.CustomerserviceApplication.executor": "Run",
     "Spring Boot.DiscoveryserverApplication.executor": "Run",
     "Spring Boot.GatewayserverApplication.executor": "Run",
+    "Spring Boot.OrderserviceApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Halil/Desktop/final/tcell-final-project/tcell-final-project/catalogservice/pom.xml",
+    "last_opened_file_path": "C:/Users/Halil/Desktop/sample/tcell-final-project/tcell-final-project/orderservice/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -134,17 +141,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="userservice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.turkcell.userservice.UserserviceApplication" />
+    <configuration name="OrderserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="orderservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.turkcell.orderservice.OrderserviceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Spring Boot.OrderserviceApplication" />
       <item itemvalue="Spring Boot.CatalogserviceApplication" />
       <item itemvalue="Spring Boot.DiscoveryserverApplication" />
-      <item itemvalue="Spring Boot.UserserviceApplication" />
       <item itemvalue="Spring Boot.AuthserverApplication" />
       <item itemvalue="Spring Boot.CustomerserviceApplication" />
       <item itemvalue="Spring Boot.ConfigserverApplication" />
@@ -182,6 +189,7 @@
       <workItem from="1716621639436" duration="116000" />
       <workItem from="1716621772137" duration="8186000" />
       <workItem from="1716909927083" duration="8526000" />
+      <workItem from="1717227172016" duration="8521000" />
     </task>
     <task id="LOCAL-00001" summary="sample">
       <option name="closed" value="true" />

@@ -44,6 +44,7 @@ public class CustomProductRepositoryImpl implements CustomProductRepository {
                 product.get("catalog").get("id")
         )).where(cb.and(predicates.toArray(new Predicate[0])));
 
+
         return entityManager.createQuery(cq).getResultList();
     }
 }

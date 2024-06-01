@@ -31,4 +31,16 @@ public class Address {
     @ManyToOne
     @JsonIgnore
     private Customer customer;
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id=" + id +
+                ", city='" + city + '\'' +
+                ", district='" + district + '\'' +
+                ", street='" + street + '\'' +
+                ", addressDescription='" + addressDescription + '\'' +
+                ", houseFlatNumberStreet='" + houseFlatNumberStreet + '\'' +
+                '}';
+    }
+
 }

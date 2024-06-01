@@ -1,6 +1,7 @@
 package com.turkcell.customerservice.services.concretes;
 
 import com.turkcell.customerservice.core.utils.types.BusinessException;
+import com.turkcell.customerservice.core.utils.types.NotFoundException;
 import com.turkcell.customerservice.entities.Address;
 import com.turkcell.customerservice.entities.Contact;
 import com.turkcell.customerservice.entities.Customer;
@@ -123,7 +124,14 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     public List<SearchResponse> searchCustomer(SearchRequest request){
-        return customerRepository.search(request);
+        List<SearchResponse> results = customerRepository.search(request);
+        if(results.isEmpty())
+            throw new NotFoundException("No customer found! Would you like to create the customer?");
+        return results;
+    }
+
+    public int getDefaultAdressById(int id){
+        return customerRepository.findById(id).orElseThrow().getAddresses().stream().findFirst().orElseThrow().getId();
     }
 
 }

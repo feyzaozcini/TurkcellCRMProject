@@ -25,4 +25,5 @@ public interface CustomerService {
     List<CustomerContactGet> getCustomerContactsByCustomerId(int customerId);
     void deleteCustomerContactByContactId(int contactId);
     List<SearchResponse> searchCustomer(SearchRequest request);
+    int getDefaultAdressById(int id);
 }

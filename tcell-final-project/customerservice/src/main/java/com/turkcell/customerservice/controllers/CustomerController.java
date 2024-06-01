@@ -70,4 +70,9 @@ public class CustomerController {
     public List<SearchResponse> searchCustomer(@RequestBody SearchRequest request){
         return customerService.searchCustomer(request);
     }
+
+    @GetMapping("/getDefaultAdress/{id}")
+    public int getDefaultAddressById(@PathVariable int id){
+        return customerService.getDefaultAdressById(id);
+    }
 }

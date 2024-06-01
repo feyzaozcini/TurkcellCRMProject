@@ -6,6 +6,7 @@ import com.turkcell.customerservice.entities.Customer;
 import com.turkcell.customerservice.repositories.AddressRepository;
 import com.turkcell.customerservice.services.abstracts.AddressService;
 import com.turkcell.customerservice.services.dtos.request.AddressUpdateRequest;
+import com.turkcell.customerservice.services.dtos.response.CustomerAddressGet;
 import com.turkcell.customerservice.services.mappers.AddressMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,8 @@ public class AddressServiceImpl implements AddressService {
         if(!addressRepository.existsById(id)){
             throw new BusinessException(id + ", bu idye sahip bir adres bulunamadi");
         }
+    }
+    public CustomerAddressGet getAddressById(int addressId){
+        return AddressMapper.INSTANCE.getResponseFromAddress(addressRepository.findById(addressId).orElseThrow());
     }
 }

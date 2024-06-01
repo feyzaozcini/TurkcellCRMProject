@@ -1,5 +1,6 @@
 package com.turkcell.catalogservice.services.concretes;
 
+import com.turkcell.catalogservice.core.utils.types.NotFoundException;
 import com.turkcell.catalogservice.entities.Catalog;
 import com.turkcell.catalogservice.entities.Product;
 import com.turkcell.catalogservice.repositories.CatalogRepository;
@@ -22,27 +23,12 @@ import java.util.stream.Collectors;
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
     private final CatalogRepository catalogRepository;
-    public void addProduct(ProductAddRequest request){
-//        Product product = ProductMapper.INSTANCE.productFromAddRequest(request);
-//        productRepository.save(product);
-//        Catalog catalog = catalogRepository.findById(request.getCatalogId()).orElseThrow();
-//        Set<Product> catalogProducts = catalog.getProducts();
-//        catalogProducts.add(product);
-//        catalog.setProducts(catalogProducts);
-//        catalogRepository.save(catalog);
-        Catalog catalog = catalogRepository.findById(request.getCatalogId()).orElseThrow(() -> new RuntimeException("Catalog not found"));
-
-        // Product nesnesini oluştur ve Catalog ile ilişkilendir
+    public void addProduct(ProductAddRequest request) {
+        Catalog catalog = catalogRepository.findById(request.getCatalogId()).orElseThrow(() -> new NotFoundException("Ilgili catalog bulunamadi"));
         Product product = ProductMapper.INSTANCE.productFromAddRequest(request);
         product.setCatalog(catalog);
-
-        // Product nesnesini kaydet
         productRepository.save(product);
-
-        // Catalog nesnesinin products kümesini güncelle
         catalog.getProducts().add(product);
-
-        // Catalog nesnesini güncelle
         catalogRepository.save(catalog);
     }
 
@@ -51,11 +37,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     public ProductGetResponse getProductById(int id){
-        return ProductMapper.INSTANCE.getResponseFromProduct(productRepository.findById(id).orElseThrow());
+        return ProductMapper.INSTANCE.getResponseFromProduct(productRepository.findById(id).orElseThrow(()->new NotFoundException("Ilgili product bulunamadi")));
     }
 
     public void deleteProductById(int id){
-        productRepository.deleteById(id);
+        if(productRepository.existsById(id))
+            productRepository.deleteById(id);
+        else
+            throw new NotFoundException("Ilgili catalog bulunamadi!");
     }
 
     public void updateProduct(ProductUpdateRequest request){
@@ -63,6 +52,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     public List<SearchResponse> search(SearchRequest request){
-        return productRepository.search(request);
+        List<SearchResponse> results = productRepository.search(request);
+        if(results.isEmpty())
+            throw new NotFoundException("There is no product matching the information you entered. Please check.");
+        return results;
     }
 }
