@@ -16,7 +16,7 @@ public class AddressController {
     }
 
     @GetMapping("/{id}")
-    public CustomerAddressGet getAddressById(@PathVariable int addressId){
-        return addressService.getAddressById(addressId);
+    public CustomerAddressGet getAddressById(@PathVariable int id){
+        return addressService.getAddressById(id);
     }
 }

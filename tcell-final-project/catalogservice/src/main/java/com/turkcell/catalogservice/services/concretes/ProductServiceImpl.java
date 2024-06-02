@@ -57,4 +57,8 @@ public class ProductServiceImpl implements ProductService {
             throw new NotFoundException("There is no product matching the information you entered. Please check.");
         return results;
     }
+
+    public float getPriceById(int id){
+        return productRepository.findById(id).orElseThrow().getPrice();
+    }
 }

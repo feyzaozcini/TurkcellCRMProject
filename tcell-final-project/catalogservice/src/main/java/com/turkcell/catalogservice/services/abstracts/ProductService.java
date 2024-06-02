@@ -15,4 +15,5 @@ public interface ProductService {
     void updateProduct(ProductUpdateRequest request);
     void deleteProductById(int id);
     List<SearchResponse> search(SearchRequest request);
+    float getPriceById(int id);
 }

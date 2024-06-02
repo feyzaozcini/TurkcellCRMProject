@@ -21,8 +21,9 @@ public class OrderServiceImpl implements OrderService {
     private final CatalogServiceClient catalogServiceClient;
     private String token;
     public OrderResponse addOrder(OrderRequest request){
-        token = request.getToken();
+        this.token = request.getToken();
         Order order = OrderMapper.INSTANCE.orderFromRequest(request);
+        System.out.println(customerServiceClient.getDefaultCustomerAddress(request.getCustomerId()));
         order.setServiceAddress(customerServiceClient.getDefaultCustomerAddress(request.getCustomerId()));
         float totalAmount = 0;
         for(int productId : request.getProductIds()){
@@ -33,5 +34,9 @@ public class OrderServiceImpl implements OrderService {
         OrderResponse response = OrderMapper.INSTANCE.responseFromOrder(order);
         response.setServiceAddress(customerServiceClient.getAddressDetails(order.getServiceAddress()));
         return response;
+    }
+
+    public String getToken(){
+        return this.token;
     }
 }

@@ -13,11 +13,11 @@
         <module name="discoveryserver" />
         <module name="configserver" />
         <module name="customerservice" />
-        <module name="authserver (1)" />
         <module name="orderservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="authserver (1)" target="1.5" />
       <module name="userservice" target="17" />
     </bytecodeTargetLevel>
   </component>

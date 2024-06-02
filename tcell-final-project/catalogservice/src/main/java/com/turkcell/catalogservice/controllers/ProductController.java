@@ -44,4 +44,9 @@ public class ProductController {
         List<SearchResponse> results = productService.search(request);
         return ResponseEntity.ok(results);
     }
+
+    @GetMapping("/getPrice/{id}")
+    public float getPriceById(@PathVariable int id){
+        return productService.getPriceById(id);
+    }
 }

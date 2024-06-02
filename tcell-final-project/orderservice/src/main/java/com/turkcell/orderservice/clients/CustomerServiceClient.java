@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "customerservice", url = "http://localhost:8084", configuration = FeignConfiguration.class)
 public interface CustomerServiceClient {
-    @GetMapping(value = "/api/v1/customer/getDefaultAddress")
+    @GetMapping(value = "/api/v1/customer/getDefaultAddress/{id}")
     int getDefaultCustomerAddress(@PathVariable int id);
 
     @GetMapping(value = "/api/v1/address/{id}")

@@ -5,5 +5,5 @@ import com.turkcell.customerservice.services.dtos.response.CustomerAddressGet;
 
 public interface AddressService {
     void updateAddress(AddressUpdateRequest request);
-    CustomerAddressGet getAddressById(int addressId);
+    CustomerAddressGet getAddressById(int id);
 }

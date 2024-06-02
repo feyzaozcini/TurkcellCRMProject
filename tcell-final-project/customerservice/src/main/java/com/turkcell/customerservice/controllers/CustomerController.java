@@ -71,7 +71,7 @@ public class CustomerController {
         return customerService.searchCustomer(request);
     }
 
-    @GetMapping("/getDefaultAdress/{id}")
+    @GetMapping("/getDefaultAddress/{id}")
     public int getDefaultAddressById(@PathVariable int id){
         return customerService.getDefaultAdressById(id);
     }

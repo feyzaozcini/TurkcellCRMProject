@@ -28,7 +28,7 @@ public class AddressServiceImpl implements AddressService {
             throw new BusinessException(id + ", bu idye sahip bir adres bulunamadi");
         }
     }
-    public CustomerAddressGet getAddressById(int addressId){
-        return AddressMapper.INSTANCE.getResponseFromAddress(addressRepository.findById(addressId).orElseThrow());
+    public CustomerAddressGet getAddressById(int id){
+        return AddressMapper.INSTANCE.getResponseFromAddress(addressRepository.findById(id).orElseThrow());
     }
 }

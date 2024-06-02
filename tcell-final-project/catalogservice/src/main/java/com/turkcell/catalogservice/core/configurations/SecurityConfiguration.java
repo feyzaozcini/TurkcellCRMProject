@@ -15,8 +15,6 @@ public class SecurityConfiguration {
     private final BaseSecurityService baseSecurityService;
 
     private static final String[] WHITE_LIST={
-            "/api/v1/catalog/**",
-            "/api/v1/product/**",
             "/swagger-ui/**",
             "/v2/api-docs",
             "/v3/api-docs",
@@ -28,8 +26,8 @@ public class SecurityConfiguration {
         http
                 .authorizeHttpRequests((req)-> req
                         .requestMatchers(WHITE_LIST).permitAll()
-                        //.requestMatchers(("/api/v1/*"))
-                        //.hasAnyAuthority("Kodlamaio")
+                        .requestMatchers(("/api/v1/*"))
+                        .hasAnyAuthority("Kodlamaio")
                         .anyRequest().authenticated());
         return http.build();
     }
