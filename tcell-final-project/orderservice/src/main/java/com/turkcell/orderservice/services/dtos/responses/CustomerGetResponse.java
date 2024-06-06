@@ -1,13 +1,11 @@
-package com.turkcell.customerservice.services.dtos.response;
+package com.turkcell.orderservice.services.dtos.responses;
 
-import com.turkcell.customerservice.entities.Address;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @AllArgsConstructor

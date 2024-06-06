@@ -15,6 +15,7 @@ public interface CustomerMapper {
     @Mapping(target = "id", ignore = true)
     Customer getCustomerFromAddRequest(CustomerAddRequest request);
 
+    @Mapping(target = "defaultAddressId", source = "defaultAddress.id")
     CustomerGetResponse getResponseFromCustomer(Customer customer);
 
     Customer customerFromUpdateRequest(CustomerUpdateRequest request);

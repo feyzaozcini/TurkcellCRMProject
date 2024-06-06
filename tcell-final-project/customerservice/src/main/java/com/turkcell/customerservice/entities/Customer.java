@@ -47,6 +47,9 @@ public class Customer {
     private LocalDateTime birthDate;
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<Address> addresses;
+    @JoinColumn(name = "default_address")
+    @OneToOne
+    private Address defaultAddress;
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<Contact> contacts;
 

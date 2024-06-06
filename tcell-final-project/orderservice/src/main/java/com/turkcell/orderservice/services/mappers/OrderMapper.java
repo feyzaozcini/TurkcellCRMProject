@@ -14,5 +14,6 @@ public interface OrderMapper {
     Order orderFromRequest(OrderRequest request);
 
     @Mapping(target = "serviceAddress", ignore = true)
+    @Mapping(target = "products", ignore = true)
     OrderResponse responseFromOrder(Order order);
 }

@@ -130,8 +130,10 @@ public class CustomerServiceImpl implements CustomerService {
         return results;
     }
 
-    public int getDefaultAdressById(int id){
-        return customerRepository.findById(id).orElseThrow().getAddresses().stream().findFirst().orElseThrow().getId();
+    public void setDefaultAddressToCustomer(CustomerSetDefaultAddress request){
+        Customer customer = customerRepository.findById(request.getCustomerId()).orElseThrow(()->new NotFoundException("Ilgili musteri bulunamadi!"));
+        customer.setDefaultAddress(addressRepository.findById(request.getAddressId()).orElseThrow(()->new NotFoundException("Ilgili address bulunamadi!")));
+        customerRepository.save(customer);
     }
 
 }
