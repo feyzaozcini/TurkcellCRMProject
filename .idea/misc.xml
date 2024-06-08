@@ -22,12 +22,12 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/orderservice/pom.xml" />
+        <option value="$PROJECT_DIR$/userservice/pom.xml" />
         <option value="$PROJECT_DIR$/../../../final/tcell-final-project/tcell-final-project/authserver/pom.xml" />
         <option value="$PROJECT_DIR$/../../../tcell-final-project/authserver/pom.xml" />
-        <option value="$PROJECT_DIR$/userservice/pom.xml" />
       </set>
     </option>
-    <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

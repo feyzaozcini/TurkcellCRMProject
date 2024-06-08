@@ -21,6 +21,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="authserver (1)" target="1.5" />
+      <module name="tcell-final-core" target="17" />
       <module name="userservice" target="17" />
     </bytecodeTargetLevel>
   </component>
