@@ -1,0 +1,79 @@
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=test
+    volumes:
+      - postgresql-volume:/var/lib/postgresql/data
+  config-server:
+    build: ./configserver
+    ports:
+      - "8079:8079"
+    networks:
+      - common
+  discovery-server:
+    build: ./discoveryserver
+    ports:
+      - "8888:8888"
+    networks:
+      - common
+  gateway-server:
+    build: ./gatewayserver
+    ports:
+      - "8080:8080"
+    restart: on-failure # her hata aldığında
+    # restart: unless-stopped # kullanıcı dışında konteyner durdu ise
+    # restart: always # kullanıcı dahil herhangi bir şekilde durdu ise.
+    depends_on:
+      - discovery-server
+      - config-server
+    environment:
+      - SPRING_CLOUD_CONFIG_PROFILE=prod
+      - CONFIGURL=http://config-server:8079
+    networks:
+      - common
+  # docker-compose.yml dosyası .env dosyaları ile auto. çalışacak şekilde konfigüre edilmiştir.
+  catalog-service:
+    build:
+      context: ./catalogservice
+      args:
+        GITHUB_USERNAME: ${GITHUB_USERNAME}
+        GITHUB_TOKEN: ${GITHUB_TOKEN}
+    ports:
+      - "8082:8082"
+    depends_on:
+      - discovery-server
+      - config-server
+      - gateway-server
+    networks:
+      - common
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper
+    ports:
+      - 2181:2181
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+  kafka:
+    image: confluentinc/cp-kafka
+    ports:
+      - 9092:9092
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://broker:29092
+      KAFKA_BROKER_ID: 1
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+
+volumes:
+  postgresql-volume: #dosyadaki nickname'i
+    name: postgresql-volume2 #klasör ismi
+  mongodb-volume:
+    name: mongodb-volume2
+
+networks:
+  common:
+    driver: bridge
