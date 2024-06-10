@@ -14,6 +14,8 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
@@ -26,6 +28,7 @@ public class AuthServiceImpl implements AuthService {
         try{
             User user = UserMapper.INSTANCE.userFromRegisterRequest(request);
             user.setPassword(passwordEncoder.encode(request.getPassword()));
+            user.setCreatedDate(LocalDateTime.now());
             userService.add(user);
         }
         catch (BusinessException exception){

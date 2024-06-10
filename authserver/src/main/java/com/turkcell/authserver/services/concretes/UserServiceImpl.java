@@ -35,32 +35,5 @@ public class UserServiceImpl implements UserService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.findByEmail(username).orElseThrow(() -> new BadCredentialsException(""));
     }
-    public List<CustomerGet> getCustomers(String token){
-        this.token = token;
-        return customerServiceClient.getCustomers();
-    }
 
-
-    public List<CustomerAddressGet> getCustomerAddressesByCustomerId( String token,int customerId){
-        this.token=token;
-        return customerServiceClient.getCustomerAddressesByCustomerId(customerId);
-    }
-
-    public List<CustomerContactGet> getCustomerContactsByCustomerId(int customerId){
-        return customerServiceClient.getCustomerContactsByCustomerId(customerId);
-    }
-    public List<CustomerContactGet> getCustomerContactsByCustomerId(String token, int customerId){
-        this.token = token;
-        return customerServiceClient.getCustomerContactsByCustomerId(customerId);
-    }
-
-    public List<SearchResponse> searchCustomer(SearchRequest request){
-        this.token = request.getToken();
-        return customerServiceClient.searchCustomer(request);
-    }
-
-    public void updateCustomer(String token, CustomerUpdateRequest request){
-        this.token = token;
-        customerServiceClient.updateCustomer(request);
-    }
 }

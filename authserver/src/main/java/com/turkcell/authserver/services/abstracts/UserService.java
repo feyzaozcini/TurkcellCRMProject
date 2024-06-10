@@ -16,11 +16,6 @@ import java.util.List;
 public interface UserService extends UserDetailsService {
     void add(User user);
     UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
-    List<CustomerGet> getCustomers(String token);
     String getToken();
-    List<CustomerAddressGet> getCustomerAddressesByCustomerId(String token, int customerId);
-    List<CustomerContactGet> getCustomerContactsByCustomerId(int customerId);
-    List<CustomerContactGet> getCustomerContactsByCustomerId(String token, int customerId);
-    List<SearchResponse> searchCustomer(SearchRequest request);
-    void updateCustomer(String token, CustomerUpdateRequest request);
+
 }
