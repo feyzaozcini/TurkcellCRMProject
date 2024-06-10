@@ -5,18 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12259e16-21ce-4acd-8315-f9ed281d24a6" name="Changes" comment="sample">
-      <change beforePath="$PROJECT_DIR$/../../../final/tcell-final-project/tcell-final-project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../final/tcell-final-project/tcell-final-project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/core/configurations/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/core/configurations/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/core/configurations/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/core/configurations/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/AddressController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/ContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/ContactController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/IndividualCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/core/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/core/configuration/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/core/utils/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/core/utils/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/core/utils/types/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/core/utils/types/BusinessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/core/utils/types/NotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/core/utils/types/NotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/IndividualCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/entities/enums/Gender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/repositories/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/repositories/IndividualCustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/AddressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/ContactService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/ContactService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/IndividualCustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/AddressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/ContactServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/ContactServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/IndividualCustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/AddressUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/AddressUpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/CustomerAddRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/IndividualCustomerAddRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/CustomerAddressAddRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/IndividualCustomerAddressAddRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/CustomerContactAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/IndividualCustomerContactAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/CustomerUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/IndividualCustomerUpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/SearchRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/IndividualCustomerSearchRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/CustomerAddressGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/IndividualCustomerAddressGet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/CustomerContactGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/IndividualCustomerContactGet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/CustomerGetResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/IndividualCustomerGetResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/SearchResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/IndividualCustomerSearchResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/AddressMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/AddressMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/ContactMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/ContactMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/IndividualCustomerMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +55,20 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;burakonurerten&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/feyzaozcini/tcell-final-project.git&quot;,
+    &quot;accountId&quot;: &quot;51e90f7c-a630-4be5-b377-0edf73dc27cb&quot;
+  }
+}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
@@ -47,6 +80,7 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2gEsx5vXiQ0NLx8TcubF3ujDCtI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -72,7 +106,7 @@
     "Spring Boot.OrderserviceApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Halil/Desktop/turkcell-ms-final/tcell-final-project/tcell-final-project/cartservice/pom.xml",
+    "last_opened_file_path": "C:/Users/burak/OneDrive/Masaüstü/TurkcellCRM-main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,6 +116,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.24424425",
     "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -189,7 +224,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-249ae16d76d6-a618e4d4" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
       </set>
     </attachedChunks>
   </component>
@@ -222,6 +258,10 @@
       <workItem from="1717687215118" duration="8887000" />
       <workItem from="1717763049738" duration="762000" />
       <workItem from="1717831018536" duration="8394000" />
+      <workItem from="1717855473933" duration="2461000" />
+      <workItem from="1717857954770" duration="1474000" />
+      <workItem from="1717916960642" duration="15976000" />
+      <workItem from="1718003105979" duration="10060000" />
     </task>
     <task id="LOCAL-00001" summary="sample">
       <option name="closed" value="true" />
@@ -238,6 +278,9 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="sample" />
     <option name="LAST_COMMIT_MESSAGE" value="sample" />
   </component>

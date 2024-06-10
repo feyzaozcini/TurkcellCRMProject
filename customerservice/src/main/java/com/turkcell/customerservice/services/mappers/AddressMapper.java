@@ -2,10 +2,9 @@ package com.turkcell.customerservice.services.mappers;
 
 import com.turkcell.customerservice.entities.Address;
 import com.turkcell.customerservice.services.dtos.request.AddressUpdateRequest;
-import com.turkcell.customerservice.services.dtos.request.CustomerAddressAddRequest;
-import com.turkcell.customerservice.services.dtos.response.CustomerAddressGet;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import com.turkcell.customerservice.services.dtos.request.IndividualCustomerAddressAddRequest;
+import com.turkcell.customerservice.services.dtos.response.IndividualCustomerAddressGet;
+import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 
 @Mapper
@@ -13,10 +12,11 @@ public interface AddressMapper {
     AddressMapper INSTANCE = Mappers.getMapper(AddressMapper.class);
 
     @Mapping(target = "customer.id", source = "customerId")
-    Address addressFromAddRequest(CustomerAddressAddRequest add);
+    Address addressFromAddRequest(IndividualCustomerAddressAddRequest add);
 
-    CustomerAddressGet getResponseFromAddress(Address address);
+    IndividualCustomerAddressGet getResponseFromAddress(Address address);
 
     @Mapping(target = "customer", ignore = true)
-    Address addressFromUpdateRequest(AddressUpdateRequest request);
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    Address addressFromUpdateRequest(AddressUpdateRequest request, @MappingTarget Address address);
 }

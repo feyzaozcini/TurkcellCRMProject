@@ -1,6 +1,5 @@
 package com.turkcell.customerservice.services.dtos.response;
 
-import com.turkcell.customerservice.entities.Address;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +11,7 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerGetResponse {
+public class IndividualCustomerGetResponse {
     private int id;
     private String firstName;
     private String secondName;

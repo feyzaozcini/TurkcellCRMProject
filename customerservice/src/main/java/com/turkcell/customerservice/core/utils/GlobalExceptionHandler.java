@@ -19,9 +19,10 @@ public class GlobalExceptionHandler {
         businessProblemDetails.setDetail(exception.getMessage());
         return businessProblemDetails;
     }
+
     @ExceptionHandler({NotFoundException.class})
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public NotFoundDetails handleNotFoundException(NotFoundException exception){
+    public NotFoundDetails handleNotFoundException(NotFoundException exception) {
         NotFoundDetails notFoundDetails = new NotFoundDetails();
         notFoundDetails.setMessage(exception.getMessage());
         return notFoundDetails;

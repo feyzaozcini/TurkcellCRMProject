@@ -9,13 +9,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerAddressAddRequest {
+public class IndividualCustomerAddressAddRequest {
     private int customerId;
     private String city;
     private String district;
     private String street;
     private String addressDescription;
-
     private String houseFlatNumberStreet;
-
 }

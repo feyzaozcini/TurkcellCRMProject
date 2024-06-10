@@ -1,4 +1,4 @@
-package com.turkcell.customerservice.services.dtos.response;
+package com.turkcell.customerservice.services.dtos.request;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,8 +8,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerContactGet {
-    private int id;
+public class IndividualCustomerContactAdd {
+    private int customerId;
     private String email;
     private String mobilePhone;
     private String homePhone;
