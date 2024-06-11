@@ -8,6 +8,7 @@ import com.turkcell.customerservice.services.dtos.request.*;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerGetResponse;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerSearchResponse;
 import com.turkcell.customerservice.services.mappers.IndividualCustomerMapper;
+import com.turkcell.customerservice.services.rules.IndividualCustomerBusinessRules;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +20,11 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class IndividualCustomerServiceImpl implements IndividualCustomerService {
     private final IndividualCustomerRepository individualCustomerRepository;
+    private final IndividualCustomerBusinessRules individualCustomerBusinessRules;
 
     @Override
     public void addCustomer(IndividualCustomerAddRequest request) {
+        individualCustomerBusinessRules.individualCustomerMustBeUnique(request.getNationalityId());
         IndividualCustomer newCustomer = IndividualCustomerMapper.INSTANCE.getIndividualCustomerFromAddRequest(request);
         newCustomer.setCreatedDate(LocalDateTime.now());
         newCustomer.setActive(true);
@@ -53,6 +56,7 @@ public class IndividualCustomerServiceImpl implements IndividualCustomerService 
 
     @Override
     public void updateCustomer(IndividualCustomerUpdateRequest request) {
+        individualCustomerBusinessRules.individualCustomerMustBeUnique(request.getNationalityId());
         isExist(request.getId());
         IndividualCustomer individualCustomer = individualCustomerRepository.findById(request.getId()).orElseThrow();
         IndividualCustomerMapper.INSTANCE.individualCustomerFromUpdateRequest(request, individualCustomer);

@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface IndividualCustomerRepository extends JpaRepository<IndividualCustomer, Integer> {
     boolean existsById(int id);
+    boolean existsIndividualCustomerByNationalityId(Long nationalId);
 
     @Query("select new com.turkcell.customerservice.services.dtos.response.IndividualCustomerSearchResponse(" +
             "c.id, c.firstName, c.secondName, c.lastName, c.nationalityId)" +
