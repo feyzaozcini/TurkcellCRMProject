@@ -1,4 +1,4 @@
-package com.turkcell.accountservice.services.dtos.requests;
+package com.turkcell.accountservice.services.dtos.requests.account;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

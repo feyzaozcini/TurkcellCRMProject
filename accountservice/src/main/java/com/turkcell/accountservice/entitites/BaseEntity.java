@@ -26,4 +26,21 @@ public class BaseEntity {
     private LocalDateTime deletedDate;
     @Column(name = "active")
     private boolean active;
+
+    public static class Listener{
+        @PrePersist
+        void onPrePersist(BaseEntity baseEntity){
+            baseEntity.setCreatedDate(LocalDateTime.now());
+            baseEntity.setActive(true);
+        }
+        @PreUpdate
+        void onPreUpdate(BaseEntity baseEntity){
+            baseEntity.setUpdatedDate(LocalDateTime.now());
+        }
+        @PreRemove
+        void onPreDelete(BaseEntity baseEntity){
+            baseEntity.setDeletedDate(LocalDateTime.now());
+            baseEntity.setActive(false);
+        }
+    }
 }

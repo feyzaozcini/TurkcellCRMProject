@@ -1,13 +1,12 @@
-package com.turkcell.customerservice.services.dtos.response;
+package com.turkcell.accountservice.clients.dtos.customerservice;
 
-import com.turkcell.customerservice.entities.enums.Gender;
+import com.turkcell.accountservice.clients.enums.customerservice.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @AllArgsConstructor
