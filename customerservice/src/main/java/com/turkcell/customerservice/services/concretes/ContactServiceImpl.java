@@ -12,6 +12,8 @@ import com.turkcell.customerservice.services.dtos.request.ContactUpdateRequest;
 import com.turkcell.customerservice.services.dtos.request.IndividualCustomerContactAdd;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerContactGet;
 import com.turkcell.customerservice.services.mappers.ContactMapper;
+import com.turkcell.customerservice.services.rules.ContactBusinessRules;
+import com.turkcell.customerservice.services.rules.IndividualCustomerBusinessRules;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,12 +26,14 @@ import java.util.stream.Collectors;
 public class ContactServiceImpl implements ContactService {
     private final ContactRepository contactRepository;
     private final IndividualCustomerRepository individualCustomerRepository;
+    private final ContactBusinessRules contactBusinessRules;
+    private final IndividualCustomerBusinessRules individualCustomerBusinessRules;
 
     public void updateContact(ContactUpdateRequest request) {
-        isExist(request.getId());
+        contactBusinessRules.isContactExist(request.getId());
         Contact contact = contactRepository.findById(request.getId()).orElseThrow();
         ContactMapper.INSTANCE.contactFromUpdateRequest(request, contact);
-        Customer customer = contactRepository.findById(request.getId()).orElseThrow(() -> new BusinessException(request.getId() + ", bu idye sahip bir contact bulunamadi!")).getCustomer();
+        Customer customer = contactRepository.findById(request.getId()).orElseThrow().getCustomer();
         contact.setCustomer(customer);
         contact.setUpdatedDate(LocalDateTime.now());
         contactRepository.save(contact);
@@ -37,18 +41,19 @@ public class ContactServiceImpl implements ContactService {
 
 
     public void addContactToIndividualCustomer(IndividualCustomerContactAdd request){
+        individualCustomerBusinessRules.isIndividualCustomerExist(request.getCustomerId());
         Contact contact = ContactMapper.INSTANCE.contactFromAddRequest(request);
         contact.setCreatedDate(LocalDateTime.now());
         contact.setActive(true);
-        IndividualCustomer customer = individualCustomerRepository.findById(request.getCustomerId())
-                .orElseThrow(() -> new NotFoundException("Customer not found with id: " + request.getCustomerId()));
+        IndividualCustomer customer = individualCustomerRepository.findById(request.getCustomerId()).orElseThrow();
         contact.setCustomer(customer);
         contactRepository.save(contact);
     }
 
     @Override
     public List<IndividualCustomerContactGet> getIndividualCustomerContactsByCustomerId(int customerId){
-        return individualCustomerRepository.findById(customerId).orElseThrow(()-> new NotFoundException("Customer not found with id: " + customerId))
+        individualCustomerBusinessRules.isIndividualCustomerExist(customerId);
+        return individualCustomerRepository.findById(customerId).orElseThrow()
                 .getContacts()
                 .stream()
                 .filter(Contact::getActive)
@@ -58,7 +63,7 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public void deleteContactByContactId(int contactId) {
-        isExist(contactId);
+        contactBusinessRules.isContactExist(contactId);
         Contact contact = contactRepository.findById(contactId).orElseThrow();
         contact.setActive(false);
         contact.setDeletedDate(LocalDateTime.now());
@@ -67,13 +72,7 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public IndividualCustomerContactGet getContactById(int id) {
-        isExist(id);
+        contactBusinessRules.isContactExist(id);
         return ContactMapper.INSTANCE.getResponseFromContact(contactRepository.findById(id).orElseThrow());
-    }
-
-    public void isExist(int id){
-        if(!contactRepository.existsById(id) || !contactRepository.findById(id).orElseThrow().getActive()){
-            throw new NotFoundException("No Contact found with id: " + id);
-        }
     }
 }
