@@ -11,7 +11,7 @@ public interface CustomerServiceClient {
 //    @GetMapping(value = "/api/v1/customer/getDefaultAddress/{id}")
 //    int getDefaultCustomerAddress(@PathVariable int id);
 
-    @GetMapping("/api/v1/customer/{id}")
+    @GetMapping("/api/v1/individualCustomer/{id}")
     CustomerGetResponse getCustomer(@PathVariable int id);
     @GetMapping(value = "/api/v1/address/{id}")
     AddressResponse getAddressDetails(@PathVariable int id);

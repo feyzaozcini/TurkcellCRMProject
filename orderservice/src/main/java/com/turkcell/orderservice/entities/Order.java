@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.Set;
 
-@Entity(name = "order")
+@Entity(name = "orderr")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
