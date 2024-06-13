@@ -4,19 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.math.BigDecimal;
 import java.util.Set;
 
-@Entity(name = "orderr")
+@Entity(name = "order")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+public class Order extends BaseEntity{
+
     @Column(name = "service_address")
     private int serviceAddress;
     @Column(name = "total_amount")

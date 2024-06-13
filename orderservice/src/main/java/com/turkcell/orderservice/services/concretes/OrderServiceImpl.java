@@ -10,7 +10,10 @@ import com.turkcell.orderservice.services.dtos.responses.OrderResponse;
 import com.turkcell.orderservice.services.dtos.responses.ProductGetResponse;
 import com.turkcell.orderservice.services.mappers.OrderMapper;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.service.spi.ServiceException;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -27,14 +30,21 @@ public class OrderServiceImpl implements OrderService {
         Order order = OrderMapper.INSTANCE.orderFromRequest(request);
         order.setServiceAddress(getServiceAddressId(request.getCustomerId()));
         order.setTotalAmount(getTotalAmount(request));
+        order.setCreatedDate(LocalDateTime.now());
         orderRepository.save(order);
         return buildResponse(order);
     }
 
-    public int getServiceAddressId(int customerId){
-        if(customerServiceClient.getCustomer(customerId).getDefaultAddressId() == 0)
-            throw new NotFoundException("Default address not found");
-        return customerServiceClient.getCustomer(customerId).getDefaultAddressId();
+    public int getServiceAddressId(int customerId) {
+        try {
+            int defaultAddressId = customerServiceClient.getCustomer(customerId).getDefaultAddressId();
+            if (defaultAddressId == 0) {
+                throw new NotFoundException("Default address not found for customer ID: " + customerId);
+            }
+            return defaultAddressId;
+        } catch (Exception e) {
+            throw new ServiceException("Failed to retrieve service address for customer ID: " + customerId, e);
+        }
     }
 
     public OrderResponse buildResponse(Order order){
