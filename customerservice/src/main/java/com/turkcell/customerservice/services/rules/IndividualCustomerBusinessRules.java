@@ -1,5 +1,6 @@
 package com.turkcell.customerservice.services.rules;
 
+import com.turkcell.customerservice.clients.OrderServiceClient;
 import com.turkcell.customerservice.core.utils.types.BusinessException;
 import com.turkcell.customerservice.core.utils.types.NotFoundException;
 import com.turkcell.customerservice.repositories.IndividualCustomerRepository;
@@ -15,6 +16,7 @@ import java.util.List;
 public class IndividualCustomerBusinessRules {
     private final IndividualCustomerRepository individualCustomerRepository;
 
+    private final OrderServiceClient orderServiceClient;
     public void individualCustomerMustBeUnique(String nationalNumber, int customerId) {
         if (individualCustomerRepository.existsIndividualCustomerByNationalityId(nationalNumber, customerId)) {
             throw new BusinessException("Individual customer already exists");
@@ -31,5 +33,10 @@ public class IndividualCustomerBusinessRules {
         List<IndividualCustomerSearchResponse> results = individualCustomerRepository.search(request);
         if (results.isEmpty())
             throw new NotFoundException("No customer found! Would you like to create the customer?");
+    }
+
+    public void isOrderExistRelatedIndividualCustomer(int customerId){
+        if(orderServiceClient.isOrderExistByCustomerId(customerId))
+            throw new BusinessException("Since the customer has active products, the customer cannot be deleted.");
     }
 }

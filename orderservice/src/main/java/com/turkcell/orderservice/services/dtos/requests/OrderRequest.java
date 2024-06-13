@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderRequest {
-    private String token;
     private int customerId;
+    private int accountId;
     private List<Integer> productIds;
 }

@@ -1,10 +1,11 @@
-package com.turkcell.orderservice.services.dtos.responses;
+package com.turkcell.orderservice.clients.dtos.customerservice;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 @Getter
 @Setter
@@ -15,13 +16,20 @@ public class CustomerGetResponse {
     private String firstName;
     private String secondName;
     private String lastName;
-    private Long nationalityId;
-    private Long accountNumber;
-    private Long gsmNumber;
-    private Long orderNumber;
+    private String nationalityId;
+    private String accountNumber;
+    private String gsmNumber;
+    private String orderNumber;
     private String motherName;
     private String fatherName;
-    private String gender;
-    private LocalDateTime birthDate;
+    private Gender gender;
+    private LocalDate birthDate;
     private int defaultAddressId;
+
+    @Getter
+    public enum Gender{
+        MALE,
+        FEMALE,
+        NOT_SPECIFIED
+    }
 }

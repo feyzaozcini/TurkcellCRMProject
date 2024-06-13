@@ -1,11 +1,13 @@
 package com.turkcell.orderservice.services.dtos.responses;
+import com.turkcell.orderservice.clients.dtos.customerservice.AddressResponse;
+import com.turkcell.orderservice.clients.dtos.productservice.ProductGetResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.Set;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,6 +15,7 @@ import java.util.Set;
 public class OrderResponse {
     private int id;
     private int customerId;
+    private int accountId;
     private AddressResponse serviceAddress;
     private List<ProductGetResponse> products;
     private float totalAmount;

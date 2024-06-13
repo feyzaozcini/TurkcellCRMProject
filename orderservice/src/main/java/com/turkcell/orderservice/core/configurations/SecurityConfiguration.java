@@ -1,7 +1,4 @@
 package com.turkcell.orderservice.core.configurations;
-
-import com.turkcell.orderservice.services.abstracts.OrderService;
-import com.turkcell.tcellfinalcore.security.BaseJwtFilter;
 import com.turkcell.tcellfinalcore.services.BaseSecurityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

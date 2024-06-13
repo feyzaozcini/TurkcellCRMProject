@@ -1,16 +1,17 @@
 package com.turkcell.orderservice.services.concretes;
+import com.turkcell.common.events.InvoiceEvent;
 import com.turkcell.orderservice.clients.CatalogServiceClient;
 import com.turkcell.orderservice.clients.CustomerServiceClient;
-import com.turkcell.orderservice.core.utils.types.NotFoundException;
+import com.turkcell.orderservice.entities.BaseEntity;
 import com.turkcell.orderservice.entities.Order;
 import com.turkcell.orderservice.repositories.OrderRepository;
 import com.turkcell.orderservice.services.abstracts.OrderService;
 import com.turkcell.orderservice.services.dtos.requests.OrderRequest;
 import com.turkcell.orderservice.services.dtos.responses.OrderResponse;
-import com.turkcell.orderservice.services.dtos.responses.ProductGetResponse;
+import com.turkcell.orderservice.clients.dtos.productservice.ProductGetResponse;
 import com.turkcell.orderservice.services.mappers.OrderMapper;
+import com.turkcell.orderservice.services.rules.OrderBusinessRules;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.service.spi.ServiceException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -24,27 +25,20 @@ public class OrderServiceImpl implements OrderService {
     private final OrderRepository orderRepository;
     private final CustomerServiceClient customerServiceClient;
     private final CatalogServiceClient catalogServiceClient;
-    private String token;
+    private final OrderBusinessRules orderBusinessRules;
     public OrderResponse addOrder(OrderRequest request){
-        this.token = request.getToken();
         Order order = OrderMapper.INSTANCE.orderFromRequest(request);
         order.setServiceAddress(getServiceAddressId(request.getCustomerId()));
         order.setTotalAmount(getTotalAmount(request));
         order.setCreatedDate(LocalDateTime.now());
         orderRepository.save(order);
+        InvoiceEvent invoiceEvent = new InvoiceEvent(order.getCustomerId(), order.getAccountId(), order.getServiceAddress(), order.getProductIds().stream().toList(), order.getTotalAmount());
         return buildResponse(order);
     }
 
     public int getServiceAddressId(int customerId) {
-        try {
-            int defaultAddressId = customerServiceClient.getCustomer(customerId).getDefaultAddressId();
-            if (defaultAddressId == 0) {
-                throw new NotFoundException("Default address not found for customer ID: " + customerId);
-            }
-            return defaultAddressId;
-        } catch (Exception e) {
-            throw new ServiceException("Failed to retrieve service address for customer ID: " + customerId, e);
-        }
+        orderBusinessRules.isDefaultAddressExist(customerId);
+        return customerServiceClient.getCustomer(customerId).getDefaultAddressId();
     }
 
     public OrderResponse buildResponse(Order order){
@@ -54,17 +48,13 @@ public class OrderServiceImpl implements OrderService {
         return response;
     }
 
-    public float getTotalAmount(OrderRequest request){
-        try{
-            float totalAmount = 0;
-            for(int productId : request.getProductIds()){
-                totalAmount+= catalogServiceClient.getProductById(productId).getPrice();
-            }
-            return totalAmount;
+    public float getTotalAmount(OrderRequest request) {
+        float totalAmount = 0;
+        for (int productId : request.getProductIds()) {
+            orderBusinessRules.isProductExist(productId);
+            totalAmount += catalogServiceClient.getProductById(productId).getPrice();
         }
-        catch (NotFoundException exception){
-            throw new NotFoundException("Product Not Found!");
-        }
+        return totalAmount;
     }
 
     public List<ProductGetResponse> getProductsById(Set<Integer>ids){
@@ -75,8 +65,8 @@ public class OrderServiceImpl implements OrderService {
         return products.stream().toList();
     }
 
-    public List<OrderResponse> getAllOrders(String token){
-        this.token =token;
+    public List<OrderResponse> getAllOrders(){
+
         List<OrderResponse> responses = new ArrayList<>();
         for(Order order : orderRepository.findAll()){
             responses.add(buildResponse(order));
@@ -85,7 +75,13 @@ public class OrderServiceImpl implements OrderService {
         return responses;
     }
 
-    public String getToken(){
-        return this.token;
+    public OrderResponse getOrderById(int id){
+        orderBusinessRules.isOrderExist(id);
+        return buildResponse(orderRepository.findById(id).orElseThrow());
     }
+
+    public boolean isOrderExistByCustomerId(int customerId){
+        return orderRepository.existsByCustomerId(customerId);
+    }
+
 }

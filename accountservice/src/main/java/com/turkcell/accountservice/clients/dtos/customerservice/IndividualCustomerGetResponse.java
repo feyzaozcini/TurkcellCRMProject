@@ -1,6 +1,5 @@
 package com.turkcell.accountservice.clients.dtos.customerservice;
 
-import com.turkcell.accountservice.clients.enums.customerservice.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,4 +24,11 @@ public class IndividualCustomerGetResponse {
     private Gender gender;
     private LocalDateTime birthDate;
     private int defaultAddressId;
+    @Getter
+    public enum Gender{
+        MALE,
+        FEMALE,
+        NOT_SPECIFIED
+    }
+
 }

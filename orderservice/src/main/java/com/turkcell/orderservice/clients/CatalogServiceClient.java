@@ -1,7 +1,7 @@
 package com.turkcell.orderservice.clients;
 
 import com.turkcell.orderservice.core.configurations.FeignConfiguration;
-import com.turkcell.orderservice.services.dtos.responses.ProductGetResponse;
+import com.turkcell.orderservice.clients.dtos.productservice.ProductGetResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,6 +1,7 @@
 package com.turkcell.customerservice.services.dtos.request;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,8 +12,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerSetDefaultAddress {
-    @NotBlank(message = "{customerId.NotBlank}")
+    @NotNull(message = "{customerId.NotBlank}")
     private int customerId;
-    @NotBlank(message = "{addressId.NotBlank}")
+    @NotNull(message = "{addressId.NotBlank}")
     private int addressId;
 }

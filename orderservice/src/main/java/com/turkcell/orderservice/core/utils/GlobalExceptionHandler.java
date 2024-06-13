@@ -19,18 +19,4 @@ public class GlobalExceptionHandler {
         notFoundDetails.setMessage(exception.getMessage());
         return notFoundDetails;
     }
-//    @ExceptionHandler({FeignException.class})
-//    public ResponseEntity<NotFoundDetails> handleFeignException(FeignException exception) {
-//        String exceptionBody = exception.contentUTF8();
-//        NotFoundDetails notFoundDetails = new NotFoundDetails();
-//        try {
-//            ObjectMapper objectMapper = new ObjectMapper();
-//            notFoundDetails = objectMapper.readValue(exceptionBody, NotFoundDetails.class);
-//        } catch (JsonProcessingException e) {
-//            notFoundDetails.setTitle("Error Parsing Feign Exception");
-//            notFoundDetails.setMessage("Error message could not be parsed.");
-//        }
-//
-//        return new ResponseEntity<>(notFoundDetails, HttpStatus.NOT_FOUND);
-//    }
 }

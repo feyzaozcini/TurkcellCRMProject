@@ -20,7 +20,6 @@ import java.util.stream.Collectors;
 public class IndividualCustomerServiceImpl implements IndividualCustomerService {
     private final IndividualCustomerRepository individualCustomerRepository;
     private final IndividualCustomerBusinessRules individualCustomerBusinessRules;
-
     @Override
     public void addCustomer(IndividualCustomerAddRequest request) {
         individualCustomerBusinessRules.individualCustomerMustBeUnique(request.getNationalityId(), 0);
@@ -47,6 +46,7 @@ public class IndividualCustomerServiceImpl implements IndividualCustomerService 
     @Override
     public void deleteCustomerById(int id) {
         individualCustomerBusinessRules.isIndividualCustomerExist(id);
+        individualCustomerBusinessRules.isOrderExistRelatedIndividualCustomer(id);
         IndividualCustomer individualCustomer = individualCustomerRepository.findById(id).orElseThrow();
         individualCustomer.setActive(false);
         individualCustomer.setDeletedDate(LocalDateTime.now());

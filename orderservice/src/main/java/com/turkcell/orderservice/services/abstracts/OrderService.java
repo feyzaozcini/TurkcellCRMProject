@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface OrderService {
     OrderResponse addOrder(OrderRequest request);
-    String getToken();
-    List<OrderResponse> getAllOrders(String token);
+    List<OrderResponse> getAllOrders();
+    boolean isOrderExistByCustomerId(int customerId);
+    OrderResponse getOrderById(int id);
 }

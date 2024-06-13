@@ -1,4 +1,4 @@
-package com.turkcell.orderservice.services.dtos.responses;
+package com.turkcell.orderservice.clients.dtos.productservice;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

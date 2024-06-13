@@ -15,13 +15,32 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public class BaseEntity {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "base_sequence_generator"
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-
-    @Column(name = "createDate")
+    @Column(name = "created_date")
     private LocalDateTime createdDate;
+    @Column(name = "updated_date")
+    private LocalDateTime updatedDate;
+    @Column(name = "deleted_date")
+    private LocalDateTime deletedDate;
+    @Column(name = "active")
+    private boolean active;
+
+    public static class Listener{
+        @PrePersist
+        void onPrePersist(BaseEntity baseEntity){
+            baseEntity.setCreatedDate(LocalDateTime.now());
+            baseEntity.setActive(true);
+        }
+        @PreUpdate
+        void onPreUpdate(BaseEntity baseEntity){
+            baseEntity.setUpdatedDate(LocalDateTime.now());
+        }
+        @PreRemove
+        void onPreDelete(BaseEntity baseEntity){
+            baseEntity.setDeletedDate(LocalDateTime.now());
+            baseEntity.setActive(false);
+        }
+    }
 }

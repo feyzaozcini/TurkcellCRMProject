@@ -19,6 +19,8 @@ public class Order extends BaseEntity{
     private float totalAmount;
     @Column(name = "customer_id")
     private int customerId;
+    @Column(name = "account_id")
+    private int accountId;
     @ElementCollection
     @Column(name = "product_ids")
     private Set<Integer> productIds;

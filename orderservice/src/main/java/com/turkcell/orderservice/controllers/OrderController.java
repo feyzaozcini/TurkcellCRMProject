@@ -19,7 +19,12 @@ public class OrderController {
     }
 
     @GetMapping("/all/{token}")
-    public List<OrderResponse> getAllOrders(@PathVariable String token){
-        return orderService.getAllOrders(token);
+    public List<OrderResponse> getAllOrders(){
+        return orderService.getAllOrders();
+    }
+
+    @GetMapping("/isExistByCustomerId/{customerId}")
+    public boolean isOrderExistByCustomerId(@PathVariable int customerId){
+        return orderService.isOrderExistByCustomerId(customerId);
     }
 }
