@@ -1,5 +1,6 @@
 package com.turkcell.customerservice.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.turkcell.customerservice.entities.enums.Gender;
@@ -8,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -32,16 +35,16 @@ public class IndividualCustomer extends Customer{
     private String lastName;
 
     @Column(name = "nationality_id")
-    private Long nationalityId;
+    private String nationalityId;
 
     @Column(name = "account_number")
-    private Long accountNumber;
+    private String accountNumber;
 
     @Column(name = "gsm_number")
-    private Long gsmNumber;
+    private String gsmNumber;
 
     @Column(name = "order_number")
-    private Long orderNumber;
+    private String orderNumber;
 
     @Column(name = "mother_name")
     private String motherName;
@@ -53,7 +56,7 @@ public class IndividualCustomer extends Customer{
     private Gender gender;
 
     @Column(name = "birth_date")
-    private LocalDateTime birthDate;
+    private LocalDate birthDate;
 
     @JoinColumn(name = "default_address")
     @OneToOne

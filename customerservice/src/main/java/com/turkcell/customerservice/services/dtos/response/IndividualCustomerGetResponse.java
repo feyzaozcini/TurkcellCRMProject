@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -17,13 +18,13 @@ public class IndividualCustomerGetResponse {
     private String firstName;
     private String secondName;
     private String lastName;
-    private Long nationalityId;
-    private Long accountNumber;
-    private Long gsmNumber;
-    private Long orderNumber;
+    private String nationalityId;
+    private String accountNumber;
+    private String gsmNumber;
+    private String orderNumber;
     private String motherName;
     private String fatherName;
     private Gender gender;
-    private LocalDateTime birthDate;
+    private LocalDate birthDate;
     private int defaultAddressId;
 }

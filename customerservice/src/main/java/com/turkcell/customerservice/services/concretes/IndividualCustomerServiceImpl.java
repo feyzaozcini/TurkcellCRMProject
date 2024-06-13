@@ -23,7 +23,7 @@ public class IndividualCustomerServiceImpl implements IndividualCustomerService 
 
     @Override
     public void addCustomer(IndividualCustomerAddRequest request) {
-        individualCustomerBusinessRules.individualCustomerMustBeUnique(request.getNationalityId());
+        individualCustomerBusinessRules.individualCustomerMustBeUnique(request.getNationalityId(), 0);
         IndividualCustomer newCustomer = IndividualCustomerMapper.INSTANCE.getIndividualCustomerFromAddRequest(request);
         newCustomer.setCreatedDate(LocalDateTime.now());
         newCustomer.setActive(true);
@@ -55,7 +55,7 @@ public class IndividualCustomerServiceImpl implements IndividualCustomerService 
 
     @Override
     public void updateCustomer(IndividualCustomerUpdateRequest request) {
-        individualCustomerBusinessRules.individualCustomerMustBeUnique(request.getNationalityId());
+        individualCustomerBusinessRules.individualCustomerMustBeUnique(request.getNationalityId(), request.getId());
         individualCustomerBusinessRules.isIndividualCustomerExist(request.getId());
         IndividualCustomer individualCustomer = individualCustomerRepository.findById(request.getId()).orElseThrow();
         IndividualCustomerMapper.INSTANCE.individualCustomerFromUpdateRequest(request, individualCustomer);

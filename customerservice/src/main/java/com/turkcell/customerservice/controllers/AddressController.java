@@ -5,6 +5,7 @@ import com.turkcell.customerservice.services.dtos.request.AddressUpdateRequest;
 import com.turkcell.customerservice.services.dtos.request.CustomerSetDefaultAddress;
 import com.turkcell.customerservice.services.dtos.request.IndividualCustomerAddressAddRequest;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerAddressGet;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class AddressController {
     private final AddressService addressService;
 
     @PutMapping("/update")
-    public void updateAddress(@RequestBody AddressUpdateRequest request) {
+    public void updateAddress(@Valid @RequestBody AddressUpdateRequest request) {
         addressService.updateAddress(request);
     }
 
@@ -27,7 +28,7 @@ public class AddressController {
     }
 
     @PostMapping("/add")
-    public void addAddress(@RequestBody IndividualCustomerAddressAddRequest request){
+    public void addAddress(@Valid @RequestBody IndividualCustomerAddressAddRequest request){
         addressService.addAddressToIndividualCustomer(request);
     }
 
@@ -42,7 +43,7 @@ public class AddressController {
     }
 
     @PostMapping("/setDefaultAddressToCustomer")
-    public void setDefaultAddressToIndividualCustomer(@RequestBody CustomerSetDefaultAddress request) {
+    public void setDefaultAddressToIndividualCustomer(@Valid @RequestBody CustomerSetDefaultAddress request) {
         addressService.setDefaultAddressToIndividualCustomer(request);
     }
 }

@@ -15,8 +15,8 @@ import java.util.List;
 public class IndividualCustomerBusinessRules {
     private final IndividualCustomerRepository individualCustomerRepository;
 
-    public void individualCustomerMustBeUnique(Long nationalNumber) {
-        if (individualCustomerRepository.existsIndividualCustomerByNationalityId(nationalNumber)) {
+    public void individualCustomerMustBeUnique(String nationalNumber, int customerId) {
+        if (individualCustomerRepository.existsIndividualCustomerByNationalityId(nationalNumber, customerId)) {
             throw new BusinessException("Individual customer already exists");
         }
     }
