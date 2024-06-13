@@ -4,6 +4,7 @@ import com.turkcell.customerservice.services.abstracts.IndividualCustomerService
 import com.turkcell.customerservice.services.dtos.request.*;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerGetResponse;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerSearchResponse;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +27,7 @@ public class IndividualCustomerController {
     }
 
     @PostMapping("/add")
-    public void addCustomer(@RequestBody IndividualCustomerAddRequest individualCustomerAddRequest) {
+    public void addCustomer(@Valid @RequestBody IndividualCustomerAddRequest individualCustomerAddRequest) {
         customerService.addCustomer(individualCustomerAddRequest);
     }
 
@@ -36,12 +37,12 @@ public class IndividualCustomerController {
     }
 
     @PutMapping("/update")
-    public void updateCustomer(@RequestBody IndividualCustomerUpdateRequest request) {
+    public void updateCustomer(@Valid @RequestBody IndividualCustomerUpdateRequest request) {
         customerService.updateCustomer(request);
     }
 
     @PostMapping("/search")
-    public List<IndividualCustomerSearchResponse> searchCustomer(@RequestBody IndividualCustomerSearchRequest request) {
+    public List<IndividualCustomerSearchResponse> searchCustomer(@Valid @RequestBody IndividualCustomerSearchRequest request) {
         return customerService.searchCustomer(request);
     }
 

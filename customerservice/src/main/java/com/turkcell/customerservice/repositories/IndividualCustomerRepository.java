@@ -5,12 +5,21 @@ import com.turkcell.customerservice.services.dtos.request.IndividualCustomerSear
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerSearchResponse;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
 public interface IndividualCustomerRepository extends JpaRepository<IndividualCustomer, Integer> {
     boolean existsById(int id);
-    boolean existsIndividualCustomerByNationalityId(Long nationalId);
+
+    @Query("SELECT CASE WHEN COUNT(ic) > 0 THEN true ELSE false END " +
+            "FROM IndividualCustomer ic " +
+            "WHERE ic.nationalityId = :nationalId " +
+            "AND ic.id <> :excludeId")
+    boolean existsIndividualCustomerByNationalityId(
+            @Param("nationalId") String nationalId,
+            @Param("excludeId") int excludeId
+    );
 
     @Query("select new com.turkcell.customerservice.services.dtos.response.IndividualCustomerSearchResponse(" +
             "c.id, c.firstName, c.secondName, c.lastName, c.nationalityId)" +

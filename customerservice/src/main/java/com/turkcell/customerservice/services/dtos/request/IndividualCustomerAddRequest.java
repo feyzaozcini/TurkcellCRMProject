@@ -1,47 +1,50 @@
 package com.turkcell.customerservice.services.dtos.request;
 
 import com.turkcell.customerservice.entities.enums.Gender;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 public class IndividualCustomerAddRequest {
-    @NotBlank
-    @Size(min = 2, max = 50)
+    @NotEmpty(message = "{firstName.NotBlank}")
+    @Size(min = 2, max = 50, message = "{firstName.Size}")
+    @Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*[0-9a-zA-Z])[a-zA-Z0-9]*$", message = "{name.Pattern}")
     private String firstName;
 
-    @Size(min = 2, max = 50)
+    @Size(min = 2, max = 50, message = "{secondName.Size}")
+    @Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*[0-9a-zA-Z])[a-zA-Z0-9]*$", message = "{name.Pattern}")
     private String secondName;
 
-    @Size(min = 2, max = 50)
-    @NotBlank
+    @Size(min = 2, max = 50, message = "{lastName.Size}")
+    @NotEmpty(message = "{lastName.NotBlank}")
+    @Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*[0-9a-zA-Z])[a-zA-Z0-9]*$", message = "{name.Pattern}")
     private String lastName;
 
-    @Size(min = 11, max= 11)
-    @Pattern(regexp = "^[0-9]{11}$")
-    private Long nationalityId;
+    @Size(min = 11, max = 11, message = "{nationalityId.Size}")
+    @Pattern(regexp = "^[0-9]{11}$", message = "{nationalityId.Pattern}")
+    private String nationalityId;
 
-    private Long accountNumber;
-    private Long gsmNumber;
-    private Long orderNumber;
+    private String accountNumber;
+    private String gsmNumber;
+    private String orderNumber;
 
-    @Size(min = 2, max = 50)
+    @Size(min = 2, max = 50, message = "{motherName.Size}")
+    @Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*[0-9a-zA-Z])[a-zA-Z0-9]*$", message = "{name.Pattern}")
     private String motherName;
-    @Size(min = 2, max = 50)
+    @Size(min = 2, max = 50, message = "{fatherName.Size}")
+    @Pattern(regexp = "^(?=.*[a-zA-Z])(?=.*[0-9a-zA-Z])[a-zA-Z0-9]*$", message = "{name.Pattern}")
     private String fatherName;
-    @NotBlank
+
+    @NotNull(message = "{gender.NotBlank}")
     private Gender gender;
 
-    @NotBlank
-    private LocalDateTime birthDate;
+    @NotNull(message = "{birthDate.NotBlank}")
+    private LocalDate birthDate;
 }

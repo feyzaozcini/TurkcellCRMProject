@@ -1,13 +1,12 @@
 package com.turkcell.accountservice.services.concretes;
-import com.turkcell.accountservice.core.utils.types.BusinessException;
-import com.turkcell.accountservice.core.utils.types.NotFoundException;
 import com.turkcell.accountservice.entitites.Account;
 import com.turkcell.accountservice.repositories.AccountRepository;
 import com.turkcell.accountservice.services.abstracts.AccountService;
-import com.turkcell.accountservice.services.dtos.requests.AccountAddRequest;
-import com.turkcell.accountservice.services.dtos.requests.AccountUpdateRequest;
-import com.turkcell.accountservice.services.dtos.responses.AccountGetResponse;
+import com.turkcell.accountservice.services.dtos.requests.account.AccountAddRequest;
+import com.turkcell.accountservice.services.dtos.requests.account.AccountUpdateRequest;
+import com.turkcell.accountservice.services.dtos.responses.account.AccountGetResponse;
 import com.turkcell.accountservice.services.mappers.AccountMapper;
+import com.turkcell.accountservice.services.rules.AccountBusinessRules;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
@@ -17,8 +16,10 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class AccountServiceImpl implements AccountService {
     private final AccountRepository accountRepository;
-    private String token;
+    private final AccountBusinessRules accountBusinessRules;
     public void addAccount(AccountAddRequest request){
+        accountBusinessRules.checkCustomerIsExistById(request.getCustomerId());
+        accountBusinessRules.checkAddressIsExistById(request.getAddressId());
         Account account = AccountMapper.INSTANCE.accountFromAddRequest(request);
         account.setCreatedDate(LocalDateTime.now());
         account.setActive(true);
@@ -29,37 +30,28 @@ public class AccountServiceImpl implements AccountService {
     }
 
     public AccountGetResponse getAccountById(int id) {
-        checkFound(id);
+        accountBusinessRules.checkAccountExistById(id);
         return AccountMapper.INSTANCE.getResponseFromAccount(accountRepository.findById(id).orElseThrow());
     }
 
-    @Override
-    public String getToken() {
-        return token;
-    }
+
 
     public void deleteAccountById(int id) {
-        checkFound(id);
+        accountBusinessRules.checkAccountExistById(id);
         Account account = accountRepository.findById(id).orElseThrow();
-        if (account.getProductIds() == null) {
-            account.setActive(false);
-            account.setDeletedDate(LocalDateTime.now());
-            accountRepository.save(account);
-        } else {
-            throw new BusinessException("There are product/products connected to the billing account");
-        }
+        accountBusinessRules.checkProductListIsNotEmpty(account);
+        account.setActive(false);
+        account.setDeletedDate(LocalDateTime.now());
+        accountRepository.save(account);
     }
 
     public void updateAccount(AccountUpdateRequest request) {
-        checkFound(request.getId());
+        accountBusinessRules.checkAccountExistById(request.getId());
         Account account = accountRepository.findById(request.getId()).orElseThrow();
-        AccountMapper.INSTANCE.updateAccountFromUpdateRequest(request, account); //AccountMapper.INSTANCE.accountFromUpdateRequest(request);
+        AccountMapper.INSTANCE.updateAccountFromUpdateRequest(request, account);
+        accountBusinessRules.checkProductIdsAreExist(account.getProductIds());
         account.setUpdatedDate(LocalDateTime.now());
         accountRepository.save(account);
     }
 
-    public void checkFound(int id){
-        if(!accountRepository.existsById(id) || !accountRepository.findById(id).orElseThrow().isActive())
-            throw new NotFoundException("Bu idye sahip account bulunamadi!");
-    }
 }

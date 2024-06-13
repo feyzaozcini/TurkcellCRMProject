@@ -1,9 +1,9 @@
 package com.turkcell.accountservice.controllers;
 
 import com.turkcell.accountservice.services.abstracts.AccountService;
-import com.turkcell.accountservice.services.dtos.requests.AccountAddRequest;
-import com.turkcell.accountservice.services.dtos.requests.AccountUpdateRequest;
-import com.turkcell.accountservice.services.dtos.responses.AccountGetResponse;
+import com.turkcell.accountservice.services.dtos.requests.account.AccountAddRequest;
+import com.turkcell.accountservice.services.dtos.requests.account.AccountUpdateRequest;
+import com.turkcell.accountservice.services.dtos.responses.account.AccountGetResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

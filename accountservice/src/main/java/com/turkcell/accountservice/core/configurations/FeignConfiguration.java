@@ -1,22 +1,21 @@
 package com.turkcell.accountservice.core.configurations;
-
-import com.turkcell.accountservice.services.abstracts.AccountService;
 import feign.RequestInterceptor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
+import feign.RequestTemplate;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Configuration
-@RequiredArgsConstructor
-public class FeignConfiguration {
-    private final ApplicationContext applicationContext;
-    @Bean
-    public RequestInterceptor requestInterceptor() {
-        return template -> {
-            AccountService orderService = applicationContext.getBean(AccountService.class);
-            String jwtToken = "Bearer " + orderService.getToken();
-            template.header("Authorization", jwtToken);
-        };
+public class FeignConfiguration implements RequestInterceptor {
+    @Override
+    public void apply(RequestTemplate requestTemplate) {
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if(attributes !=null){
+            String token = attributes.getRequest().getHeader("Authorization");
+            if(token != null && token.startsWith("Bearer")){
+                token = token.substring(7);
+                requestTemplate.header("Authorization", "Bearer " + token);
+            }
+        }
     }
 }
