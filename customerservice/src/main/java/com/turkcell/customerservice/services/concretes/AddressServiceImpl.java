@@ -67,6 +67,7 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public void deleteAddressByAddressId(int addressId) {
         addressBusinessRules.isAddressExist(addressId);
+        addressBusinessRules.isCustomerHasAtLeastOneAddress(addressId);
         Address address = addressRepository.findById(addressId).orElseThrow();
         address.setActive(false);
         address.setDeletedDate(LocalDateTime.now());
