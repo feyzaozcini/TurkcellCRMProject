@@ -11,4 +11,6 @@ public interface AddressRepository extends JpaRepository<Address, Integer> {
     @Query("SELECT COUNT(a) FROM Address a WHERE a.customer.id = :customerId AND a.active = true")
     int countByCustomerId(@Param("customerId") int customerId);
 
+
+
 }
