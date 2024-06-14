@@ -15,7 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class IndividualCustomerSearchRequest {
-    @Min(value = 1, message = "{customerId.MinSize}")
+    @Min(value = 0, message = "{customerId.MinSize}")
     @Max(value = 9999999, message = "{customerId.MaxSize}")
     private int customerId;
 

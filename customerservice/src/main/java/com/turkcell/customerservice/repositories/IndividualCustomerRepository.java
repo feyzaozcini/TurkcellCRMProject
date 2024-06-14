@@ -3,6 +3,7 @@ package com.turkcell.customerservice.repositories;
 import com.turkcell.customerservice.entities.IndividualCustomer;
 import com.turkcell.customerservice.services.dtos.request.IndividualCustomerSearchRequest;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerSearchResponse;
+    import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -34,6 +35,5 @@ public interface IndividualCustomerRepository extends JpaRepository<IndividualCu
             " or c.orderNumber = :#{#request.getOrderNumber()}" +
             " or c.id = :#{#request.getCustomerId()}" +
             ")")
-
-    List<IndividualCustomerSearchResponse> search(IndividualCustomerSearchRequest request);
+    List<IndividualCustomerSearchResponse> search(IndividualCustomerSearchRequest request, Pageable pageable);
 }

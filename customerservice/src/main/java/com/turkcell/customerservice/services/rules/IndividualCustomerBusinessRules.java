@@ -7,6 +7,8 @@ import com.turkcell.customerservice.repositories.IndividualCustomerRepository;
 import com.turkcell.customerservice.services.dtos.request.IndividualCustomerSearchRequest;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerSearchResponse;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,7 +32,8 @@ public class IndividualCustomerBusinessRules {
     }
 
     public void individualCustomerSearchCheckExist(IndividualCustomerSearchRequest request){
-        List<IndividualCustomerSearchResponse> results = individualCustomerRepository.search(request);
+        Pageable pageable = PageRequest.of(0, 1);
+        List<IndividualCustomerSearchResponse> results = individualCustomerRepository.search(request, pageable);
         if (results.isEmpty())
             throw new NotFoundException("No customer found! Would you like to create the customer?");
     }

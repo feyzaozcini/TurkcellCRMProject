@@ -9,6 +9,8 @@ import com.turkcell.customerservice.services.dtos.response.IndividualCustomerSea
 import com.turkcell.customerservice.services.mappers.IndividualCustomerMapper;
 import com.turkcell.customerservice.services.rules.IndividualCustomerBusinessRules;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -64,8 +66,9 @@ public class IndividualCustomerServiceImpl implements IndividualCustomerService 
     }
 
     @Override
-    public List<IndividualCustomerSearchResponse> searchCustomer(IndividualCustomerSearchRequest request) {
+    public List<IndividualCustomerSearchResponse> searchCustomer(IndividualCustomerSearchRequest request, int page, int size) {
         individualCustomerBusinessRules.individualCustomerSearchCheckExist(request);
-        return individualCustomerRepository.search(request);
+        Pageable pageable = PageRequest.of(page, size);
+        return individualCustomerRepository.search(request, pageable);
     }
 }

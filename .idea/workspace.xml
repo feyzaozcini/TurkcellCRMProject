@@ -4,44 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12259e16-21ce-4acd-8315-f9ed281d24a6" name="Changes" comment="order service edited">
-      <change afterPath="$PROJECT_DIR$/common/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+    <list default="true" id="12259e16-21ce-4acd-8315-f9ed281d24a6" name="Changes" comment="sample">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accountservice/src/main/java/com/turkcell/accountservice/clients/dtos/customerservice/IndividualCustomerGetResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/accountservice/src/main/java/com/turkcell/accountservice/clients/dtos/customerservice/IndividualCustomerGetResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accountservice/src/main/java/com/turkcell/accountservice/clients/enums/customerservice/Gender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cartservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cartservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/controllers/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/CustomerserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/CustomerserviceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/IndividualCustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/IndividualCustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/repositories/IndividualCustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/repositories/IndividualCustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/IndividualCustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/IndividualCustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/IndividualCustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/IndividualCustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/CustomerSetDefaultAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/CustomerSetDefaultAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/IndividualCustomerSearchRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/request/IndividualCustomerSearchRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/rules/IndividualCustomerBusinessRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/rules/IndividualCustomerBusinessRules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/invoiceservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/InvoiceserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/InvoiceserviceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/CatalogServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/CatalogServiceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/CustomerServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/CustomerServiceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/controllers/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/core/configurations/FeignConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/core/configurations/FeignConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/core/configurations/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/core/configurations/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/core/utils/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/core/utils/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/entities/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/entities/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/entities/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/repositories/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/abstracts/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/abstracts/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/concretes/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/concretes/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/dtos/requests/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/dtos/requests/OrderRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/dtos/responses/AddressResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/dtos/customerservice/AddressResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/dtos/responses/CustomerGetResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/dtos/customerservice/CustomerGetResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/dtos/responses/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/dtos/responses/OrderResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/dtos/responses/ProductGetResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/dtos/productservice/ProductGetResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,50 +59,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.AuthserverApplication.executor": "Run",
-    "Application.CatalogserviceApplication.executor": "Run",
-    "Application.ConfigserverApplication.executor": "Run",
-    "Application.CustomerserviceApplication.executor": "Run",
-    "Application.DiscoveryserverApplication.executor": "Run",
-    "Application.GatewayserverApplication.executor": "Run",
-    "Application.OrderserviceApplication.executor": "Run",
-    "Maven.accountservice [clean].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AccountserviceApplication.executor": "Run",
-    "Spring Boot.AuthserverApplication.executor": "Run",
-    "Spring Boot.CartserviceApplication.executor": "Run",
-    "Spring Boot.CatalogserviceApplication.executor": "Run",
-    "Spring Boot.ConfigserverApplication.executor": "Run",
-    "Spring Boot.CustomerserviceApplication.executor": "Run",
-    "Spring Boot.DiscoveryserverApplication.executor": "Run",
-    "Spring Boot.GatewayserverApplication.executor": "Run",
-    "Spring Boot.InvoiceserviceApplication.executor": "Run",
-    "Spring Boot.OrderserviceApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/IJavaProjects/tcell-final-project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.24424425",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.AuthserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CatalogserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomerserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DiscoveryserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GatewayserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OrderserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.accountservice [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AccountserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.AuthserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.CartserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.CatalogserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.CustomerserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DiscoveryserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.InvoiceserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OrderserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/IJavaProjects/tcell-final-project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.24424425&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -281,6 +251,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.AuthserverApplication" />
+      <item itemvalue="Application.CatalogserviceApplication" />
+      <item itemvalue="Application.CustomerserviceApplication" />
+      <item itemvalue="Application.OrderserviceApplication" />
+      <item itemvalue="Spring Boot.CartserviceApplication" />
+      <item itemvalue="Spring Boot.InvoiceserviceApplication" />
+      <item itemvalue="Spring Boot.AccountserviceApplication" />
+      <item itemvalue="Spring Boot.OrderserviceApplication" />
+      <item itemvalue="Spring Boot.CatalogserviceApplication" />
+      <item itemvalue="Spring Boot.DiscoveryserverApplication" />
+      <item itemvalue="Spring Boot.AuthserverApplication" />
+      <item itemvalue="Spring Boot.ConfigserverApplication" />
+      <item itemvalue="Spring Boot.GatewayserverApplication" />
+      <item itemvalue="Spring Boot.CustomerserviceApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.CustomerserviceApplication" />

@@ -17,5 +17,5 @@ public interface IndividualCustomerService {
 
     void updateCustomer(IndividualCustomerUpdateRequest request);
 
-    List<IndividualCustomerSearchResponse> searchCustomer(IndividualCustomerSearchRequest request);
+    List<IndividualCustomerSearchResponse> searchCustomer(IndividualCustomerSearchRequest request, int page, int size);
 }

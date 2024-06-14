@@ -42,8 +42,11 @@ public class IndividualCustomerController {
     }
 
     @PostMapping("/search")
-    public List<IndividualCustomerSearchResponse> searchCustomer(@Valid @RequestBody IndividualCustomerSearchRequest request) {
-        return customerService.searchCustomer(request);
+    public List<IndividualCustomerSearchResponse> searchCustomer(
+            @Valid @RequestBody IndividualCustomerSearchRequest request,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        return customerService.searchCustomer(request, page, size);
     }
 
 }
