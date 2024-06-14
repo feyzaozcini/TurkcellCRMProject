@@ -46,12 +46,15 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public void addAddressToIndividualCustomer(IndividualCustomerAddressAddRequest request) {
         individualCustomerBusinessRules.isIndividualCustomerExist(request.getCustomerId());
+        IndividualCustomer customer = individualCustomerRepository.findById(request.getCustomerId()).filter(IndividualCustomer::getActive).orElseThrow();
         Address address = AddressMapper.INSTANCE.addressFromAddRequest(request);
         address.setCreatedDate(LocalDateTime.now());
         address.setActive(true);
-        IndividualCustomer customer = individualCustomerRepository.findById(request.getCustomerId()).filter(IndividualCustomer::getActive).orElseThrow();
         address.setCustomer(customer);
+        if(customer.getDefaultAddress() == null)
+            customer.setDefaultAddress(address);
         addressRepository.save(address);
+
     }
 
     @Override
