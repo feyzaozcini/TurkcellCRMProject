@@ -15,6 +15,9 @@ import java.util.List;
 
 public interface UserService extends UserDetailsService {
     void add(User user);
+
+    boolean existsByEmail(String email);
+
     UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
     List<CustomerGet> getCustomers(String token);
     String getToken();

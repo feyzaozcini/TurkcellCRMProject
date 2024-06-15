@@ -21,17 +21,16 @@ public class AuthServiceImpl implements AuthService {
     private final UserService userService;
     private final AuthenticationManager authenticationManager;
     private final BaseJwtService jwtService;
+
     @Override
     public void register(RegisterRequest request) {
-        try{
-            User user = UserMapper.INSTANCE.userFromRegisterRequest(request);
-            user.setPassword(passwordEncoder.encode(request.getPassword()));
-            userService.add(user);
-        }
-        catch (BusinessException exception){
-            throw new BusinessException(" ");
+        if (userService.existsByEmail(request.getEmail())) {
+            throw new BusinessException("Bu e-posta adresi zaten mevcut.");
         }
 
+        User user = UserMapper.INSTANCE.userFromRegisterRequest(request);
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        userService.add(user);
     }
 
     @Override
