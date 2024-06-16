@@ -6,6 +6,7 @@ import com.turkcell.authserver.services.abstracts.UserService;
 import com.turkcell.authserver.services.dtos.requests.LoginRequest;
 import com.turkcell.authserver.services.dtos.requests.RegisterRequest;
 import com.turkcell.authserver.services.mappers.UserMapper;
+import com.turkcell.authserver.services.rules.UserBusinessRules;
 import com.turkcell.tcellfinalcore.services.BaseJwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,13 +22,11 @@ public class AuthServiceImpl implements AuthService {
     private final UserService userService;
     private final AuthenticationManager authenticationManager;
     private final BaseJwtService jwtService;
+    private final UserBusinessRules userBusinessRules;
 
     @Override
     public void register(RegisterRequest request) {
-        if (userService.existsByEmail(request.getEmail())) {
-            throw new BusinessException("Bu e-posta adresi zaten mevcut.");
-        }
-
+        userBusinessRules.checkIfUserAlreadyExists(request.getEmail());
         User user = UserMapper.INSTANCE.userFromRegisterRequest(request);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         userService.add(user);
@@ -35,14 +34,17 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public String login(LoginRequest request) {
-        try{
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
-        }
-        catch(AuthenticationException exception){
-            throw new BusinessException("Kullanici adi ya da sifre yanlis!");
-        }
-        return jwtService.generateTokenWithClaims(userService.loadUserByUsername(request.getEmail()));
+        userBusinessRules.checkIfUserNotExists(request.getEmail());
 
+        try {
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
+            );
+        } catch (AuthenticationException exception) {
+            throw new BusinessException("Kullanıcı adı ya da şifre yanlış!");
+        }
+
+        return jwtService.generateTokenWithClaims(userService.loadUserByUsername(request.getEmail()));
     }
 
 

@@ -16,13 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
     private final AuthService authService;
     @PostMapping("/register")
-    public ResponseEntity<String> register(@Valid @RequestBody RegisterRequest request) {
-        try {
-            authService.register(request);
-            return ResponseEntity.ok("Kayıt başarılı.");
-        } catch (BusinessException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+    public void register(@Valid @RequestBody RegisterRequest request){
+        authService.register(request);
     }
     @PostMapping("/login")
     public String login(@Valid @RequestBody LoginRequest request){
