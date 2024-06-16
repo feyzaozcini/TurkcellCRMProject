@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: basketservice
+  cloud:
+    config:
+      profile: local
+
+  config:
+    import: "configserver:${configUrl}"
+configUrl: http://localhost:8079/
