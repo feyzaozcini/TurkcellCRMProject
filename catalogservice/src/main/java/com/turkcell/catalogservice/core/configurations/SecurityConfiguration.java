@@ -27,7 +27,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests((req)-> req
                         .requestMatchers(WHITE_LIST).permitAll()
                         .requestMatchers(("/api/v1/*"))
-                        .hasAnyAuthority("Kodlamaio")
+                        .hasAnyAuthority("Kodlama.io")
                         .anyRequest().authenticated());
         return http.build();
     }
