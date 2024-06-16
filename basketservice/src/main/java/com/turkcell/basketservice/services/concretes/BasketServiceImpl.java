@@ -11,27 +11,27 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class BasketServiceImpl implements BasketService {
     @Override
-    public void createCart(BasketCreateRequest request) {
+    public void createBasket(BasketCreateRequest request) {
 
     }
 
     @Override
-    public void addItemToCart(BasketAddItemRequest request) {
+    public void addItemToBasket(BasketAddItemRequest request) {
 
     }
 
     @Override
-    public void deleteItemFromCart(BasketDeleteItemRequest request) {
+    public void deleteItemFromBasket(BasketDeleteItemRequest request) {
 
     }
 
     @Override
-    public void clearCartById(int cartId) {
+    public void clearBasketById(int cartId) {
 
     }
 
     @Override
-    public void deleteCartById(int cartId) {
+    public void deleteBasketById(int cartId) {
 
     }
 }
