@@ -3,7 +3,9 @@ package com.turkcell.accountservice.services.mappers;
 import com.turkcell.accountservice.entitites.Account;
 import com.turkcell.accountservice.services.dtos.requests.account.AccountAddRequest;
 import com.turkcell.accountservice.services.dtos.requests.account.AccountUpdateRequest;
+import com.turkcell.accountservice.services.dtos.responses.account.AccountAddResponse;
 import com.turkcell.accountservice.services.dtos.responses.account.AccountGetResponse;
+import com.turkcell.accountservice.services.dtos.responses.account.AccountUpdateResponse;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
@@ -22,5 +24,9 @@ public interface AccountMapper {
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     void updateAccountFromUpdateRequest(AccountUpdateRequest request, @MappingTarget Account account);
+
+    AccountAddResponse addResponseFromAccount(Account account);
+
+    AccountUpdateResponse updateResponseFromAccount(Account account);
 }
 

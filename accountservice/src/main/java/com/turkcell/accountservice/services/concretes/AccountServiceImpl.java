@@ -4,7 +4,9 @@ import com.turkcell.accountservice.repositories.AccountRepository;
 import com.turkcell.accountservice.services.abstracts.AccountService;
 import com.turkcell.accountservice.services.dtos.requests.account.AccountAddRequest;
 import com.turkcell.accountservice.services.dtos.requests.account.AccountUpdateRequest;
+import com.turkcell.accountservice.services.dtos.responses.account.AccountAddResponse;
 import com.turkcell.accountservice.services.dtos.responses.account.AccountGetResponse;
+import com.turkcell.accountservice.services.dtos.responses.account.AccountUpdateResponse;
 import com.turkcell.accountservice.services.mappers.AccountMapper;
 import com.turkcell.accountservice.services.rules.AccountBusinessRules;
 import lombok.RequiredArgsConstructor;
@@ -17,13 +19,14 @@ import java.util.stream.Collectors;
 public class AccountServiceImpl implements AccountService {
     private final AccountRepository accountRepository;
     private final AccountBusinessRules accountBusinessRules;
-    public void addAccount(AccountAddRequest request){
+    public AccountAddResponse addAccount(AccountAddRequest request){
         accountBusinessRules.checkCustomerIsExistById(request.getCustomerId());
         accountBusinessRules.checkAddressIsExistById(request.getAddressId());
         Account account = AccountMapper.INSTANCE.accountFromAddRequest(request);
         account.setCreatedDate(LocalDateTime.now());
         account.setActive(true);
         accountRepository.save(account);
+        return AccountMapper.INSTANCE.addResponseFromAccount(account);
     }
     public List<AccountGetResponse> getAccounts(){
         return accountRepository.findAll().stream().filter(response -> response.isActive()).map((response) -> AccountMapper.INSTANCE.getResponseFromAccount(response)).collect(Collectors.toList());
@@ -45,13 +48,14 @@ public class AccountServiceImpl implements AccountService {
         accountRepository.save(account);
     }
 
-    public void updateAccount(AccountUpdateRequest request) {
+    public AccountUpdateResponse updateAccount(AccountUpdateRequest request) {
         accountBusinessRules.checkAccountExistById(request.getId());
         Account account = accountRepository.findById(request.getId()).orElseThrow();
         AccountMapper.INSTANCE.updateAccountFromUpdateRequest(request, account);
         accountBusinessRules.checkProductIdsAreExist(account.getProductIds());
         account.setUpdatedDate(LocalDateTime.now());
         accountRepository.save(account);
+        return AccountMapper.INSTANCE.updateResponseFromAccount(account);
     }
 
 }
