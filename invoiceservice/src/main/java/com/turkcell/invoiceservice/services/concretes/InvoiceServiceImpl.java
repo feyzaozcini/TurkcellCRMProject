@@ -5,6 +5,7 @@ import com.turkcell.invoiceservice.entities.Invoice;
 import com.turkcell.invoiceservice.repositories.InvoiceRepository;
 import com.turkcell.invoiceservice.services.abstracts.InvoiceService;
 import com.turkcell.invoiceservice.services.dtos.requests.InvoiceAddRequest;
+import com.turkcell.invoiceservice.services.dtos.response.InvoiceAddResponse;
 import com.turkcell.invoiceservice.services.dtos.response.InvoiceGetResponse;
 import com.turkcell.invoiceservice.services.mappers.InvoiceMapper;
 import com.turkcell.invoiceservice.services.rules.InvoiceBusinessRules;
@@ -20,11 +21,12 @@ public class InvoiceServiceImpl implements InvoiceService {
     private final InvoiceRepository invoiceRepository;
     private final InvoiceBusinessRules invoiceBusinessRules;
 
-    public void addInvoice(InvoiceAddRequest request){
+    public InvoiceAddResponse addInvoice(InvoiceAddRequest request){
         Invoice invoice = InvoiceMapper.INSTANCE.invoiceFromAddRequest(request);
         invoice.setActive(true);
         invoice.setCreatedDate(LocalDateTime.now());
         invoiceRepository.save(invoice);
+        return InvoiceMapper.INSTANCE.addResponseFromInvoice(invoice);
     }
 
     public InvoiceGetResponse getInvoiceById(int id){

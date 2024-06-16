@@ -18,7 +18,7 @@ public class OrderController {
         return orderService.addOrder(request);
     }
 
-    @GetMapping("/all/{token}")
+    @GetMapping("/all")
     public List<OrderResponse> getAllOrders(){
         return orderService.getAllOrders();
     }
