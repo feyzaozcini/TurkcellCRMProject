@@ -4,8 +4,10 @@ import com.turkcell.customerservice.entities.IndividualCustomer;
 import com.turkcell.customerservice.repositories.IndividualCustomerRepository;
 import com.turkcell.customerservice.services.abstracts.IndividualCustomerService;
 import com.turkcell.customerservice.services.dtos.request.*;
+import com.turkcell.customerservice.services.dtos.response.CreatedIndividualCustomerResponse;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerGetResponse;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerSearchResponse;
+import com.turkcell.customerservice.services.dtos.response.UpdatedIndividualCustomerResponse;
 import com.turkcell.customerservice.services.mappers.IndividualCustomerMapper;
 import com.turkcell.customerservice.services.rules.IndividualCustomerBusinessRules;
 import lombok.RequiredArgsConstructor;
@@ -23,12 +25,13 @@ public class IndividualCustomerServiceImpl implements IndividualCustomerService 
     private final IndividualCustomerRepository individualCustomerRepository;
     private final IndividualCustomerBusinessRules individualCustomerBusinessRules;
     @Override
-    public void addCustomer(IndividualCustomerAddRequest request) {
+    public CreatedIndividualCustomerResponse addCustomer(IndividualCustomerAddRequest request) {
         individualCustomerBusinessRules.individualCustomerMustBeUnique(request.getNationalityId(), 0);
         IndividualCustomer newCustomer = IndividualCustomerMapper.INSTANCE.getIndividualCustomerFromAddRequest(request);
         newCustomer.setCreatedDate(LocalDateTime.now());
         newCustomer.setActive(true);
-        individualCustomerRepository.save(newCustomer);
+        IndividualCustomer savedCustomer = individualCustomerRepository.save(newCustomer);
+        return IndividualCustomerMapper.INSTANCE.getResponseFromCreatedIndividualCustomer(savedCustomer);
     }
 
     @Override
@@ -56,13 +59,17 @@ public class IndividualCustomerServiceImpl implements IndividualCustomerService 
     }
 
     @Override
-    public void updateCustomer(IndividualCustomerUpdateRequest request) {
+    public UpdatedIndividualCustomerResponse updateCustomer(IndividualCustomerUpdateRequest request) {
         individualCustomerBusinessRules.individualCustomerMustBeUnique(request.getNationalityId(), request.getId());
         individualCustomerBusinessRules.isIndividualCustomerExist(request.getId());
         IndividualCustomer individualCustomer = individualCustomerRepository.findById(request.getId()).orElseThrow();
         IndividualCustomerMapper.INSTANCE.individualCustomerFromUpdateRequest(request, individualCustomer);
         individualCustomer.setUpdatedDate(LocalDateTime.now());
-        individualCustomerRepository.save(individualCustomer);
+
+        IndividualCustomer savedCustomer = individualCustomerRepository.save(individualCustomer);
+        UpdatedIndividualCustomerResponse response = IndividualCustomerMapper.INSTANCE.getResponseFromUpdatedIndividualCustomer(savedCustomer);
+        response.setAddresses(IndividualCustomerMapper.INSTANCE.convertToAddressDtoList(savedCustomer.getAddresses()));
+        return response;
     }
 
     @Override

@@ -2,8 +2,10 @@ package com.turkcell.customerservice.controllers;
 
 import com.turkcell.customerservice.services.abstracts.IndividualCustomerService;
 import com.turkcell.customerservice.services.dtos.request.*;
+import com.turkcell.customerservice.services.dtos.response.CreatedIndividualCustomerResponse;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerGetResponse;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerSearchResponse;
+import com.turkcell.customerservice.services.dtos.response.UpdatedIndividualCustomerResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -27,8 +29,8 @@ public class IndividualCustomerController {
     }
 
     @PostMapping("/add")
-    public void addCustomer(@Valid @RequestBody IndividualCustomerAddRequest individualCustomerAddRequest) {
-        customerService.addCustomer(individualCustomerAddRequest);
+    public CreatedIndividualCustomerResponse addCustomer(@Valid @RequestBody IndividualCustomerAddRequest individualCustomerAddRequest) {
+        return customerService.addCustomer(individualCustomerAddRequest);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -37,8 +39,8 @@ public class IndividualCustomerController {
     }
 
     @PutMapping("/update")
-    public void updateCustomer(@Valid @RequestBody IndividualCustomerUpdateRequest request) {
-        customerService.updateCustomer(request);
+    public UpdatedIndividualCustomerResponse updateCustomer(@Valid @RequestBody IndividualCustomerUpdateRequest request) {
+        return customerService.updateCustomer(request);
     }
 
     @PostMapping("/search")
