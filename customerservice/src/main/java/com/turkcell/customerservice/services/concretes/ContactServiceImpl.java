@@ -10,7 +10,9 @@ import com.turkcell.customerservice.repositories.IndividualCustomerRepository;
 import com.turkcell.customerservice.services.abstracts.ContactService;
 import com.turkcell.customerservice.services.dtos.request.ContactUpdateRequest;
 import com.turkcell.customerservice.services.dtos.request.IndividualCustomerContactAdd;
+import com.turkcell.customerservice.services.dtos.response.CreatedContactResponse;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerContactGet;
+import com.turkcell.customerservice.services.dtos.response.UpdatedContactResponse;
 import com.turkcell.customerservice.services.mappers.ContactMapper;
 import com.turkcell.customerservice.services.rules.ContactBusinessRules;
 import com.turkcell.customerservice.services.rules.IndividualCustomerBusinessRules;
@@ -29,25 +31,27 @@ public class ContactServiceImpl implements ContactService {
     private final ContactBusinessRules contactBusinessRules;
     private final IndividualCustomerBusinessRules individualCustomerBusinessRules;
 
-    public void updateContact(ContactUpdateRequest request) {
+    public UpdatedContactResponse updateContact(ContactUpdateRequest request) {
         contactBusinessRules.isContactExist(request.getId());
         Contact contact = contactRepository.findById(request.getId()).orElseThrow();
         ContactMapper.INSTANCE.contactFromUpdateRequest(request, contact);
         Customer customer = contactRepository.findById(request.getId()).orElseThrow().getCustomer();
         contact.setCustomer(customer);
         contact.setUpdatedDate(LocalDateTime.now());
-        contactRepository.save(contact);
+        Contact savedContact = contactRepository.save(contact);
+        return ContactMapper.INSTANCE.getResponseFromUpdatedContact(savedContact);
     }
 
 
-    public void addContactToIndividualCustomer(IndividualCustomerContactAdd request){
+    public CreatedContactResponse addContactToIndividualCustomer(IndividualCustomerContactAdd request){
         individualCustomerBusinessRules.isIndividualCustomerExist(request.getCustomerId());
         Contact contact = ContactMapper.INSTANCE.contactFromAddRequest(request);
         contact.setCreatedDate(LocalDateTime.now());
         contact.setActive(true);
         IndividualCustomer customer = individualCustomerRepository.findById(request.getCustomerId()).orElseThrow();
         contact.setCustomer(customer);
-        contactRepository.save(contact);
+        Contact savedContact = contactRepository.save(contact);
+        return ContactMapper.INSTANCE.getResponseFromCreatedContact(savedContact);
     }
 
     @Override

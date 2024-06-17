@@ -3,7 +3,9 @@ package com.turkcell.customerservice.controllers;
 import com.turkcell.customerservice.services.abstracts.ContactService;
 import com.turkcell.customerservice.services.dtos.request.ContactUpdateRequest;
 import com.turkcell.customerservice.services.dtos.request.IndividualCustomerContactAdd;
+import com.turkcell.customerservice.services.dtos.response.CreatedContactResponse;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerContactGet;
+import com.turkcell.customerservice.services.dtos.response.UpdatedContactResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -17,13 +19,13 @@ public class ContactController {
     private final ContactService contactService;
 
     @PutMapping("/update")
-    public void updateContact(@Valid @RequestBody ContactUpdateRequest request) {
-        contactService.updateContact(request);
+    public UpdatedContactResponse updateContact(@Valid @RequestBody ContactUpdateRequest request) {
+        return contactService.updateContact(request);
     }
 
     @PostMapping("/add")
-    public void addContact(@Valid @RequestBody IndividualCustomerContactAdd request) {
-        contactService.addContactToIndividualCustomer(request);
+    public CreatedContactResponse addContact(@Valid @RequestBody IndividualCustomerContactAdd request) {
+        return contactService.addContactToIndividualCustomer(request);
     }
 
     @DeleteMapping("/deleteContact")

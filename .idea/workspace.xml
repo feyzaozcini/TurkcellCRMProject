@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12259e16-21ce-4acd-8315-f9ed281d24a6" name="Changes" comment="sample">
-      <change afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/CreatedAddressResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/UpdatedAddressResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/AddressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/AddressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/AddressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/AddressService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/AddressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/AddressServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/CreatedIndividualCustomerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/CreatedIndividualCustomerResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/UpdatedIndividualCustomerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/UpdatedIndividualCustomerResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/AddressMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/AddressMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/CreatedContactResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/UpdatedContactResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/ContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/ContactController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/ContactService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/ContactService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/ContactServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/ContactServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/ContactMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/ContactMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
