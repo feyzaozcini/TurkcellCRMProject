@@ -1,7 +1,5 @@
 package com.turkcell.customerservice.services.dtos.response;
 
-import com.turkcell.customerservice.entities.Address;
-import com.turkcell.customerservice.entities.Contact;
 import com.turkcell.customerservice.entities.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Data;

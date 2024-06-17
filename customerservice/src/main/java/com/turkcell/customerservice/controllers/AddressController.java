@@ -4,7 +4,9 @@ import com.turkcell.customerservice.services.abstracts.AddressService;
 import com.turkcell.customerservice.services.dtos.request.AddressUpdateRequest;
 import com.turkcell.customerservice.services.dtos.request.CustomerSetDefaultAddress;
 import com.turkcell.customerservice.services.dtos.request.IndividualCustomerAddressAddRequest;
+import com.turkcell.customerservice.services.dtos.response.CreatedAddressResponse;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerAddressGet;
+import com.turkcell.customerservice.services.dtos.response.UpdatedAddressResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +20,8 @@ public class AddressController {
     private final AddressService addressService;
 
     @PutMapping("/update")
-    public void updateAddress(@Valid @RequestBody AddressUpdateRequest request) {
-        addressService.updateAddress(request);
+    public UpdatedAddressResponse updateAddress(@Valid @RequestBody AddressUpdateRequest request) {
+        return addressService.updateAddress(request);
     }
 
     @GetMapping("/{id}")
@@ -28,8 +30,8 @@ public class AddressController {
     }
 
     @PostMapping("/add")
-    public void addAddress(@Valid @RequestBody IndividualCustomerAddressAddRequest request){
-        addressService.addAddressToIndividualCustomer(request);
+    public CreatedAddressResponse addAddress(@Valid @RequestBody IndividualCustomerAddressAddRequest request){
+        return addressService.addAddressToIndividualCustomer(request);
     }
 
     @GetMapping("/addresses")

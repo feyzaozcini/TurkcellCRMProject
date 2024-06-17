@@ -9,7 +9,9 @@ import com.turkcell.customerservice.services.abstracts.AddressService;
 import com.turkcell.customerservice.services.dtos.request.AddressUpdateRequest;
 import com.turkcell.customerservice.services.dtos.request.CustomerSetDefaultAddress;
 import com.turkcell.customerservice.services.dtos.request.IndividualCustomerAddressAddRequest;
+import com.turkcell.customerservice.services.dtos.response.CreatedAddressResponse;
 import com.turkcell.customerservice.services.dtos.response.IndividualCustomerAddressGet;
+import com.turkcell.customerservice.services.dtos.response.UpdatedAddressResponse;
 import com.turkcell.customerservice.services.mappers.AddressMapper;
 import com.turkcell.customerservice.services.rules.AddressBusinessRules;
 import com.turkcell.customerservice.services.rules.IndividualCustomerBusinessRules;
@@ -28,14 +30,15 @@ public class AddressServiceImpl implements AddressService {
     private final AddressBusinessRules addressBusinessRules;
     private final IndividualCustomerBusinessRules individualCustomerBusinessRules;
 
-    public void updateAddress(AddressUpdateRequest request) {
+    public UpdatedAddressResponse updateAddress(AddressUpdateRequest request) {
         addressBusinessRules.isAddressExist(request.getId());
         Address address = addressRepository.findById(request.getId()).orElseThrow();
         AddressMapper.INSTANCE.addressFromUpdateRequest(request, address);
         Customer customer = addressRepository.findById(request.getId()).orElseThrow().getCustomer();
         address.setUpdatedDate(LocalDateTime.now());
         address.setCustomer(customer);
-        addressRepository.save(address);
+        Address savedAddress = addressRepository.save(address);
+        return AddressMapper.INSTANCE.getResponseFromUpdatedAddress(savedAddress);
     }
 
     public IndividualCustomerAddressGet getAddressById(int id) {
@@ -44,7 +47,7 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public void addAddressToIndividualCustomer(IndividualCustomerAddressAddRequest request) {
+    public CreatedAddressResponse addAddressToIndividualCustomer(IndividualCustomerAddressAddRequest request) {
         individualCustomerBusinessRules.isIndividualCustomerExist(request.getCustomerId());
         IndividualCustomer customer = individualCustomerRepository.findById(request.getCustomerId()).filter(IndividualCustomer::getActive).orElseThrow();
         Address address = AddressMapper.INSTANCE.addressFromAddRequest(request);
@@ -53,7 +56,8 @@ public class AddressServiceImpl implements AddressService {
         address.setCustomer(customer);
         if(customer.getDefaultAddress() == null)
             customer.setDefaultAddress(address);
-        addressRepository.save(address);
+        Address savedAddress = addressRepository.save(address);
+        return AddressMapper.INSTANCE.getResponseFromCreatedAddress(savedAddress);
 
     }
 
