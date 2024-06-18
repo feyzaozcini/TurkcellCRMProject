@@ -15,12 +15,13 @@
         <module name="configserver" />
         <module name="customerservice" />
         <module name="accountservice" />
+        <module name="basketservice" />
         <module name="orderservice" />
-        <module name="cartservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="authserver (1)" target="1.5" />
+      <module name="cartservice" target="17" />
       <module name="userservice" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -29,6 +30,7 @@
       <module name="accountservice" options="-parameters" />
       <module name="authserver" options="-parameters" />
       <module name="authserver (1)" options="" />
+      <module name="basketservice" options="-parameters" />
       <module name="cartservice" options="-parameters" />
       <module name="catalogservice" options="-parameters" />
       <module name="configserver" options="-parameters" />

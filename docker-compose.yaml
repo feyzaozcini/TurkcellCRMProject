@@ -7,6 +7,8 @@ services:
       - POSTGRES_PASSWORD=test
     volumes:
       - postgresql-volume:/var/lib/postgresql/data
+    networks:
+      - common
   config-server:
     build: ./configserver
     ports:

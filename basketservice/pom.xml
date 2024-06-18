@@ -5,11 +5,11 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.0</version>
+		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.turkcell</groupId>
-	<artifactId>orderservice</artifactId>
+	<artifactId>basketservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>basketservice</name>
 	<description>Demo project for Spring Boot</description>
@@ -118,11 +118,6 @@
 			<artifactId>jjwt-jackson</artifactId>
 			<version>0.12.5</version>
 		</dependency>
-		<!--		<dependency>-->
-		<!--			<groupId>com.turkcell</groupId>-->
-		<!--			<artifactId>tcell-final-core</artifactId>-->
-		<!--			<version>1.0.3</version>-->
-		<!--		</dependency>-->
 		<dependency>
 			<groupId>io.github.haiykut</groupId>
 			<artifactId>core</artifactId>
@@ -144,44 +139,11 @@
 	</dependencyManagement>
 
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-maven-plugin</artifactId>
-					<version>3.8.1</version>
-					<configuration>
-						<source>${java.version}</source>
-						<target>${java.version}</target>
-						<annotationProcessorPaths>
-							<path>
-								<groupId>org.mapstruct</groupId>
-								<artifactId>mapstruct-processor</artifactId>
-								<version>${mapstruct.version}</version>
-							</path>
-							<path>
-								<groupId>org.projectlombok</groupId>
-								<artifactId>lombok</artifactId>
-								<version>${lombok.version}</version>
-							</path>
-							<path>
-								<groupId>org.projectlombok</groupId>
-								<artifactId>lombok-mapstruct-binding</artifactId>
-								<version>${lombok-mapstruct-binding.version}</version>
-							</path>
-						</annotationProcessorPaths>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
 	</build>
-	<!--	<repositories>-->
-	<!--		<repository>-->
-	<!--			<id>github</id>-->
-	<!--			<name>Github Package Center</name>-->
-	<!--			<url>https://maven.pkg.github.com/feyzaozcini/tcell-final-project</url>-->
-	<!--		</repository>-->
-	<!--	</repositories>-->
-
 </project>

@@ -17,9 +17,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
-
-    @Getter
-    private String token;
     @Override
     public void add(User user) {
         userRepository.save(user);

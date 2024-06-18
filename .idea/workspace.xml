@@ -5,12 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12259e16-21ce-4acd-8315-f9ed281d24a6" name="Changes" comment="sample">
-      <change afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/CreatedContactResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/dtos/response/UpdatedContactResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/ContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/controllers/ContactController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/ContactService.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/abstracts/ContactService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/ContactServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/concretes/ContactServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/ContactMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/ContactMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accountservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accountservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/clients/CustomerServiceClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/core/configurations/FeignConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/abstracts/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/concretes/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/concretes/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/dtos/requests/CustomerUpdateRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/dtos/requests/SearchRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/dtos/responses/CustomerAddressGet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/dtos/responses/CustomerContactGet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/dtos/responses/CustomerGet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authserver/src/main/java/com/turkcell/authserver/services/dtos/responses/SearchResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/basketservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/basketservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basketservice/src/main/java/com/turkcell/basketservice/BasketserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/basketservice/src/main/java/com/turkcell/basketservice/BasketserviceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basketservice/src/main/java/com/turkcell/basketservice/repositories/BasketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/basketservice/src/main/java/com/turkcell/basketservice/repositories/BasketRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basketservice/src/main/java/com/turkcell/basketservice/services/abstracts/BasketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/basketservice/src/main/java/com/turkcell/basketservice/services/abstracts/BasketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basketservice/src/main/java/com/turkcell/basketservice/services/concretes/BasketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/basketservice/src/main/java/com/turkcell/basketservice/services/concretes/BasketServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/CartserviceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/controllers/CartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/core/configurations/FeignConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/core/configurations/SecurityConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/entities/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/entities/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/entities/CartItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/repositories/CartRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/services/abstracts/CartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/services/concretes/CartServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/services/dtos/requests/CartAddItemRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/services/dtos/requests/CartCreateRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/services/dtos/requests/CartDeleteItemRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/services/dtos/requests/CartItemDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/services/mappers/CartMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/java/com/turkcell/cartservice/services/rules/CartBusinessRules.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cartservice/src/test/java/com/turkcell/cartservice/CartserviceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customerservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discoveryserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discoveryserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +118,7 @@
     &quot;Application.OrderserviceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Maven.accountservice [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.accountservice [purge-local-repository].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.basketservice [clean,install].executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -79,6 +128,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.AccountserviceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.AuthserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.BasketserviceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.CartserviceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.CatalogserviceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
@@ -90,7 +140,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/IJavaProjects/tcell-final-project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/IJavaProjects/tcell-final-project/basketservice/pom.xml&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -111,6 +161,7 @@
     <option name="myCommands">
       <command value="mvn purge-local-repository" />
       <command value="mvn clean" />
+      <command value="mvn clean install" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -123,7 +174,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CustomerserviceApplication">
+  <component name="RunManager" selected="Spring Boot.ConfigserverApplication">
     <configuration name="AuthserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.turkcell.authserver.AuthserverApplication" />
       <module name="authserver" />
@@ -186,6 +237,14 @@
     <configuration name="AuthserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="authserver" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.turkcell.authserver.AuthserverApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasketserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="basketservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.turkcell.basketservice.BasketserviceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -258,6 +317,7 @@
       <item itemvalue="Application.CatalogserviceApplication" />
       <item itemvalue="Application.CustomerserviceApplication" />
       <item itemvalue="Application.OrderserviceApplication" />
+      <item itemvalue="Spring Boot.BasketserviceApplication" />
       <item itemvalue="Spring Boot.CartserviceApplication" />
       <item itemvalue="Spring Boot.InvoiceserviceApplication" />
       <item itemvalue="Spring Boot.AccountserviceApplication" />
@@ -331,6 +391,8 @@
       <workItem from="1718540137847" duration="5085000" />
       <workItem from="1718561033936" duration="5643000" />
       <workItem from="1718567133534" duration="328000" />
+      <workItem from="1718733888387" duration="7049000" />
+      <workItem from="1718740968367" duration="128000" />
     </task>
     <task id="LOCAL-00001" summary="sample">
       <option name="closed" value="true" />
@@ -382,6 +444,33 @@
     <option name="LAST_COMMIT_MESSAGE" value="order service edited" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/basketservice/src/main/java/com/turkcell/basketservice/services/concretes/BasketServiceImpl.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/basketservice/src/main/java/com/turkcell/basketservice/services/concretes/BasketServiceImpl.java</url>
+          <line>42</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/basketservice/src/main/java/com/turkcell/basketservice/services/concretes/BasketServiceImpl.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/basketservice/src/main/java/com/turkcell/basketservice/services/concretes/BasketServiceImpl.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.turkcell.customerservice.services.dtos.request.CustomerAddRequest" memberName="motherName" />

@@ -4,7 +4,10 @@ package com.turkcell.basketservice.repositories;
 import com.turkcell.basketservice.entitites.Basket;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface BasketRepository extends JpaRepository<Basket, Integer> {
-    Basket findByAccountId(int accountId);
+    List<Basket> findByAccountId(int accountId);
+    Basket findByAccountIdAndActive(int accountId, boolean filter);
     boolean existsByAccountId(int accountId);
 }
