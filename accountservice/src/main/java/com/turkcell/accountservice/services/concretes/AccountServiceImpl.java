@@ -1,5 +1,6 @@
 package com.turkcell.accountservice.services.concretes;
 import com.turkcell.accountservice.entitites.Account;
+import com.turkcell.accountservice.entitites.BaseEntity;
 import com.turkcell.accountservice.repositories.AccountRepository;
 import com.turkcell.accountservice.services.abstracts.AccountService;
 import com.turkcell.accountservice.services.dtos.requests.account.AccountAddRequest;
@@ -37,6 +38,12 @@ public class AccountServiceImpl implements AccountService {
         return AccountMapper.INSTANCE.getResponseFromAccount(accountRepository.findById(id).orElseThrow());
     }
 
+    @Override
+    public List<AccountGetResponse> getAccountsByCustomerId(int customerId) {
+        List<AccountGetResponse> customerAccounts = accountRepository.getAccountsByCustomerId(customerId).stream().filter(BaseEntity::isActive).map(AccountMapper.INSTANCE::getResponseFromAccount).collect(Collectors.toList());
+        accountBusinessRules.checkCustomerAccountsExist(customerAccounts);
+        return customerAccounts;
+    }
 
 
     public void deleteAccountById(int id) {

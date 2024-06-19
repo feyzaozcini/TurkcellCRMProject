@@ -16,26 +16,34 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AccountController {
     private final AccountService accountService;
+
     @PostMapping("/add")
-    public AccountAddResponse addAccount(@RequestBody AccountAddRequest request){
+    public AccountAddResponse addAccount(@RequestBody AccountAddRequest request) {
         return accountService.addAccount(request);
     }
+
     @GetMapping("/all")
-    public List<AccountGetResponse> getAccounts(){
+    public List<AccountGetResponse> getAccounts() {
         return accountService.getAccounts();
     }
 
     @PutMapping("/update")
-    public AccountUpdateResponse updateAccount(@RequestBody AccountUpdateRequest request){
+    public AccountUpdateResponse updateAccount(@RequestBody AccountUpdateRequest request) {
         return accountService.updateAccount(request);
     }
+
     @DeleteMapping("/delete/{id}")
-    public void deleteAccountById(@PathVariable int id){
+    public void deleteAccountById(@PathVariable int id) {
         accountService.deleteAccountById(id);
     }
 
     @GetMapping("/{id}")
-    public AccountGetResponse getAccountById(@PathVariable int id){
+    public AccountGetResponse getAccountById(@PathVariable int id) {
         return accountService.getAccountById(id);
+    }
+
+    @GetMapping("/getCustomerAccounts/{customerId}")
+    public List<AccountGetResponse> getAccountsByCustomerId(@PathVariable int customerId) {
+        return accountService.getAccountsByCustomerId(customerId);
     }
 }
