@@ -58,7 +58,7 @@ public class AccountBusinessRules {
 
     public void checkCustomerAccountsExist(List<AccountGetResponse> accounts) {
         if(accounts == null || accounts.isEmpty()){
-            throw new NotFoundException("You do not have a billing account, would you like to add it?");
+            throw new NotFoundException("You do not have any account, would you like to add it?");
         }
     }
 }
