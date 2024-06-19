@@ -6,7 +6,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "customerservice", url = "http://localhost:8084", configuration = FeignConfiguration.class)
+//@FeignClient(name = "customerservice", url = "http://localhost:8084", configuration = FeignConfiguration.class)
+@FeignClient(name = "customer-service", url = "http://customer-service:8084", configuration = FeignConfiguration.class)
 public interface CustomerServiceClient {
 //    @GetMapping(value = "/api/v1/customer/getDefaultAddress/{id}")
 //    int getDefaultCustomerAddress(@PathVariable int id);

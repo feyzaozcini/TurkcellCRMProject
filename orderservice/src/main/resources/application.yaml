@@ -1,23 +1,9 @@
 spring:
   application:
     name: orderservice
-#  kafka:
-#    bootstrap-servers: localhost:9092
-#    template:
-#      default-topic: orderTopic
-#    producer:
-#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   cloud:
     config:
       profile: local
-#  kafka:
-#    bootstrap-server: localhost:9092
-#    template:
-#      default-topic: orderTopic
-#    producer:
-#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   config:
     import: "configserver:${configUrl}"
 configUrl: http://localhost:8079/
