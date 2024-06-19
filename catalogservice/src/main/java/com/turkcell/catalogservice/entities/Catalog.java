@@ -12,11 +12,8 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Catalog {
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class Catalog extends BaseEntity{
+
     @Column(name = "name")
     private String name;
     @OneToMany(mappedBy = "catalog")
