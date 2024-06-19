@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12259e16-21ce-4acd-8315-f9ed281d24a6" name="Changes" comment="sample">
-      <change afterPath="$PROJECT_DIR$/customerservice/src/test/java/com/turkcell/customerservice/service/concretes/IndividualCustomerServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/IndividualCustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/customerservice/src/main/java/com/turkcell/customerservice/services/mappers/IndividualCustomerMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +63,7 @@
     "Application.DiscoveryserverApplication.executor": "Run",
     "Application.GatewayserverApplication.executor": "Run",
     "Application.OrderserviceApplication.executor": "Run",
+    "JUnit.IndividualCustomerServiceImplTest.executor": "Run",
     "JUnit.IndividualCustomerServiceImplTest.testAddCustomer.executor": "Run",
     "JUnit.IndividualCustomerServiceImplTest.testAddCustomer_UniqueCustomerException.executor": "Run",
     "JUnit.IndividualCustomerServiceImplTest.testDeleteCustomerById.executor": "Run",
@@ -133,7 +132,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IndividualCustomerServiceImplTest">
+  <component name="RunManager" selected="Spring Boot.CustomerserviceApplication">
     <configuration name="IndividualCustomerServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="customerservice" />
       <extension name="coverage">
@@ -145,22 +144,6 @@
       <option name="PACKAGE_NAME" value="com.turkcell.customerservice.service.concretes" />
       <option name="MAIN_CLASS_NAME" value="com.turkcell.customerservice.service.concretes.IndividualCustomerServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IndividualCustomerServiceImplTest.testAddCustomer_UniqueCustomerException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="customerservice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.turkcell.customerservice.service.concretes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.turkcell.customerservice.service.concretes" />
-      <option name="MAIN_CLASS_NAME" value="com.turkcell.customerservice.service.concretes.IndividualCustomerServiceImplTest" />
-      <option name="METHOD_NAME" value="testAddCustomer_UniqueCustomerException" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -235,13 +218,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="cartservice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.turkcell.cartservice.CartserviceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CatalogserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="catalogservice" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.turkcell.catalogservice.CatalogserviceApplication" />
@@ -252,6 +228,20 @@
     <configuration name="ConfigserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="configserver" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.turkcell.configserver.ConfigserverApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="customerservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.turkcell.customerservice.CustomerserviceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.turkcell.customerservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -286,12 +276,10 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.IndividualCustomerServiceImplTest" />
-      <item itemvalue="JUnit.IndividualCustomerServiceImplTest.testAddCustomer_UniqueCustomerException" />
       <item itemvalue="JUnit.IndividualCustomerServiceImplTest.testDeleteCustomerById_BusinessException" />
       <item itemvalue="JUnit.IndividualCustomerServiceImplTest.testGetCustomerById_CustomerNotFoundException" />
       <item itemvalue="JUnit.IndividualCustomerServiceImplTest.testSearchCustomer_CustomerNotFoundException" />
       <item itemvalue="Spring Boot.BasketserviceApplication" />
-      <item itemvalue="Spring Boot.CartserviceApplication" />
       <item itemvalue="Spring Boot.InvoiceserviceApplication" />
       <item itemvalue="Spring Boot.AccountserviceApplication" />
       <item itemvalue="Spring Boot.OrderserviceApplication" />
@@ -300,14 +288,15 @@
       <item itemvalue="Spring Boot.AuthserverApplication" />
       <item itemvalue="Spring Boot.ConfigserverApplication" />
       <item itemvalue="Spring Boot.GatewayserverApplication" />
+      <item itemvalue="Spring Boot.CustomerserviceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.CustomerserviceApplication" />
         <item itemvalue="JUnit.IndividualCustomerServiceImplTest" />
         <item itemvalue="JUnit.IndividualCustomerServiceImplTest.testSearchCustomer_CustomerNotFoundException" />
         <item itemvalue="JUnit.IndividualCustomerServiceImplTest.testDeleteCustomerById_BusinessException" />
         <item itemvalue="JUnit.IndividualCustomerServiceImplTest.testGetCustomerById_CustomerNotFoundException" />
-        <item itemvalue="JUnit.IndividualCustomerServiceImplTest.testAddCustomer_UniqueCustomerException" />
       </list>
     </recent_temporary>
   </component>
@@ -367,7 +356,7 @@
       <workItem from="1718733888387" duration="7049000" />
       <workItem from="1718740968367" duration="128000" />
       <workItem from="1718741334532" duration="268000" />
-      <workItem from="1718778015970" duration="7891000" />
+      <workItem from="1718778015970" duration="9061000" />
     </task>
     <task id="LOCAL-00001" summary="sample">
       <option name="closed" value="true" />
