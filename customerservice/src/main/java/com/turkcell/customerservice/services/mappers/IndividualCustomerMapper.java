@@ -12,6 +12,7 @@ import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 import org.mapstruct.MappingTarget;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,6 +30,9 @@ public interface IndividualCustomerMapper {
     UpdatedIndividualCustomerResponse getResponseFromUpdatedIndividualCustomer(IndividualCustomer customer);
 
     default List<IndividualCustomerAddressGet> convertToAddressDtoList(List<Address> addresses) {
+        if (addresses == null) {
+            return Collections.emptyList();
+        }
         return addresses.stream()
                 .map(this::convertToAddressDto)
                 .collect(Collectors.toList());
