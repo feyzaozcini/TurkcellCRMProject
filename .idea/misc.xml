@@ -25,6 +25,7 @@
       <set>
         <option value="$PROJECT_DIR$/../../../final/tcell-final-project/tcell-final-project/authserver/pom.xml" />
         <option value="$PROJECT_DIR$/../../../tcell-final-project/authserver/pom.xml" />
+        <option value="$PROJECT_DIR$/catalogservice/pom.xml" />
         <option value="$PROJECT_DIR$/userservice/pom.xml" />
       </set>
     </option>

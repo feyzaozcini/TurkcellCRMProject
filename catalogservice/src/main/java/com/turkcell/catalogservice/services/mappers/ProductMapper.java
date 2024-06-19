@@ -14,7 +14,7 @@ import org.springframework.security.core.parameters.P;
 @Mapper
 public interface ProductMapper {
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
-
+    @Mapping(target = "catalogId", source = "catalog.id")
     CreatedProductResponse getResponseFromCreatedProduct(Product product);
     @Mapping(target = "catalog.id",source = "catalogId")
     Product productFromAddRequest(ProductAddRequest request);

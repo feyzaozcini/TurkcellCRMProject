@@ -10,4 +10,6 @@ public interface BasketRepository extends JpaRepository<Basket, Integer> {
     List<Basket> findByAccountId(int accountId);
     Basket findByAccountIdAndActive(int accountId, boolean filter);
     boolean existsByAccountId(int accountId);
+
+    Basket findByIdAndActive(int basketId, boolean filter);
 }

@@ -33,10 +33,10 @@ public class ProductServiceImpl implements ProductService {
         Product product = ProductMapper.INSTANCE.productFromAddRequest(request);
         product.setCatalog(catalog);
         product.setCreatedDate(LocalDateTime.now());
-        Product savedProduct=productRepository.save(product);
+        productRepository.save(product);
         catalog.getProducts().add(product);
         catalogRepository.save(catalog);
-        return ProductMapper.INSTANCE.getResponseFromCreatedProduct(savedProduct);
+        return ProductMapper.INSTANCE.getResponseFromCreatedProduct(product);
     }
 
     public List<ProductGetResponse> getAllProducts(){

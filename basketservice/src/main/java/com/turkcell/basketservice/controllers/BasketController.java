@@ -19,8 +19,12 @@ public class BasketController {
     }
 
     @GetMapping("/{accountId}")
-    public BasketGetResponse getBasketById(@PathVariable int accountId){
-        return basketService.getBasket(accountId);
+    public BasketGetResponse getBasketByAccountId(@PathVariable int accountId){
+        return basketService.getBasketByAccountId(accountId);
+    }
+    @GetMapping("/{basketId}")
+    public BasketGetResponse getBasketById(@PathVariable int basketId){
+        return basketService.getBasketById(basketId);
     }
 
     @PostMapping("/addItem")

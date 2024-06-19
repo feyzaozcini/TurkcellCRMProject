@@ -9,7 +9,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="gatewayserver" />
         <module name="authserver" />
-        <module name="catalogservice" />
         <module name="invoiceservice" />
         <module name="discoveryserver" />
         <module name="configserver" />
@@ -22,6 +21,7 @@
     <bytecodeTargetLevel>
       <module name="authserver (1)" target="1.5" />
       <module name="cartservice" target="17" />
+      <module name="catalogservice" target="17" />
       <module name="userservice" target="17" />
     </bytecodeTargetLevel>
   </component>

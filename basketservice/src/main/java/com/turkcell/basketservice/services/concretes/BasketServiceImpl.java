@@ -44,8 +44,14 @@ public class BasketServiceImpl implements BasketService {
         return response;
     }
 
-    public BasketGetResponse getBasket(int accountId){
+    public BasketGetResponse getBasketByAccountId(int accountId){
+        basketBusinessRules.checkBasketIsExistByAccountId(accountId);
         return BasketMapper.INSTANCE.getResponseFromBasket(basketRepository.findByAccountIdAndActive(accountId, true));
+    }
+
+    public BasketGetResponse getBasketById(int basketId){
+        basketBusinessRules.checkBasketIsExistById(basketId);
+        return BasketMapper.INSTANCE.getResponseFromBasket(basketRepository.findByIdAndActive(basketId,true));
     }
     @Override
     public void addItemToBasket(BasketAddItemRequest request) {
@@ -87,6 +93,7 @@ public class BasketServiceImpl implements BasketService {
 
     @Override
     public void clearBasketById(int basketId) {
+        basketBusinessRules.checkBasketIsExistById(basketId);
         Basket basket = basketRepository.findById(basketId).orElseThrow();
         basket.setTotalAmount(0);
         basket.setItems(new ArrayList<>());
@@ -96,6 +103,7 @@ public class BasketServiceImpl implements BasketService {
 
     @Override
     public void deleteBasketById(int basketId) {
+        basketBusinessRules.checkBasketIsExistById(basketId);
         Basket basket = basketRepository.findById(basketId).orElseThrow();
         basket.setActive(false);
         basket.setDeletedDate(LocalDateTime.now());

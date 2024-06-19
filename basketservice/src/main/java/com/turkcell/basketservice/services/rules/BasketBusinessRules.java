@@ -2,6 +2,7 @@ package com.turkcell.basketservice.services.rules;
 
 import com.turkcell.basketservice.clients.AccountServiceClient;
 import com.turkcell.basketservice.clients.CatalogServiceClient;
+import com.turkcell.basketservice.core.utils.types.NotFoundException;
 import com.turkcell.basketservice.entitites.Basket;
 import com.turkcell.basketservice.repositories.BasketRepository;
 import feign.FeignException;
@@ -15,38 +16,24 @@ public class BasketBusinessRules {
     private final CatalogServiceClient catalogServiceClient;
     private final AccountServiceClient accountServiceClient;
     public void checkBasketIsNotExistByAccountId(int accountId){
-//        if(!basketRepository.existsByAccountId(accountId))
-//            throw new RuntimeException("Cart not found!");
-//
-//        if(basketRepository.existsByAccountId(accountId)){
-//            for (Basket basket : basketRepository.findByAccountId(accountId)){
-//                if(!basket.getActive())
-//                    throw new RuntimeException("Cart not found!");
-//            }
-//        }
-
         if(basketRepository.findByAccountIdAndActive(accountId, true) == null)
-            throw new RuntimeException("");
+            throw new NotFoundException("Basket not found related the account id.");
     }
     public void checkBasketIsExistByAccountId(int accountId){
-//        if(basketRepository.existsByAccountId(accountId)){
-//            for (Basket basket : basketRepository.findByAccountId(accountId)){
-//                if(basket.getActive())
-//                    throw new RuntimeException("Cart already found!");
-//            }
-//        }
-
         if(basketRepository.findByAccountIdAndActive(accountId, true) != null)
-            throw new RuntimeException("");
+            throw new NotFoundException("Basket already found related the account id.");
     }
 
-
+    public void checkBasketIsExistById(int id){
+        if(basketRepository.findByIdAndActive(id, true) == null)
+            throw new NotFoundException("Basket not found: " + id);
+    }
     public void isProductExist(int productId){
         try{
             catalogServiceClient.getProductById(productId);
         }
         catch (FeignException.NotFound exception){
-            throw new RuntimeException(" ");
+            throw new NotFoundException("Product not found: " +productId);
         }
     }
     public void isAccountExist(int accountId){
@@ -54,7 +41,7 @@ public class BasketBusinessRules {
             accountServiceClient.getAccountById(accountId);
         }
         catch (FeignException.NotFound exception){
-            throw new RuntimeException("");
+            throw new NotFoundException("Account not found: " + accountId);
         }
     }
 }

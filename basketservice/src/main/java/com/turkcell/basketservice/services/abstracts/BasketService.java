@@ -11,5 +11,6 @@ public interface BasketService {
     void deleteItemFromBasket(BasketDeleteItemRequest request);
     void clearBasketById(int basketId);
     void deleteBasketById(int basketId);
-    BasketGetResponse getBasket(int accountId);
+    BasketGetResponse getBasketByAccountId(int accountId);
+    BasketGetResponse getBasketById(int basketId);
 }

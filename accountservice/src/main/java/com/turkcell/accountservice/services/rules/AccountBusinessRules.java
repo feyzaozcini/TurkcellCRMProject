@@ -26,7 +26,7 @@ public class AccountBusinessRules {
     }
 
     public void checkProductListIsNotEmpty(Account account) {
-        if (account.getProductIds() == null)
+        if (account.getProductIds() != null)
             throw new BusinessException("There are product/products connected to the billing account");
     }
 

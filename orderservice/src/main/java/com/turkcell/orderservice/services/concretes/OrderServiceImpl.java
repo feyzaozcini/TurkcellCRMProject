@@ -2,7 +2,6 @@ package com.turkcell.orderservice.services.concretes;
 import com.turkcell.common.events.InvoiceEvent;
 import com.turkcell.orderservice.clients.CatalogServiceClient;
 import com.turkcell.orderservice.clients.CustomerServiceClient;
-import com.turkcell.orderservice.entities.BaseEntity;
 import com.turkcell.orderservice.entities.Order;
 import com.turkcell.orderservice.repositories.OrderRepository;
 import com.turkcell.orderservice.services.abstracts.OrderService;
@@ -12,13 +11,11 @@ import com.turkcell.orderservice.clients.dtos.productservice.ProductGetResponse;
 import com.turkcell.orderservice.services.mappers.OrderMapper;
 import com.turkcell.orderservice.services.rules.OrderBusinessRules;
 import lombok.RequiredArgsConstructor;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+
 @Service
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
@@ -26,6 +23,7 @@ public class OrderServiceImpl implements OrderService {
     private final CustomerServiceClient customerServiceClient;
     private final CatalogServiceClient catalogServiceClient;
     private final OrderBusinessRules orderBusinessRules;
+    private final KafkaTemplate<String, Object> kafkaTemplate;
     public OrderResponse addOrder(OrderRequest request){
         Order order = OrderMapper.INSTANCE.orderFromRequest(request);
         order.setServiceAddress(getServiceAddressId(request.getCustomerId()));
@@ -33,6 +31,7 @@ public class OrderServiceImpl implements OrderService {
         order.setCreatedDate(LocalDateTime.now());
         orderRepository.save(order);
         InvoiceEvent invoiceEvent = new InvoiceEvent(order.getCustomerId(), order.getAccountId(), order.getServiceAddress(), order.getProductIds().stream().toList(), order.getTotalAmount());
+        kafkaTemplate.send("orderTopic", "NewOrder", invoiceEvent);
         return buildResponse(order);
     }
 
