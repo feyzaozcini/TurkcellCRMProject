@@ -29,6 +29,7 @@ public class ProductServiceImpl implements ProductService {
     private final CatalogRepository catalogRepository;
     private final ProductBusinessRules productBusinessRules;
     public CreatedProductResponse addProduct(ProductAddRequest request) {
+
         Catalog catalog = productBusinessRules.findCatalogById(request.getCatalogId());
         Product product = ProductMapper.INSTANCE.productFromAddRequest(request);
         product.setCatalog(catalog);
@@ -36,6 +37,7 @@ public class ProductServiceImpl implements ProductService {
         productRepository.save(product);
         catalog.getProducts().add(product);
         catalogRepository.save(catalog);
+
         return ProductMapper.INSTANCE.getResponseFromCreatedProduct(product);
     }
 
