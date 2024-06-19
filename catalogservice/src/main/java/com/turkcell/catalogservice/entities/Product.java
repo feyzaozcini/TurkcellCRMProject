@@ -12,15 +12,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+public class Product extends BaseEntity{
+
     @Column(name = "name")
     private String name;
+
     @Column(name = "price")
     private float price;
+
     @ManyToOne
     @JoinColumn(name = "catalog_id")
     private Catalog catalog;

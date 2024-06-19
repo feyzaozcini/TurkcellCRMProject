@@ -9,13 +9,16 @@ import com.turkcell.catalogservice.services.abstracts.ProductService;
 import com.turkcell.catalogservice.services.dtos.requests.ProductAddRequest;
 import com.turkcell.catalogservice.services.dtos.requests.ProductUpdateRequest;
 import com.turkcell.catalogservice.services.dtos.requests.SearchRequest;
+import com.turkcell.catalogservice.services.dtos.responses.CreatedProductResponse;
 import com.turkcell.catalogservice.services.dtos.responses.ProductGetResponse;
 import com.turkcell.catalogservice.services.dtos.responses.SearchResponse;
+import com.turkcell.catalogservice.services.dtos.responses.UpdatedProductResponse;
 import com.turkcell.catalogservice.services.mappers.ProductMapper;
 import com.turkcell.catalogservice.services.rules.ProductBusinessRules;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,13 +28,15 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
     private final CatalogRepository catalogRepository;
     private final ProductBusinessRules productBusinessRules;
-    public void addProduct(ProductAddRequest request) {
+    public CreatedProductResponse addProduct(ProductAddRequest request) {
         Catalog catalog = productBusinessRules.findCatalogById(request.getCatalogId());
         Product product = ProductMapper.INSTANCE.productFromAddRequest(request);
         product.setCatalog(catalog);
-        productRepository.save(product);
+        product.setCreatedDate(LocalDateTime.now());
+        Product savedProduct=productRepository.save(product);
         catalog.getProducts().add(product);
         catalogRepository.save(catalog);
+        return ProductMapper.INSTANCE.getResponseFromCreatedProduct(savedProduct);
     }
 
     public List<ProductGetResponse> getAllProducts(){
@@ -47,9 +52,13 @@ public class ProductServiceImpl implements ProductService {
         productRepository.deleteById(id);
     }
 
-    public void updateProduct(ProductUpdateRequest request){
-        productBusinessRules.findCatalogById(request.getCatalogId());
-        productRepository.save(ProductMapper.INSTANCE.productFromUpdateRequest(request));
+    public UpdatedProductResponse updateProduct(ProductUpdateRequest request) {
+        Catalog catalog=productBusinessRules.findCatalogById(request.getCatalogId());
+        Product product = productRepository.findById(request.getId()).orElseThrow();
+        product.setUpdatedDate(LocalDateTime.now());
+        product.setCatalog(catalog);
+        Product savedProduct = productRepository.save(ProductMapper.INSTANCE.productFromUpdateRequest(request));
+        return ProductMapper.INSTANCE.getResponseFromUpdatedProduct(savedProduct);
     }
 
     public List<SearchResponse> search(SearchRequest request){

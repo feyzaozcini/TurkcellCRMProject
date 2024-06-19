@@ -1,17 +1,13 @@
-package com.turkcell.catalogservice.services.dtos.requests;
-
+package com.turkcell.catalogservice.services.dtos.responses;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductUpdateRequest {
-
+@Data
+public class CreatedProductResponse {
     private int id;
 
     private String name;
@@ -19,5 +15,4 @@ public class ProductUpdateRequest {
     private float price;
 
     private int catalogId;
-
 }
