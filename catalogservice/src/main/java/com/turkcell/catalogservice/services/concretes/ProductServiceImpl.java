@@ -12,6 +12,7 @@ import com.turkcell.catalogservice.services.dtos.requests.SearchRequest;
 import com.turkcell.catalogservice.services.dtos.responses.ProductGetResponse;
 import com.turkcell.catalogservice.services.dtos.responses.SearchResponse;
 import com.turkcell.catalogservice.services.mappers.ProductMapper;
+import com.turkcell.catalogservice.services.rules.ProductBusinessRules;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +24,9 @@ import java.util.stream.Collectors;
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
     private final CatalogRepository catalogRepository;
+    private final ProductBusinessRules productBusinessRules;
     public void addProduct(ProductAddRequest request) {
-        Catalog catalog = catalogRepository.findById(request.getCatalogId()).orElseThrow(() -> new NotFoundException("Ilgili catalog bulunamadi"));
+        Catalog catalog = productBusinessRules.findCatalogById(request.getCatalogId());
         Product product = ProductMapper.INSTANCE.productFromAddRequest(request);
         product.setCatalog(catalog);
         productRepository.save(product);
@@ -41,13 +43,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     public void deleteProductById(int id){
-        if(productRepository.existsById(id))
-            productRepository.deleteById(id);
-        else
-            throw new NotFoundException("Ilgili catalog bulunamadi!");
+        productBusinessRules.checkIfProductExistsById(id);
+        productRepository.deleteById(id);
     }
 
     public void updateProduct(ProductUpdateRequest request){
+        productBusinessRules.findCatalogById(request.getCatalogId());
         productRepository.save(ProductMapper.INSTANCE.productFromUpdateRequest(request));
     }
 

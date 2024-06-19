@@ -12,6 +12,7 @@ import lombok.Setter;
 
 public class ProductAddRequest {
     private String name;
+
     private float price;
 
     private int catalogId;
