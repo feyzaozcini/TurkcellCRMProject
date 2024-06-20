@@ -16,10 +16,12 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 public class Invoice extends BaseEntity{
-    @Column(name = "order_id")
-    private int orderId;
+    @Column(name = "customer_id")
+    private int customerId;
     @Column(name = "account_id")
     private int accountId;
+    @Column(name = "service_address")
+    private int serviceAddress;
     @ElementCollection
     @CollectionTable(name = "product_ids")
     @Column(name = "products")

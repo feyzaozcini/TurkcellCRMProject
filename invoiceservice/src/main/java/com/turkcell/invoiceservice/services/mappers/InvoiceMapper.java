@@ -1,5 +1,6 @@
 package com.turkcell.invoiceservice.services.mappers;
 
+import com.turkcell.common.events.InvoiceEvent;
 import com.turkcell.invoiceservice.entities.Invoice;
 import com.turkcell.invoiceservice.services.dtos.requests.InvoiceAddRequest;
 import com.turkcell.invoiceservice.services.dtos.response.InvoiceAddResponse;
@@ -16,4 +17,6 @@ public interface InvoiceMapper {
     InvoiceGetResponse getResponseFromInvoice(Invoice invoice);
 
     InvoiceAddResponse addResponseFromInvoice(Invoice invoice);
+
+    Invoice invoiceFromInvoiceEvent(InvoiceEvent invoiceEvent);
 }

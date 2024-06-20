@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15117682-b388-4960-8294-da5489cd7508" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/CatalogServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/CatalogServiceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/CustomerServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/CustomerServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoiceservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/InvoiceserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/InvoiceserviceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/entities/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/entities/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/abstracts/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/abstracts/InvoiceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/concretes/InvoiceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/concretes/InvoiceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/mappers/InvoiceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/mappers/InvoiceMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/concretes/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/concretes/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,16 +22,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2i72Tm1nYqJW05zzS5Nu3w60vek" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,6 +41,7 @@
   "keyToString": {
     "Docker.docker-compose.yaml.kafka: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yaml.zookeeper: Compose Deployment.executor": "Run",
+    "Docker.invoiceservice/Dockerfile.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -87,7 +83,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrderserviceApplication">
+  <component name="RunManager" selected="Docker.invoiceservice/Dockerfile">
     <configuration name="AccountserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="accountservice" />
@@ -172,7 +168,13 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yaml.kafka: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -201,8 +203,18 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="invoiceservice/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="invoiceservice/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.invoiceservice/Dockerfile" />
         <item itemvalue="Spring Boot.OrderserviceApplication" />
         <item itemvalue="Docker.docker-compose.yaml.kafka: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yaml.zookeeper: Compose Deployment" />
@@ -224,7 +236,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718827305860</updated>
-      <workItem from="1718827308861" duration="4631000" />
+      <workItem from="1718827308861" duration="5229000" />
+      <workItem from="1718910406613" duration="4588000" />
     </task>
     <servers />
   </component>
