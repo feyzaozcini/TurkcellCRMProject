@@ -30,7 +30,7 @@ public class OrderServiceImpl implements OrderService {
         order.setTotalAmount(getTotalAmount(request));
         order.setCreatedDate(LocalDateTime.now());
         order = orderRepository.save(order);
-        InvoiceEvent invoiceEvent = new InvoiceEvent(order.getCustomerId(), order.getAccountId(), order.getServiceAddress(), new ArrayList<>(), order.getTotalAmount());
+        InvoiceEvent invoiceEvent = new InvoiceEvent(order.getCustomerId(), order.getAccountId(), order.getServiceAddress(), order.getProductIds(), order.getTotalAmount());
         kafkaTemplate.sendDefault("NewOrder", invoiceEvent);
         return buildResponse(order);
     }

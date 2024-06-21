@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Map;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -24,4 +26,7 @@ public class Invoice extends BaseEntity{
     private int serviceAddress;
     @Column(name = "total_amount")
     private float totalAmount;
+    @Column(name = "products")
+    @ElementCollection
+    private Map<Integer, Integer> productIds;
 }
