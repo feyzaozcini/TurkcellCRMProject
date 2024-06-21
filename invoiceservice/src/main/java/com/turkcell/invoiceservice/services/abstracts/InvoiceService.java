@@ -4,6 +4,7 @@ import com.turkcell.common.events.InvoiceEvent;
 import com.turkcell.invoiceservice.services.dtos.requests.InvoiceAddRequest;
 import com.turkcell.invoiceservice.services.dtos.response.InvoiceAddResponse;
 import com.turkcell.invoiceservice.services.dtos.response.InvoiceGetResponse;
+import org.springframework.kafka.annotation.KafkaListener;
 
 import java.util.List;
 
@@ -12,5 +13,7 @@ public interface InvoiceService {
     InvoiceGetResponse getInvoiceById(int id);
     List<InvoiceGetResponse> getInvoices();
     void deleteInvoiceById(int id);
-    void consumeKafkaMessage(InvoiceEvent invoiceEvent);
+
+//    @KafkaListener(topics = {"orderTopic"})
+//    void consumeKafkaMessage(InvoiceEvent invoiceEvent);
 }

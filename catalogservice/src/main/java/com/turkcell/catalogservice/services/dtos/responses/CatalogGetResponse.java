@@ -10,6 +10,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CatalogGetResponse {
-    private int id;
+    private Integer id;
     private String name;
 }

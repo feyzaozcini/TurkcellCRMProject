@@ -10,8 +10,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductGetResponse {
-    private int id;
+    private Integer id;
     private String name;
-    private float price;
-    private int catalogId;
+    private Float price;
+    private Integer catalogId;
 }

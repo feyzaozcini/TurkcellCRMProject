@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class CreatedProductResponse {
-    private int id;
+    private Integer id;
 
     private String name;
 
-    private float price;
+    private Float price;
 
-    private int catalogId;
+    private Integer catalogId;
 }

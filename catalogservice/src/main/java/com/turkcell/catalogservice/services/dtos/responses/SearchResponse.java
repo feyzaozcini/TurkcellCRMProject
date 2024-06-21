@@ -10,7 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SearchResponse {
-    private int id;
+    private Integer id;
     private String name;
-    private int catalogId;
+    private Integer catalogId;
 }

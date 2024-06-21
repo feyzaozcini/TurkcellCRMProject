@@ -17,7 +17,6 @@ public class BasketController {
     public BasketGetResponse createBasket(@RequestBody BasketCreateRequest request){
         return basketService.createBasket(request);
     }
-
     @GetMapping("/getBasketByAccountId")
     public BasketGetResponse getBasketByAccountId(@RequestParam int accountId){
         return basketService.getBasketByAccountId(accountId);

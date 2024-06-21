@@ -18,7 +18,7 @@ public class Product extends BaseEntity{
     private String name;
 
     @Column(name = "price")
-    private float price;
+    private Float price;
 
     @ManyToOne
     @JoinColumn(name = "catalog_id")

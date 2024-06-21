@@ -6,6 +6,7 @@ import com.turkcell.invoiceservice.services.dtos.requests.InvoiceAddRequest;
 import com.turkcell.invoiceservice.services.dtos.response.InvoiceAddResponse;
 import com.turkcell.invoiceservice.services.dtos.response.InvoiceGetResponse;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper

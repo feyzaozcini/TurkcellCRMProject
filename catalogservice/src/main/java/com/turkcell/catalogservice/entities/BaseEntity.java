@@ -20,8 +20,10 @@ public class BaseEntity {
             generator = "base_sequence_generator"
     )
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
+    @Column(name = "active")
+    private Boolean active;
     @Column(name = "createDate")
     private LocalDateTime createdDate;
 

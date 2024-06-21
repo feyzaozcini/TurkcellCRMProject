@@ -28,7 +28,7 @@ public class IndividualCustomerContactAdd {
     @Pattern(regexp = "^[1-9][0-9]{10}$", message = "{homePhone.Pattern}")
     private String homePhone;
 
-    @Size(min = 12, max = 12, message = "fax.Size")
-    @Pattern(regexp = "^[1-9][0-9]{11}$", message = "fax.Pattern")
+    @Size(min = 12, max = 12, message = "{fax.Size}")
+    @Pattern(regexp = "^[1-9][0-9]{11}$", message = "{fax.Pattern}")
     private String fax;
 }

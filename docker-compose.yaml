@@ -179,33 +179,6 @@ services:
         KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
       networks:
         - common
-#  zookeeper:
-#    image: 'bitnami/zookeeper:latest'
-#    container_name: zookeeper
-#    ports:
-#      - "2181:2181"
-#    environment:
-#      - ALLOW_ANONYMOUS_LOGIN=yes
-#    networks:
-#      - common
-#  kafka:
-#    image: 'bitnami/kafka:latest'
-#    container_name: kafka
-#    ports:
-#      - "9092:9092"
-#    depends_on:
-#      - zookeeper
-#    environment:
-#      - KAFKA_BROKER_ID=1
-#      - KAFKA_CFG_LISTENERS=LISTENER_DEVELOPMENT://localhost:9092,LISTENER_PRODUCTION://kafka:29092
-#      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=LISTENER_DEVELOPMENT:PLAINTEXT,LISTENER_PRODUCTION:PLAINTEXT
-#      - KAFKA_CFG_ADVERTISED_LISTENERS=LISTENER_DEVELOPMENT://localhost:9092,LISTENER_PRODUCTION://kafka:29092
-#      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=LISTENER_PRODUCTION
-#      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
-#      - ALLOW_PLAINTEXT_LISTENER=yes
-#    networks:
-#      - common
-
 volumes:
   postgresql-volume:
     name: postgresql-volume2

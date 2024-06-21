@@ -6,8 +6,7 @@ import com.turkcell.catalogservice.services.dtos.requests.ProductUpdateRequest;
 import com.turkcell.catalogservice.services.dtos.responses.CreatedProductResponse;
 import com.turkcell.catalogservice.services.dtos.responses.ProductGetResponse;
 import com.turkcell.catalogservice.services.dtos.responses.UpdatedProductResponse;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 import org.springframework.security.core.parameters.P;
 
@@ -18,11 +17,13 @@ public interface ProductMapper {
     Product productFromAddRequest(ProductAddRequest request);
     @Mapping(target = "catalogId", source = "catalog.id")
     CreatedProductResponse getResponseFromCreatedProduct(Product product);
-    @Mapping(target = "catalog.id",source = "catalogId")
-    Product productFromUpdateRequest(ProductUpdateRequest request);
+//    @Mapping(target = "catalog.id",source = "catalogId")
+//    Product productFromUpdateRequest(ProductUpdateRequest request);
     @Mapping(target = "catalogId", source = "catalog.id")
     ProductGetResponse getResponseFromProduct(Product product);
 
     @Mapping(target = "catalogId", source = "catalog.id")
     UpdatedProductResponse getResponseFromUpdatedProduct(Product product);
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    void productFromUpdateRequest(ProductUpdateRequest request, @MappingTarget Product product);
 }

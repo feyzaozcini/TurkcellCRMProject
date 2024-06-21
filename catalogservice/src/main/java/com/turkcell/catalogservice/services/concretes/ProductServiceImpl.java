@@ -1,6 +1,7 @@
 package com.turkcell.catalogservice.services.concretes;
 
 import com.turkcell.catalogservice.core.utils.types.NotFoundException;
+import com.turkcell.catalogservice.entities.BaseEntity;
 import com.turkcell.catalogservice.entities.Catalog;
 import com.turkcell.catalogservice.entities.Product;
 import com.turkcell.catalogservice.repositories.CatalogRepository;
@@ -29,18 +30,16 @@ public class ProductServiceImpl implements ProductService {
     private final CatalogRepository catalogRepository;
     private final ProductBusinessRules productBusinessRules;
     public CreatedProductResponse addProduct(ProductAddRequest request) {
-
         Catalog catalog = productBusinessRules.findCatalogById(request.getCatalogId());
         Product product = ProductMapper.INSTANCE.productFromAddRequest(request);
         product.setCatalog(catalog);
         product.setCreatedDate(LocalDateTime.now());
+        product.setActive(true);
         productRepository.save(product);
         catalog.getProducts().add(product);
         catalogRepository.save(catalog);
-
         return ProductMapper.INSTANCE.getResponseFromCreatedProduct(product);
     }
-
     public List<ProductGetResponse> getAllProducts(){
         return productRepository.findAll().stream().map((product)-> ProductMapper.INSTANCE.getResponseFromProduct(product)).collect(Collectors.toList());
     }
@@ -51,22 +50,30 @@ public class ProductServiceImpl implements ProductService {
 
     public void deleteProductById(int id){
         productBusinessRules.checkIfProductExistsById(id);
-        productRepository.deleteById(id);
+        Product product =productRepository.findById(id).orElseThrow();
+        product.setActive(false);
+        product.setDeletedDate(LocalDateTime.now());
+        productRepository.save(product);
     }
 
     public UpdatedProductResponse updateProduct(ProductUpdateRequest request) {
-        Catalog catalog=productBusinessRules.findCatalogById(request.getCatalogId());
+        productBusinessRules.checkIfProductExistsById(request.getId());
         Product product = productRepository.findById(request.getId()).orElseThrow();
+        if(request.getCatalogId() != null){
+            Catalog catalog=productBusinessRules.findCatalogById(request.getCatalogId());
+            product.setCatalog(catalog);
+        }
         product.setUpdatedDate(LocalDateTime.now());
-        product.setCatalog(catalog);
-        Product savedProduct = productRepository.save(ProductMapper.INSTANCE.productFromUpdateRequest(request));
-        return ProductMapper.INSTANCE.getResponseFromUpdatedProduct(savedProduct);
+        ProductMapper.INSTANCE.productFromUpdateRequest(request, product);
+        productRepository.save(product);
+        return ProductMapper.INSTANCE.getResponseFromUpdatedProduct(product);
     }
 
     public List<SearchResponse> search(SearchRequest request){
         List<SearchResponse> results = productRepository.search(request);
         if(results.isEmpty())
             throw new NotFoundException("There is no product matching the information you entered. Please check.");
+        results.removeIf(response -> productRepository.existsByIdAndActive(response.getId(), false));
         return results;
     }
 

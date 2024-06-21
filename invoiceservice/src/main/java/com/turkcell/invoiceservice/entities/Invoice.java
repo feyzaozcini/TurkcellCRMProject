@@ -22,10 +22,6 @@ public class Invoice extends BaseEntity{
     private int accountId;
     @Column(name = "service_address")
     private int serviceAddress;
-    @ElementCollection
-    @CollectionTable(name = "product_ids")
-    @Column(name = "products")
-    private List<Integer> productIds;
     @Column(name = "total_amount")
-    private double totalAmount;
+    private float totalAmount;
 }

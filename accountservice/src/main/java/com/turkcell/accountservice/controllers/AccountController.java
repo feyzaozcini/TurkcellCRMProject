@@ -6,6 +6,7 @@ import com.turkcell.accountservice.services.dtos.requests.account.AccountUpdateR
 import com.turkcell.accountservice.services.dtos.responses.account.AccountAddResponse;
 import com.turkcell.accountservice.services.dtos.responses.account.AccountGetResponse;
 import com.turkcell.accountservice.services.dtos.responses.account.AccountUpdateResponse;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ public class AccountController {
     private final AccountService accountService;
 
     @PostMapping("/add")
-    public AccountAddResponse addAccount(@RequestBody AccountAddRequest request) {
+    public AccountAddResponse addAccount(@RequestBody @Valid AccountAddRequest request) {
         return accountService.addAccount(request);
     }
 

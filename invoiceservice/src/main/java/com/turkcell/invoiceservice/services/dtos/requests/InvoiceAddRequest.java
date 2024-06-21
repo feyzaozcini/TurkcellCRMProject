@@ -14,6 +14,5 @@ public class InvoiceAddRequest {
     private int customerId;
     private int accountId;
     private int serviceAddress;
-    private List<Integer> productIds;
     private float totalAmount;
 }

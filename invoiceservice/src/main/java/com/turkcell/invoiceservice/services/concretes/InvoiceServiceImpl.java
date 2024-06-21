@@ -30,23 +30,16 @@ public class InvoiceServiceImpl implements InvoiceService {
         invoiceRepository.save(invoice);
         return InvoiceMapper.INSTANCE.addResponseFromInvoice(invoice);
     }
-
-    @KafkaListener(topics = {"orderTopic"})
-    public void consumeKafkaMessage(InvoiceEvent invoiceEvent) {
-//        System.out.println("Invoice Eventten gelen customer id: " + invoiceEvent.getCustomerId());
-//        Invoice invoice = new Invoice();
-//        invoice.setProductIds(invoiceEvent.getProductIds());
-//        invoice.setCustomerId(invoiceEvent.getCustomerId());
-//        invoice.setServiceAddress(invoiceEvent.getServiceAddress());
-//        invoice.setAccountId(invoiceEvent.getAccountId());
+//    public void consumeKafkaMessage(InvoiceEvent invoiceEvent) {
+//        Invoice invoice = InvoiceMapper.INSTANCE.invoiceFromInvoiceEvent(invoiceEvent);
 //        invoice.setCreatedDate(LocalDateTime.now());
 //        invoice.setActive(true);
 //        invoiceRepository.save(invoice);
-        String[] lines = {"**ORDER RECEIVED**", "-CustomerId: " + invoiceEvent.getCustomerId(), "-AccountId: " + invoiceEvent.getAccountId(), "-ServiceAddressId: " + invoiceEvent.getServiceAddress(), "-TotalAmount: " + invoiceEvent.getTotalAmount()};
-        for (String line : lines) {
-            System.out.println(line);
-        }
-    }
+//        String[] lines = {"**ORDER RECEIVED**", "-CustomerId: " + invoiceEvent.getCustomerId(), "-AccountId: " + invoiceEvent.getAccountId(), "-ServiceAddressId: " + invoiceEvent.getServiceAddress(), "-TotalAmount: " + invoiceEvent.getTotalAmount()};
+//        for (String line : lines) {
+//            System.out.println(line);
+//        }
+//    }
     public InvoiceGetResponse getInvoiceById(int id){
         invoiceBusinessRules.isInvoiceExist(id);
         Invoice invoice = invoiceRepository.findById(id).orElseThrow();
