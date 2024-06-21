@@ -1,6 +1,8 @@
 
 # 💫 TurkcellCRMProject
-[![Contributors][contributors-shield]][contributors-url]
+[![GitHub contributors](https://badgen.net/github/contributors/Naereen/Strapdown.js)](https://github.com/feyzaozcini/TurkcellCRMProject/graphs/contributors)
+
+
 
 The purpose of this project is to develop a CRM project in accordance with the given SRS document.
 
