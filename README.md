@@ -1,11 +1,8 @@
 
 # 💫 TurkcellCRMProject
-[![GitHub contributors](https://badgen.net/github/contributors/Naereen/Strapdown.js)](https://github.com/feyzaozcini/TurkcellCRMProject/graphs/contributors)
-
-
+![Static Badge](https://img.shields.io/badge/contributors-green?link=https%3A%2F%2Fgithub.com%2Ffeyzaozcini%2FTurkcellCRMProject%2Fgraphs%2Fcontributors)
 
 The purpose of this project is to develop a CRM project in accordance with the given SRS document.
-
 
 ## 🪜 Architecture
 
@@ -47,6 +44,3 @@ The architecture of this project is microservice structure. There are 10 java sp
 - [Docker](https://www.docker.com/get-started/)
 - [Maven Central Sonatype](https://central.sonatype.org/publish/publish-guide/#deployment)
 
-
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/feyzaozcini/TurkcellCRMProject/graphs/contributors
