@@ -1,6 +1,6 @@
 
 # 💫 TurkcellCRMProject
-![Static Badge](https://img.shields.io/badge/contributors-green?link=https%3A%2F%2Fgithub.com%2Ffeyzaozcini%2FTurkcellCRMProject%2Fgraphs%2Fcontributors)
+[![General badge](https://img.shields.io/badge/Contributors-green.svg)](https://github.com/feyzaozcini/TurkcellCRMProject/graphs/contributors)
 
 The purpose of this project is to develop a CRM project in accordance with the given SRS document.
 
