@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.Map;
 import java.util.Set;
 
 @Entity(name = "orderr")
@@ -22,6 +24,6 @@ public class Order extends BaseEntity{
     @Column(name = "account_id")
     private int accountId;
     @ElementCollection
-    @Column(name = "product_ids")
-    private Set<Integer> productIds;
+    @Column(name = "product_quantity_ids")
+    private Map<Integer, Integer> productIds;
 }

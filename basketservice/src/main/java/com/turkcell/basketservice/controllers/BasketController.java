@@ -18,12 +18,12 @@ public class BasketController {
         return basketService.createBasket(request);
     }
 
-    @GetMapping("/{accountId}")
-    public BasketGetResponse getBasketByAccountId(@PathVariable int accountId){
+    @GetMapping("/getBasketByAccountId")
+    public BasketGetResponse getBasketByAccountId(@RequestParam int accountId){
         return basketService.getBasketByAccountId(accountId);
     }
-    @GetMapping("/{basketId}")
-    public BasketGetResponse getBasketById(@PathVariable int basketId){
+    @GetMapping("/getBasketById")
+    public BasketGetResponse getBasketById(@RequestParam int basketId){
         return basketService.getBasketById(basketId);
     }
 

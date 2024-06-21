@@ -1,7 +1,9 @@
 package com.turkcell.orderservice.services.mappers;
 
+import com.turkcell.orderservice.clients.dtos.productservice.ProductGetResponse;
 import com.turkcell.orderservice.entities.Order;
 import com.turkcell.orderservice.services.dtos.requests.OrderRequest;
+import com.turkcell.orderservice.services.dtos.responses.OrderProductResponse;
 import com.turkcell.orderservice.services.dtos.responses.OrderResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -16,4 +18,7 @@ public interface OrderMapper {
     @Mapping(target = "serviceAddress", ignore = true)
     @Mapping(target = "products", ignore = true)
     OrderResponse responseFromOrder(Order order);
+
+    @Mapping(target = "quantity", ignore = true)
+    OrderProductResponse productResponseFromProduct(ProductGetResponse productGetResponse);
 }

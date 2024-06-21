@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -17,6 +18,6 @@ public class OrderResponse {
     private int customerId;
     private int accountId;
     private AddressResponse serviceAddress;
-    private List<ProductGetResponse> products;
+    private List<OrderProductResponse> products;
     private float totalAmount;
 }

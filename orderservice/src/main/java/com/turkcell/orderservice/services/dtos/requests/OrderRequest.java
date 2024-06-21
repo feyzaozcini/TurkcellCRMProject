@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -14,5 +15,5 @@ import java.util.List;
 public class OrderRequest {
     private int customerId;
     private int accountId;
-    private List<Integer> productIds;
+    private Map<Integer,Integer> productIds;
 }

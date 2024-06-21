@@ -23,7 +23,7 @@ public class Customer extends BaseEntity {
     @OneToMany(mappedBy = "customer")
     private List<Contact> contacts;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customer")
     private List<Address> addresses;
 
 }

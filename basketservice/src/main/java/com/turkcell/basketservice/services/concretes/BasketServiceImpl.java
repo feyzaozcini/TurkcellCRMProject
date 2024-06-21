@@ -45,7 +45,7 @@ public class BasketServiceImpl implements BasketService {
     }
 
     public BasketGetResponse getBasketByAccountId(int accountId){
-        basketBusinessRules.checkBasketIsExistByAccountId(accountId);
+        basketBusinessRules.checkBasketIsNotExistByAccountId(accountId);
         return BasketMapper.INSTANCE.getResponseFromBasket(basketRepository.findByAccountIdAndActive(accountId, true));
     }
 
