@@ -1,7 +1,9 @@
 
-# TurkcellCRMProject
+# 💫 TurkcellCRMProject
+[![Contributors][contributors-shield]][contributors-url]
 
 The purpose of this project is to develop a CRM project in accordance with the given SRS document.
+
 
 ## 🪜 Architecture
 
@@ -15,11 +17,11 @@ The architecture of this project is microservice structure. There are 10 java sp
 
 ## ⚙️ Installation & Run
 
-- Clone the repo,
+- Clone the repo
    ```sh
    git clone https://github.com/feyzaozcini/TurkcellCRMProject.git
    ```
-- Run with Docker Compose file,
+- Run with Docker Compose file
    ```sh
    docker compose up
    ```
@@ -42,3 +44,7 @@ The architecture of this project is microservice structure. There are 10 java sp
 - [Apache Kafka](https://kafka.apache.org/intro)
 - [Docker](https://www.docker.com/get-started/)
 - [Maven Central Sonatype](https://central.sonatype.org/publish/publish-guide/#deployment)
+
+
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-url]: https://github.com/feyzaozcini/TurkcellCRMProject/graphs/contributors
