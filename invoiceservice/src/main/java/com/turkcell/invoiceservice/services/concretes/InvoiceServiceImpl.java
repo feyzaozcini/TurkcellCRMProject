@@ -30,16 +30,6 @@ public class InvoiceServiceImpl implements InvoiceService {
         invoiceRepository.save(invoice);
         return InvoiceMapper.INSTANCE.addResponseFromInvoice(invoice);
     }
-//    public void consumeKafkaMessage(InvoiceEvent invoiceEvent) {
-//        Invoice invoice = InvoiceMapper.INSTANCE.invoiceFromInvoiceEvent(invoiceEvent);
-//        invoice.setCreatedDate(LocalDateTime.now());
-//        invoice.setActive(true);
-//        invoiceRepository.save(invoice);
-//        String[] lines = {"**ORDER RECEIVED**", "-CustomerId: " + invoiceEvent.getCustomerId(), "-AccountId: " + invoiceEvent.getAccountId(), "-ServiceAddressId: " + invoiceEvent.getServiceAddress(), "-TotalAmount: " + invoiceEvent.getTotalAmount()};
-//        for (String line : lines) {
-//            System.out.println(line);
-//        }
-//    }
     public InvoiceGetResponse getInvoiceById(int id){
         invoiceBusinessRules.isInvoiceExist(id);
         Invoice invoice = invoiceRepository.findById(id).orElseThrow();

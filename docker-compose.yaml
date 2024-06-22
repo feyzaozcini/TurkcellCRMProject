@@ -5,6 +5,7 @@ services:
       - "5433:5432"
     environment:
       - POSTGRES_PASSWORD=test
+      - POSTGRES_DB= tcellcrm
     volumes:
       - postgresql-volume:/var/lib/postgresql/data
     networks:

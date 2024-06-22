@@ -19,5 +19,5 @@ public interface InvoiceMapper {
 
     InvoiceAddResponse addResponseFromInvoice(Invoice invoice);
 
-    Invoice invoiceFromInvoiceEvent(InvoiceEvent invoiceEvent);
+    InvoiceAddRequest invoiceFromInvoiceEvent(InvoiceEvent invoiceEvent);
 }

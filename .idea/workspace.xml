@@ -5,12 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15117682-b388-4960-8294-da5489cd7508" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tcell-final-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TurkcellCRMProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/invoiceservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/entities/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/entities/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/dtos/response/InvoiceAddResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/dtos/response/InvoiceAddResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/concretes/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/services/concretes/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/entities/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/entities/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/repositories/CustomProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/repositories/CustomProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/repositories/CustomProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/repositories/CustomProductRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/services/abstracts/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/services/abstracts/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/services/concretes/CatalogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/services/concretes/CatalogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/services/concretes/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/services/concretes/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/services/rules/ProductBusinessRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/main/java/com/turkcell/catalogservice/services/rules/ProductBusinessRules.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogservice/src/test/java/com/turkcell/catalogservice/service/concretes/ProductServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/catalogservice/src/test/java/com/turkcell/catalogservice/service/concretes/ProductServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/InvoiceserviceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/InvoiceserviceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/concretes/InvoiceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/concretes/InvoiceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/dtos/requests/InvoiceAddRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/dtos/requests/InvoiceAddRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/dtos/response/InvoiceGetResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/dtos/response/InvoiceGetResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/kafka/OrderConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/kafka/OrderConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/mappers/InvoiceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/invoiceservice/src/main/java/com/turkcell/invoiceservice/services/mappers/InvoiceMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/CatalogServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/CatalogServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/CustomerServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/orderservice/src/main/java/com/turkcell/orderservice/clients/CustomerServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tcell-final-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TurkcellCRMProject.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +36,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -42,41 +59,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.docker-compose.yaml.kafka: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.zookeeper: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.invoiceservice/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.AccountserviceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.AuthserverApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.BasketserviceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.CatalogserviceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.CustomerserviceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DiscoveryserverApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.InvoiceserviceApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.OrderserviceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/IJavaProjects/tcell-final-project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.24424425&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.docker-compose.yaml.kafka: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.zookeeper: Compose Deployment.executor": "Run",
+    "Docker.invoiceservice/Dockerfile.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AccountserviceApplication.executor": "Run",
+    "Spring Boot.AuthserverApplication.executor": "Run",
+    "Spring Boot.BasketserviceApplication.executor": "Run",
+    "Spring Boot.CatalogserviceApplication.executor": "Run",
+    "Spring Boot.ConfigserverApplication.executor": "Run",
+    "Spring Boot.CustomerserviceApplication.executor": "Run",
+    "Spring Boot.DiscoveryserverApplication.executor": "Run",
+    "Spring Boot.InvoiceserviceApplication.executor": "Run",
+    "Spring Boot.OrderserviceApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/IJavaProjects/tcellcommon",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.24424425",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -89,7 +107,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.invoiceservice/Dockerfile">
+  <component name="RunManager" selected="Docker.docker-compose.yaml.kafka: Compose Deployment">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="TurkcellCRMProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="TurkcellCRMProject" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AccountserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="accountservice" />
@@ -238,9 +269,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.OrderserviceApplication" />
-        <item itemvalue="Docker.invoiceservice/Dockerfile" />
         <item itemvalue="Docker.docker-compose.yaml.kafka: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yaml.zookeeper: Compose Deployment" />
+        <item itemvalue="Docker.invoiceservice/Dockerfile" />
       </list>
     </recent_temporary>
   </component>
@@ -264,7 +295,8 @@
       <workItem from="1718922278987" duration="11832000" />
       <workItem from="1718935142010" duration="3098000" />
       <workItem from="1718958534674" duration="7216000" />
-      <workItem from="1718970490361" duration="857000" />
+      <workItem from="1718970490361" duration="996000" />
+      <workItem from="1719045724035" duration="10568000" />
     </task>
     <servers />
   </component>

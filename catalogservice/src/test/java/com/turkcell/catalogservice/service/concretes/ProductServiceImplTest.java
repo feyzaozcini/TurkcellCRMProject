@@ -154,14 +154,4 @@ public class ProductServiceImplTest {
         verify(productRepository).search(searchRequest);
     }
 
-    @Test
-    void testGetPriceById() {
-        when(productRepository.findById(product.getId())).thenReturn(Optional.of(product));
-
-        float price = productService.getPriceById(product.getId());
-
-        assertEquals(product.getPrice(), price);
-
-        verify(productRepository).findById(product.getId());
-    }
 }

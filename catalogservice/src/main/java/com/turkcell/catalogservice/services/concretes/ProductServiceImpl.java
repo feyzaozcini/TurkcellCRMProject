@@ -1,5 +1,4 @@
 package com.turkcell.catalogservice.services.concretes;
-
 import com.turkcell.catalogservice.core.utils.types.NotFoundException;
 import com.turkcell.catalogservice.entities.BaseEntity;
 import com.turkcell.catalogservice.entities.Catalog;
@@ -18,7 +17,6 @@ import com.turkcell.catalogservice.services.mappers.ProductMapper;
 import com.turkcell.catalogservice.services.rules.ProductBusinessRules;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -41,10 +39,12 @@ public class ProductServiceImpl implements ProductService {
         return ProductMapper.INSTANCE.getResponseFromCreatedProduct(product);
     }
     public List<ProductGetResponse> getAllProducts(){
-        return productRepository.findAll().stream().map((product)-> ProductMapper.INSTANCE.getResponseFromProduct(product)).collect(Collectors.toList());
+        productBusinessRules.checkIfAnyProductIsExist();
+        return productRepository.findAll().stream().filter(BaseEntity::getActive).map((product)-> ProductMapper.INSTANCE.getResponseFromProduct(product)).collect(Collectors.toList());
     }
 
     public ProductGetResponse getProductById(int id){
+        productBusinessRules.checkIfProductExistsById(id);
         return ProductMapper.INSTANCE.getResponseFromProduct(productRepository.findById(id).orElseThrow(()->new NotFoundException("Ilgili product bulunamadi")));
     }
 
@@ -71,13 +71,10 @@ public class ProductServiceImpl implements ProductService {
 
     public List<SearchResponse> search(SearchRequest request){
         List<SearchResponse> results = productRepository.search(request);
+        results.removeIf(response -> productRepository.existsByIdAndActive(response.getId(), false));
         if(results.isEmpty())
             throw new NotFoundException("There is no product matching the information you entered. Please check.");
-        results.removeIf(response -> productRepository.existsByIdAndActive(response.getId(), false));
         return results;
     }
 
-    public float getPriceById(int id){
-        return productRepository.findById(id).orElseThrow().getPrice();
-    }
 }
