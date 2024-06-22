@@ -45,8 +45,7 @@ The architecture of this project is microservice structure. There are 10 java sp
 - [Maven Central Sonatype](https://central.sonatype.org/publish/publish-guide/#deployment)
 
 ## 🖼️ Sample Screenshots
-
-![Order Response](https://github.com/feyzaozcini/TurkcellCRMProject/blob/main/screenshots/orderresponse.jpg)
-![Customer Response](https://github.com/feyzaozcini/TurkcellCRMProject/blob/main/screenshots/customerresponse.jpg)
 ![Account Response](https://github.com/feyzaozcini/TurkcellCRMProject/blob/main/screenshots/accountresponse.jpg)
+![Customer Response](https://github.com/feyzaozcini/TurkcellCRMProject/blob/main/screenshots/customerresponse.jpg)
+![Order Response](https://github.com/feyzaozcini/TurkcellCRMProject/blob/main/screenshots/orderresponse.jpg)
 ![Database ERD](https://github.com/feyzaozcini/TurkcellCRMProject/blob/main/screenshots/erd.jpg)
