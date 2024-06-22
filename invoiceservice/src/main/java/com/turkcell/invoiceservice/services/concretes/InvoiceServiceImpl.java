@@ -1,6 +1,5 @@
 package com.turkcell.invoiceservice.services.concretes;
 
-import com.turkcell.common.events.InvoiceEvent;
 import com.turkcell.invoiceservice.entities.BaseEntity;
 import com.turkcell.invoiceservice.entities.Invoice;
 import com.turkcell.invoiceservice.repositories.InvoiceRepository;
@@ -11,7 +10,6 @@ import com.turkcell.invoiceservice.services.dtos.response.InvoiceGetResponse;
 import com.turkcell.invoiceservice.services.mappers.InvoiceMapper;
 import com.turkcell.invoiceservice.services.rules.InvoiceBusinessRules;
 import lombok.RequiredArgsConstructor;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;

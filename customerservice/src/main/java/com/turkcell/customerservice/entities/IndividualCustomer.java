@@ -1,6 +1,4 @@
 package com.turkcell.customerservice.entities;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.turkcell.customerservice.entities.enums.Gender;
@@ -9,10 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 @Entity
 @Table(name = "individual_customers")
 @NoArgsConstructor

@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderController {
     private final OrderService orderService;
-    @PostMapping("/addOrder")
+    @PostMapping("/add")
     public OrderResponse addOrder(@RequestBody OrderRequest request){
         return orderService.addOrder(request);
     }
@@ -21,6 +21,11 @@ public class OrderController {
     @GetMapping("/all")
     public List<OrderResponse> getAllOrders(){
         return orderService.getAllOrders();
+    }
+
+    @GetMapping("/{id}")
+    public OrderResponse getOrderById(@PathVariable int id){
+        return orderService.getOrderById(id);
     }
 
     @GetMapping("/isExistByCustomerId/{customerId}")

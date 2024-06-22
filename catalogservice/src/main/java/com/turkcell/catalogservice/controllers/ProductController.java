@@ -9,7 +9,6 @@ import com.turkcell.catalogservice.services.dtos.responses.ProductGetResponse;
 import com.turkcell.catalogservice.services.dtos.responses.SearchResponse;
 import com.turkcell.catalogservice.services.dtos.responses.UpdatedProductResponse;
 import jakarta.validation.Valid;
-import jakarta.ws.rs.Path;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

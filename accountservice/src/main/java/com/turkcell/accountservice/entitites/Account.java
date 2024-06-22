@@ -16,10 +16,6 @@ import java.util.List;
 @Getter
 @Setter
 public class Account extends BaseEntity {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id")
-//    private int id;
     @Column(name = "account_number")
     private String accountNumber;
     @Column(name = "account_name")

@@ -3,7 +3,6 @@ package com.turkcell.customerservice.services.rules;
 import com.turkcell.customerservice.core.utils.types.BusinessException;
 import com.turkcell.customerservice.core.utils.types.NotFoundException;
 import com.turkcell.customerservice.entities.Address;
-import com.turkcell.customerservice.entities.Customer;
 import com.turkcell.customerservice.entities.IndividualCustomer;
 import com.turkcell.customerservice.repositories.AddressRepository;
 import com.turkcell.customerservice.repositories.IndividualCustomerRepository;

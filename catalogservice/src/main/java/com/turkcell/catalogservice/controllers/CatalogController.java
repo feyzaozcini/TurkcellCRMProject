@@ -1,6 +1,5 @@
 package com.turkcell.catalogservice.controllers;
 
-import com.turkcell.catalogservice.entities.Catalog;
 import com.turkcell.catalogservice.services.abstracts.CatalogService;
 import com.turkcell.catalogservice.services.dtos.responses.CatalogGetResponse;
 import lombok.RequiredArgsConstructor;

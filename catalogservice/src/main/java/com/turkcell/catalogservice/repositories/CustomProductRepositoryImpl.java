@@ -1,7 +1,6 @@
 package com.turkcell.catalogservice.repositories;
 
 import com.turkcell.catalogservice.entities.Product;
-import com.turkcell.catalogservice.repositories.CustomProductRepository;
 import com.turkcell.catalogservice.services.dtos.requests.SearchRequest;
 import com.turkcell.catalogservice.services.dtos.responses.SearchResponse;
 import jakarta.persistence.EntityManager;

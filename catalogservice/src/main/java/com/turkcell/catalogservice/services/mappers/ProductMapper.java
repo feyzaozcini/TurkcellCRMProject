@@ -8,7 +8,6 @@ import com.turkcell.catalogservice.services.dtos.responses.ProductGetResponse;
 import com.turkcell.catalogservice.services.dtos.responses.UpdatedProductResponse;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
-import org.springframework.security.core.parameters.P;
 
 @Mapper
 public interface ProductMapper {
@@ -17,8 +16,6 @@ public interface ProductMapper {
     Product productFromAddRequest(ProductAddRequest request);
     @Mapping(target = "catalogId", source = "catalog.id")
     CreatedProductResponse getResponseFromCreatedProduct(Product product);
-//    @Mapping(target = "catalog.id",source = "catalogId")
-//    Product productFromUpdateRequest(ProductUpdateRequest request);
     @Mapping(target = "catalogId", source = "catalog.id")
     ProductGetResponse getResponseFromProduct(Product product);
 

@@ -1,7 +1,4 @@
 package com.turkcell.customerservice.services.concretes;
-
-import com.turkcell.customerservice.core.utils.types.BusinessException;
-import com.turkcell.customerservice.core.utils.types.NotFoundException;
 import com.turkcell.customerservice.entities.Contact;
 import com.turkcell.customerservice.entities.Customer;
 import com.turkcell.customerservice.entities.IndividualCustomer;

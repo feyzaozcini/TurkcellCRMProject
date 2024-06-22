@@ -3,7 +3,6 @@ package com.turkcell.basketservice.services.rules;
 import com.turkcell.basketservice.clients.AccountServiceClient;
 import com.turkcell.basketservice.clients.CatalogServiceClient;
 import com.turkcell.basketservice.core.utils.types.NotFoundException;
-import com.turkcell.basketservice.entitites.Basket;
 import com.turkcell.basketservice.repositories.BasketRepository;
 import feign.FeignException;
 import lombok.RequiredArgsConstructor;

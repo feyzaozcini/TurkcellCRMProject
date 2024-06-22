@@ -17,7 +17,7 @@ public class BaseEntity {
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "base_sequence_generator" //generator name
+            generator = "base_sequence_generator"
     )
     @Column(name = "id")
     private int id;

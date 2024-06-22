@@ -1,5 +1,5 @@
 package com.turkcell.orderservice.services.concretes;
-import com.turkcell.common.events.InvoiceEvent;
+import com.turkcell.common.events.OrderEvent;
 import com.turkcell.orderservice.clients.CatalogServiceClient;
 import com.turkcell.orderservice.clients.CustomerServiceClient;
 import com.turkcell.orderservice.entities.Order;
@@ -30,7 +30,7 @@ public class OrderServiceImpl implements OrderService {
         order.setTotalAmount(getTotalAmount(request));
         order.setCreatedDate(LocalDateTime.now());
         order = orderRepository.save(order);
-        InvoiceEvent invoiceEvent = new InvoiceEvent(order.getCustomerId(), order.getAccountId(), order.getServiceAddress(), order.getProductIds(), order.getTotalAmount());
+        OrderEvent invoiceEvent = new OrderEvent(order.getCustomerId(), order.getAccountId(), order.getServiceAddress(), order.getProductIds(), order.getTotalAmount());
         kafkaTemplate.sendDefault("NewOrder", invoiceEvent);
         return buildResponse(order);
     }

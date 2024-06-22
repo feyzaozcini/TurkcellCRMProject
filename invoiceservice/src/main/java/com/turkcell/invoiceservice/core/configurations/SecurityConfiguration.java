@@ -12,10 +12,6 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfiguration {
     private final BaseSecurityService baseSecurityService;
     private static final String[] WHITE_LIST={
-            //"/api/v1/customer/**",
-            // "/api/v1/address/**",
-            // "/api/v1/contact/**",
-            //"/api/v1/order/**",
             "/swagger-ui/**",
             "/v2/api-docs",
             "/v3/api-docs",
