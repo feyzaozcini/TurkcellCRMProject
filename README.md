@@ -2,7 +2,7 @@
 # 💫 TurkcellCRMProject
 [![General badge](https://img.shields.io/badge/Contributors-green.svg)](https://github.com/feyzaozcini/TurkcellCRMProject/graphs/contributors)
 
-The purpose of this project is to develop a CRM project in accordance with the given SRS document.
+The purpose of this project is to develop a CRM project in accordance with the given [SRS](https://github.com/feyzaozcini/TurkcellCRMProject/blob/main/screenshots/Kodlama.io_SRS_Updated.docx) document.
 
 ## 🪜 Architecture
 
